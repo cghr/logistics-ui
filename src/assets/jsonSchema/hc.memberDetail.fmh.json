@@ -1,0 +1,918 @@
+{
+"schemaName":"hc.memberDetail.fmh",
+"onSave":"hc.memberDetail.pa",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"memberFamilyMedicalHistory",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"memberId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.memberId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"nameMother",
+        "type":"text",
+        "valdn":"required",
+        "label":"What is your mother's name?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"stateMother",
+        "type":"suggest",
+        "valdn":"required",
+        "label":"What is the state of origin of your mother?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Andhra Pradesh","value":"Andhra Pradesh"},
+        
+            {"text":"Delhi","value":"Delhi"},
+        
+            {"text":"Goa","value":"Goa"},
+        
+            {"text":"Gujarat","value":"Gujarat"},
+        
+            {"text":"Karnataka","value":"Karnataka"},
+        
+            {"text":"Madhya Pradesh","value":"Madhya Pradesh"},
+        
+            {"text":"Maharashtra","value":"Maharashtra"},
+        
+            {"text":"Punjab","value":"Punjab"},
+        
+            {"text":"Rajasthan","value":"Rajasthan"},
+        
+            {"text":"Uttar Pradesh","value":"Uttar Pradesh"},
+        
+            {"text":"Others","value":"Others"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"districtMother",
+        "type":"suggest",
+        "valdn":"required",
+        "label":"What is the district of origin of your Mother?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Nandurbar","value":"Nandurbar"},
+        
+            {"text":"Dhule","value":"Dhule"},
+        
+            {"text":"Jalgaon","value":"Jalgaon"},
+        
+            {"text":"Buldana","value":"Buldana"},
+        
+            {"text":"Akola","value":"Akola"},
+        
+            {"text":"Washim","value":"Washim"},
+        
+            {"text":"Amravati","value":"Amravati"},
+        
+            {"text":"Wardha","value":"Wardha"},
+        
+            {"text":"Nagpur","value":"Nagpur"},
+        
+            {"text":"Bhandara","value":"Bhandara"},
+        
+            {"text":"Gondiya","value":"Gondiya"},
+        
+            {"text":"Gadchiroli","value":"Gadchiroli"},
+        
+            {"text":"Chandrapur","value":"Chandrapur"},
+        
+            {"text":"Yavatmal","value":"Yavatmal"},
+        
+            {"text":"Nanded","value":"Nanded"},
+        
+            {"text":"Hingoli","value":"Hingoli"},
+        
+            {"text":"Parbhani","value":"Parbhani"},
+        
+            {"text":"Jalna","value":"Jalna"},
+        
+            {"text":"Aurangabad","value":"Aurangabad"},
+        
+            {"text":"Nashik","value":"Nashik"},
+        
+            {"text":"Thane","value":"Thane"},
+        
+            {"text":"Mumbai Suburban","value":"Mumbai Suburban"},
+        
+            {"text":"Mumbai","value":"Mumbai"},
+        
+            {"text":"Raigarh","value":"Raigarh"},
+        
+            {"text":"Pune","value":"Pune"},
+        
+            {"text":"Ahmadnagar","value":"Ahmadnagar"},
+        
+            {"text":"Bid","value":"Bid"},
+        
+            {"text":"Latur","value":"Latur"},
+        
+            {"text":"Osmanabad","value":"Osmanabad"},
+        
+            {"text":"Solapur","value":"Solapur"},
+        
+            {"text":"Satara","value":"Satara"},
+        
+            {"text":"Ratnagiri","value":"Ratnagiri"},
+        
+            {"text":"Sindhudurg","value":"Sindhudurg"},
+        
+            {"text":"Kolhapur","value":"Kolhapur"},
+        
+            {"text":"Sangli","value":"Sangli"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"casteMother",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What is the caste of your mother?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Brahman","value":"Brahman"},
+        
+            {"text":"Dhangar","value":"Dhangar"},
+        
+            {"text":"Lingayat","value":"Lingayat"},
+        
+            {"text":"Mahar","value":"Mahar"},
+        
+            {"text":"Mali","value":"Mali"},
+        
+            {"text":"Mang","value":"Mang"},
+        
+            {"text":"Maratha","value":"Maratha"},
+        
+            {"text":"Other","value":"Other"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"otherCasteMother",
+        "type":"text",
+        "valdn":"required",
+        "label":"If Others, then please specify",
+        "flow":"data.casteMother=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"motherTongueMother",
+        "type":"text",
+        "valdn":"required",
+        "label":"What is the mother-tongue of your mother?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Does your mother has the following disease?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"htnMother",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Hypertension",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications"},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+        
+            {"text":"Unknown","value":"Unknown"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"ageHtnMother",
+        "type":"text",
+        "valdn":"between[1:69],required",
+        "label":"Age at which it was diagnosed (In completed years):",
+        "flow":"data.htnMother=='Yes, on medications' || data.htnMother=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"dmMother",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Diabetes",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications"},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+        
+            {"text":"Unknown","value":"Unknown"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"ageDmMother",
+        "type":"text",
+        "valdn":"between[1:69],required",
+        "label":"Age at which it was diagnosed (In completed years):",
+        "flow":"data.dmMother=='Yes, on medications' || data.dmMother=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"asthmaMother",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Asthma",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications"},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+        
+            {"text":"Unknown","value":"Unknown"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"ageAsthmaMother",
+        "type":"text",
+        "valdn":"between[1:69],required",
+        "label":"Age at which it was diagnosed (In completed years):",
+        "flow":"data.asthmaMother=='Yes, on medications' || data.asthmaMother=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"hdMother",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Heart Disease",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications"},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+        
+            {"text":"Unknown","value":"Unknown"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"ageHdMother",
+        "type":"text",
+        "valdn":"between[1:69],required",
+        "label":"Age at which it was diagnosed (In completed years):",
+        "flow":"data.hdMother=='Yes, on medications' || data.hdMother=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"cancerMother",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Cancer",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications"},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+        
+            {"text":"Unknown","value":"Unknown"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"ageCancerMother",
+        "type":"text",
+        "valdn":"between[1:69],required",
+        "label":"Age at which it was diagnosed (In completed years):",
+        "flow":"data.cancerMother=='Yes, on medications' || data.cancerMother=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"locationCancerMother",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Location of the cancer",
+        "flow":"data.cancerMother=='Yes, on medications' || data.cancerMother=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+            {"text":"Cervix","value":"Cervix"},
+        
+            {"text":"Breast","value":"Breast"},
+        
+            {"text":"Ovary","value":"Ovary"},
+        
+            {"text":"Lung","value":"Lung"},
+        
+            {"text":"Abdomen","value":"Abdomen"},
+        
+            {"text":"Blood","value":"Blood"},
+        
+            {"text":"Liver","value":"Liver"},
+        
+            {"text":"Mouth","value":"Mouth"},
+        
+            {"text":"Throat","value":"Throat"},
+        
+            {"text":"Oesophagus","value":"Oesophagus"},
+        
+            {"text":"Others","value":"Others"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"otherCancerMother",
+        "type":"text",
+        "valdn":"required",
+        "label":"If Other Cancer Type -Specify",
+        "flow":"data.locationCancerMother=='Others'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Does your father has the following disease?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"htnFather",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Hypertension",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications"},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+        
+            {"text":"Unknown","value":"Unknown"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"ageHtnFather",
+        "type":"text",
+        "valdn":"between[1:69],required",
+        "label":"Age at which it was diagnosed (In completed years):",
+        "flow":"data.htnFather=='Yes, on medications' || data.htnFather=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"dmFather",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Diabetes",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications"},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+        
+            {"text":"Unknown","value":"Unknown"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"ageDmFather",
+        "type":"text",
+        "valdn":"between[1:69],required",
+        "label":"Age at which it was diagnosed (In completed years):",
+        "flow":"data.dmFather=='Yes, on medications' || data.dmFather=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"asthmaFather",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Asthma",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications"},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+        
+            {"text":"Unknown","value":"Unknown"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"ageAsthmaFather",
+        "type":"text",
+        "valdn":"between[1:69],required",
+        "label":"Age at which it was diagnosed (In completed years):",
+        "flow":"data.asthmaFather=='Yes, on medications' || data.asthmaFather=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"hdFather",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Heart Disease",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications"},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+        
+            {"text":"Unknown","value":"Unknown"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"ageHdFather",
+        "type":"text",
+        "valdn":"between[1:69],required",
+        "label":"Age at which it was diagnosed (In completed years):",
+        "flow":"data.hdFather=='Yes, on medications' || data.hdFather=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"cancerFather",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Cancer",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications"},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+        
+            {"text":"Unknown","value":"Unknown"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"ageCancerFather",
+        "type":"text",
+        "valdn":"between[1:69],required",
+        "label":"Age at which it was diagnosed (In completed years):",
+        "flow":"data.cancerFather=='Yes, on medications' || data.cancerFather=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"locationCancerFather",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Location of the cancer",
+        "flow":"data.cancerFather=='Yes, on medications' || data.cancerFather=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+            {"text":"Prostrate","value":"Prostrate"},
+        
+            {"text":"Mouth","value":"Mouth"},
+        
+            {"text":"Lung","value":"Lung"},
+        
+            {"text":"Liver","value":"Liver"},
+        
+            {"text":"Throat","value":"Throat"},
+        
+            {"text":"Oesophagus","value":"Oesophagus"},
+        
+            {"text":"Abdomen","value":"Abdomen"},
+        
+            {"text":"Blood","value":"Blood"},
+        
+            {"text":"Penis","value":"Penis"},
+        
+            {"text":"Others","value":"Others"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"otherCancerFather",
+        "type":"text",
+        "valdn":"required",
+        "label":"If Other Cancer Type -Specify",
+        "flow":"data.locationCancerFather=='Others'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]}
+
+
+
+]
+}

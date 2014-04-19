@@ -1,0 +1,150 @@
+{
+"schemaName":"hc.ffqDetail.bev",
+"onSave":"hc.ffqDetail.cls",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"ffqBeverages",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"memberId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.memberId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"milkCow",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Milk (Cow)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"milkBuffalo",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Milk (Buffalo)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"tea",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Tea",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]}
+
+
+
+]
+}

@@ -1,0 +1,354 @@
+{
+"schemaName":"hc.ffqDetail.pls",
+"onSave":"hc.ffqDetail.veg",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"ffqPulses",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"memberId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.memberId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"aamtiM",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Moongdal (Aamti)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"mokaliM",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Moongdal (Mokali)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"varanT",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Toordal (Varan)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"aamtiT",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Toordal (Aamti)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"mokaliT",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Toordal (Mokali)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"matki",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Matki (Mokali)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"patal",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Matki (Patal)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"pithale",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Besan (Pithale)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"dalmirchi",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Dal Mirchi Ghatt",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]}
+
+
+
+]
+}

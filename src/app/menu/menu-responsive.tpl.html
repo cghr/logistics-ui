@@ -1,0 +1,44 @@
+
+<!-- Main Menu -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" ng-click="isCollapsed = !isCollapsed">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="brand" href="#/">App Title</a>
+      <div class="nav-collapse" style="height: 0px;" collapse="isCollapsed">
+        <ul class="nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-home icon-white'></i> Menu Section1 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="nav-header">Menu Header</li>
+              <li><a href="#/item1">Menu Item1</a></li>
+            </ul>
+          </li>
+         
+          <li>
+            <a href='#/report/11'><i class='icon-book icon-white'></i> Reports</a>
+          </li>
+           
+          <!-- <li>
+            <a href='' ng-click='sync()'><i class='icon-refresh icon-white'></i> Synchronize</a>
+          </li> -->
+           <li access-level="accessLevels.admin">
+            <a href='' ng-click='cleanUp()'><i class='icon-trash icon-white'></i> Cleanup</a>
+          </li>
+
+        </ul>
+        <div >
+          <p class='navbar-text pull-right'><a href='' ng-click='logout()' class='navbar-link'><i class='icon-off icon-white'></i> Logout</a></p>
+        </div>
+        
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+
+    <!-- Main Menu Ends -->

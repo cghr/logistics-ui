@@ -1,0 +1,20 @@
+<div class='span2'
+     ng-init="childStates=$state.current.data.children;parent=$state.current.data.thisState;prev=$state.current.data.prev;">
+    <a ng-click="$state.go(prev.name,$stateParams)" href=''>&laquo; Back to {{prev.title}} </a>
+
+    <div class="well sidebar-nav sidebar-nav-fixed">
+        <ul class="nav nav-list">
+
+            <li class="nav-header"></li>
+            <li ng-class="{active:$state.includes(parent.name+'.'+childState.name)}" ng-repeat="childState in childStates">
+                <a>
+                    {{childState.title}}
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div class='span8'>
+    <div ui-view></div>
+</div>

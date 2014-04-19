@@ -1,0 +1,252 @@
+{
+"schemaName":"hc.ffqDetail.nonveg",
+"onSave":"hc.ffqDetail.sweets",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"ffqNonVeg",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"memberId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.memberId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"eggBurgi",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Egg Burgi",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"eggOmlet",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Egg Omlet",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"eggCurry",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Egg Curry",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"mutton",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Mutton",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"fish",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Fish",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"chicken",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Chicken",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"","value":"0"},
+        
+            {"text":"","value":"1"},
+        
+            {"text":"","value":"2"},
+        
+            {"text":"","value":"3"},
+        
+            {"text":"","value":"4"},
+        
+            {"text":"","value":"5"},
+        
+            {"text":"","value":"6"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]}
+
+
+
+]
+}

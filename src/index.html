@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="AppController">
+<head>
+    <title ng-bind="pageTitle"></title>
+
+    <!-- font awesome from BootstrapCDN -->
+    <!--<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">-->
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>"/>
+    <% }); %>
+    <link rel="stylesheet" type="text/css" href="assets/dhtmlx/dhtmlx.css">
+    <link rel="stylesheet" type="text/css" href="assets/dhtmlx/skins/dhtmlxgrid_dhx_skyblue.css">
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script>
+    <% }); %>
+</head>
+<body>
+<!-- Div for displaying toast messages -->
+<toaster-container toaster-options="{'time-out': 4000}"></toaster-container>
+
+<!-- Menu division -->
+<div ng-include="'menu/menu-static.tpl.html'" access-level="accessLevels.user" ng-controller="NavCtrl"></div>
+
+<!-- Div for loading partials -->
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div ui-view="" style="margin-top:50px"></div>
+    </div>
+</div>
+</body>
+</html>

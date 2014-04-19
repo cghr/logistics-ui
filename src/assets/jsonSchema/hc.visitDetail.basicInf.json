@@ -1,0 +1,158 @@
+{
+"schemaName":"hc.visitDetail.basicInf",
+"onSave":"hc.householdDetail.member",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"hcVisit",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"householdId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.householdId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"gps",
+        "type":"gps",
+        "valdn":"required",
+        "label":"GPS Codes:",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"hhVisit",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Household Visit",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Respondent Available","value":"Respondent Available"},
+        
+            {"text":"Respondent Not available","value":"Respondent Not available"},
+        
+            {"text":"Refused to participate","value":"Refused to participate"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"reasonNoPart",
+        "type":"text",
+        "valdn":"required",
+        "label":"If refused to participate, please provide reason",
+        "flow":"data.hhVisit=='Refused to participate'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"signedConsent",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Detailed consent form signed",
+        "flow":"data.hhVisit=='Available'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]},
+
+
+
+        {
+        "name":"reasonNoConsent",
+        "type":"text",
+        "valdn":"required",
+        "label":"If no, please provide a reason for no consent",
+        "flow":"data.hhVisit=='Available' && data.signedConsent=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ]}
+
+
+
+]
+}
