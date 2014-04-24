@@ -1,6 +1,6 @@
 {
-"schemaName":"enum.houseDetail.basicInf",
-"onSave":"enum.houseDetail.household",
+"schemaName":"enum.householdDetail.deathInf",
+"onSave":"",
 "properties":[
 
 
@@ -10,7 +10,7 @@
         "valdn":"",
         "label":"",
         "flow":"",
-        "value":"house",
+        "value":"deathInf",
         "items":[
         
         ],
@@ -29,12 +29,12 @@
 
 
         {
-        "name":"houseId",
+        "name":"householdId",
         "type":"hidden",
         "valdn":"",
         "label":"",
         "flow":"",
-        "value":"$stateParams.houseId",
+        "value":"$stateParams.householdId",
         "items":[
         
         ],
@@ -53,38 +53,18 @@
 
 
         {
-        "name":"areaId",
-        "type":"hidden",
-        "valdn":"",
-        "label":"",
-        "flow":"",
-        "value":"$stateParams.areaId",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"gps",
-        "type":"gps",
+        "name":"deathStatus",
+        "type":"radio",
         "valdn":"required",
-        "label":"GPS",
+        "label":"Did any usually residing adult household member die since 1 January 2003 till date?",
         "flow":"",
         "value":"",
         "items":[
         
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
         ],
         "image":"",
         "lookup":{
@@ -101,11 +81,11 @@
 
 
         {
-        "name":"houseNs",
+        "name":"deathCount",
         "type":"text",
-        "valdn":"required",
-        "label":"House No. (NS- No)",
-        "flow":"",
+        "valdn":"between[1:20],required",
+        "label":"If yes, then how many?",
+        "flow":"data.deathStatus=='Yes'",
         "value":"",
         "items":[
         

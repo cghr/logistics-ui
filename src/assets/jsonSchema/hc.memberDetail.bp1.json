@@ -20,7 +20,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -40,7 +44,35 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Blood Pressure & General Information ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -60,14 +92,18 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
         {
         "name":"bp1Diastolic",
         "type":"text",
-        "valdn":"between[30:250],required",
+        "valdn":"between[30:{data.bp1Systolic}],required",
         "label":"Diastolic Blood pressure 1(left arm – sitting) of the respondent (mm/hg)",
         "flow":"",
         "value":"",
@@ -80,7 +116,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -100,7 +140,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -136,7 +180,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -170,7 +218,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -190,7 +242,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -226,7 +282,11 @@
         },
         "crossFlow":[
         
-        ]}
+        ],
+        "crossCheck":{
+        
+        }
+        }
 
 
 

@@ -91,16 +91,28 @@ angular.module('appRoutes', [])
                         title: 'Food Items'
                     },
                     {
+                        name:'hospInf',
+                        url:'/hospInf',
+                        tpl:'enum/hospInf.tpl.html',
+                        title:'Hospitalization Inf'
+                    },
+                    {
                         name: 'hosp',
                         url: '/hosp',
-                        tpl: 'tpls/dataGrid.tpl.html',
+                        tpl: 'enum/hosp.tpl.html',
                         title: 'Hospitalization',
                         addNew: true
                     },
                     {
+                        name:'deathInf',
+                        url:'/deathInf',
+                        tpl:'enum/deathInf.tpl.html',
+                        title:'Death Inf'
+                    },
+                    {
                         name: 'death',
                         url: '/death',
-                        tpl: 'tpls/dataGrid.tpl.html',
+                        tpl: 'enum/death.tpl.html',
                         title: 'Deaths',
                         addNew: true
                     }
@@ -111,7 +123,7 @@ angular.module('appRoutes', [])
                 url: '/area/:areaId/house/:houseId/household/:householdId/visit/',
                 tpl: 'tpls/pageDetail.tpl.html',
                 title: '',
-                prevState:{name:'enum.householdDetail.visit',title:'Visits'},
+                prevState: {name: 'enum.householdDetail.visit', title: 'Visits'},
                 children: [
                     {
                         name: 'basicInf',
@@ -127,7 +139,7 @@ angular.module('appRoutes', [])
                 url: '/area/:areaId/house/:houseId/household/:householdId/member/:memberId',
                 tpl: 'tpls/pageDetail.tpl.html',
                 title: '',
-                prevState:{name:'enum.householdDetail.member',title:'Members'},
+                prevState: {name: 'enum.householdDetail.member', title: 'Members'},
                 children: [
                     {
                         name: 'basicInf',
@@ -143,7 +155,7 @@ angular.module('appRoutes', [])
                 url: '/area/:areaId/house/:houseId/household/:householdId/hosp/:memberId',
                 tpl: 'tpls/pageDetail.tpl.html',
                 title: '',
-                prevState:{name:'enum.householdDetail.hosp',title:'Hospitalization'},
+                prevState: {name: 'enum.householdDetail.hosp', title: 'Hospitalization'},
                 children: [
                     {
                         name: 'basicInf',
@@ -159,7 +171,7 @@ angular.module('appRoutes', [])
                 url: '/area/:areaId/house/:houseId/household/:householdId/death/:memberId',
                 tpl: 'tpls/pageDetail.tpl.html',
                 title: '',
-                prevState:{name:'enum.householdDetail.death',title:'Deaths'},
+                prevState: {name: 'enum.householdDetail.death', title: 'Deaths'},
                 children: [
                     {
                         name: 'basicInf',
@@ -192,7 +204,7 @@ angular.module('appRoutes', [])
                 url: '/area/:areaId',
                 tpl: 'tpls/pageDetail.tpl.html',
                 title: 'Area Detail',
-                prevState:{name:'hc.area',title:'Areas'},
+                prevState: {name: 'hc.area', title: 'Areas'},
                 children: [
                     {
                         name: 'house',
@@ -207,7 +219,7 @@ angular.module('appRoutes', [])
                 url: '/area/:areaId/house/:houseId',
                 tpl: 'tpls/pageDetail.tpl.html',
                 title: 'House Detail',
-                prevState:{name:'hc.areaDetail.house',title:'Houses'},
+                prevState: {name: 'hc.areaDetail.house', title: 'Houses'},
                 children: [
                     {
                         name: 'household',
@@ -222,7 +234,7 @@ angular.module('appRoutes', [])
                 url: '/area/:areaId/house/:houseId/household/:householdId',
                 tpl: 'tpls/pageDetail.tpl.html',
                 title: 'Household Detail',
-                prevState:{name:'hc.houseDetail.household',title:'Households'},
+                prevState: {name: 'hc.houseDetail.household', title: 'Households'},
                 children: [
                     {
                         name: 'visit',
@@ -252,7 +264,7 @@ angular.module('appRoutes', [])
                 url: '/area/:areaId/house/:houseId/household/:householdId/visit',
                 tpl: 'tpls/pageDetail.tpl.html',
                 title: '',
-                prevState:{name:'hc.householdDetail.visit',title:'Visits'},
+                prevState: {name: 'hc.householdDetail.visit', title: 'Visits'},
                 children: [
                     {
                         name: 'basicInf',
@@ -268,18 +280,18 @@ angular.module('appRoutes', [])
                 url: '/area/:areaId/house/:houseId/household/:householdId/member/:memberId',
                 tpl: 'tpls/pageDetail.tpl.html',
                 title: 'Member Detail',
-                prevState:{name:'hc.householdDetail.member',title:'Members'},
+                prevState: {name: 'hc.householdDetail.member', title: 'Members'},
                 children: [
                     {
-                        name:'basicInf',
-                        url:'/basicInf',
-                        tpl:'tpls/surveyForm.tpl.html',
-                        title:'Basic Inf'
+                        name: 'basicInf',
+                        url: '/basicInf',
+                        tpl: 'tpls/surveyForm.tpl.html',
+                        title: 'Basic Inf'
                     },
                     {
                         name: 'bp1',
                         url: '/bp1',
-                        tpl:'tpls/surveyForm.tpl.html',
+                        tpl: 'tpls/surveyForm.tpl.html',
                         title: 'BP1-General Information'
                     },
                     {
@@ -320,7 +332,7 @@ angular.module('appRoutes', [])
                 url: '/area/:areaId/house/:houseId/household/:householdId/ffq/:memberId',
                 tpl: 'tpls/pageDetailNavDisabled.tpl.html',
                 title: 'FFQ Detail',
-                prevState:{name:'hc.householdDetail.ffq',title:'FFQ'},
+                prevState: {name: 'hc.householdDetail.ffq', title: 'FFQ'},
                 children: [
                     {
                         name: 'general',
@@ -406,4 +418,78 @@ angular.module('appRoutes', [])
 
         ]
 
-    });
+    })
+    .constant('resampRoutes', {
+        name: 'resamp',
+        url: '/resamp',
+        tpl: 'resamp/resamp.tpl.html',
+        children: [
+            {
+                name: 'area',
+                url: '/area',
+                tpl: 'tpls/dataGrid.tpl.html',
+                title: 'Areas'
+
+            },
+            {
+                name: 'areaDetail',
+                url: '/area/:areaId',
+                tpl: 'tpls/pageDetail.tpl.html',
+                title: 'Area Detail',
+                prevState: {name: 'resamp.area', title: 'Areas'},
+                children: [
+                    {
+                        name: 'house',
+                        url: '/house',
+                        tpl: 'tpls/dataGrid.tpl.html',
+                        title: 'Houses'
+                    }
+                ]
+            },
+            {
+                name: 'houseDetail',
+                url: '/area/:areaId/house/:houseId',
+                tpl: 'tpls/pageDetail.tpl.html',
+                title: 'House Detail',
+                prevState: {name: 'resamp.areaDetail.house', title: 'Houses'},
+                children: [
+                    {
+                        name: 'household',
+                        url: '/household',
+                        tpl: 'tpls/dataGrid.tpl.html',
+                        title: 'Households'
+                    }
+                ]
+            },
+            {
+                name: 'householdDetail',
+                url: '/area/:areaId/house/:houseId/household/:householdId',
+                tpl: 'tpls/pageDetail.tpl.html',
+                title: 'Household Detail',
+                prevState: {name: 'resamp.houseDetail.household', title: 'Households'},
+                children: [
+
+                    {
+                        name: 'member',
+                        url: '/member',
+                        tpl: 'tpls/dataGrid.tpl.html',
+                        title: 'Members'
+                    }
+
+                ]
+            },
+            {
+                name: 'memberDetail',
+                url: '/area/:areaId/house/:houseId/household/:householdId/member/:memberId',
+                tpl: 'tpls/pageDetail.tpl.html',
+                title: 'Resampling ',
+                prevState: {name: 'resamp.householdDetail.member', title: 'Members'},
+                children: [
+                    {
+                        name: 'basicInf',
+                        url: '/basicInf',
+                        tpl: 'tpls/resampling.tpl.html',
+                        title: 'Basic Inf'
+                    }]
+            }
+        ]});

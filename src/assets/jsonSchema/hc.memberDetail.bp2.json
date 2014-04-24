@@ -20,7 +20,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -40,7 +44,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -60,7 +68,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -80,14 +92,18 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
         {
         "name":"bp2Diastolic",
         "type":"text",
-        "valdn":"between[30:250],required",
+        "valdn":"between[30:{data.bp2Systolic}],required",
         "label":"Diastolic Blood pressure 2(left arm – sitting) of the respondent (mm/hg)",
         "flow":"",
         "value":"",
@@ -100,7 +116,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -120,7 +140,11 @@
         },
         "crossFlow":[
         
-        ]}
+        ],
+        "crossCheck":{
+        
+        }
+        }
 
 
 

@@ -15,7 +15,8 @@ angular.module("myApp", [
         'myApp.security',
         'myApp.report',
         'myApp.enum',
-        'myApp.hc'
+        'myApp.hc',
+        'myApp.resamp'
     ])
     .config(function ($stateProvider, $urlRouterProvider) {
 

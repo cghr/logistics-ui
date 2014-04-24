@@ -1,6 +1,6 @@
 {
 "schemaName":"hc.ffqDetail.snacks",
-"onSave":"hc.ffqDetail.otherFoodItems",
+"onSave":"hc.ffqDetail.foodAdditives",
 "properties":[
 
 
@@ -20,7 +20,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -40,7 +44,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -74,7 +82,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -108,7 +120,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -142,7 +158,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -176,7 +196,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -210,7 +234,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -244,7 +272,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -278,7 +310,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -312,7 +348,11 @@
         },
         "crossFlow":[
         
-        ]}
+        ],
+        "crossCheck":{
+        
+        }
+        }
 
 
 

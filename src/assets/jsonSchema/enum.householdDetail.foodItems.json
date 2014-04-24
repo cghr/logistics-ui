@@ -1,6 +1,6 @@
 {
 "schemaName":"enum.householdDetail.foodItems",
-"onSave":"enum.householdDetail.hosp",
+"onSave":"enum.householdDetail.hospInf",
 "properties":[
 
 
@@ -20,7 +20,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -40,7 +44,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -60,7 +68,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -80,7 +92,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -100,7 +116,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -120,7 +140,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -140,7 +164,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -160,7 +188,11 @@
         },
         "crossFlow":[
         
-        ]}
+        ],
+        "crossCheck":{
+        
+        }
+        }
 
 
 

@@ -2,7 +2,7 @@
  * cgForm
  * 
 
- * Version: 0.1.0 - 2014-04-19
+ * Version: 0.1.0 - 2014-04-23
  * License: MIT
  */
 angular.module('cgForm', [
@@ -61,7 +61,6 @@ angular.module('cgForm.initFocus', []).directive('initFocus', [
         return {
             link: function (scope, elm, attrs) {
                 if (attrs.initFocus == 'false') {
-                    console.log('init focus triggered');
                     return false;
                 }
                 $timeout(function () {
@@ -87,7 +86,6 @@ angular.module('cgForm.scrollTop', ['cgForm.jQuery']).directive('scrollTop', [
         return {
             link: function (scope, elm, attrs) {
                 if (attrs.scrollTop == 'false') {
-                    console.log('scroll top triggered');
                     return false;
                 }
                 /* Scroll to the newly added element */
@@ -174,6 +172,7 @@ angular.module('cgForm.formConfig', []).factory('FormConfig', [
                     resourceBaseUrl: context + 'api/data/dataAccessService/',
                     lookupBaseUrl: context + 'api/LookupService/',
                     crossFlowBaseUrl: context + 'api/CrossFlowService',
+                    crossCheckBaseUrl: context + 'api/CrossCheckService',
                     submitLabel: 'Save',
                     style: 'well'
                 };
@@ -214,6 +213,10 @@ angular.module('cgForm.formService', [
                 getLookupData: function (reqData) {
                     reqData.refId = $stateParams[reqData.ref];
                     return $http.post(FormConfig.getConfig().lookupBaseUrl, reqData);
+                },
+                getCrossCheckData: function (reqData) {
+                    reqData.refId = $stateParams[reqData.ref];
+                    return $http.post(FormConfig.getConfig().crossCheckBaseUrl, reqData);
                 },
                 checkCrossFlow: function (crossFlows) {
                     angular.forEach(crossFlows, function (crossFlow) {
@@ -365,21 +368,40 @@ angular.module('cgForm.standardForm', [
                     randomsize: '@'
                 },
                 link: function postLink(scope, element, attrs) {
-                    console.log(scope.randomtotal + ' ' + scope.randomsize);
                     /* Load Json Schema for current state if not supplied through attributes */
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
                     /* Generates a random form */
                     var randoms = [];
+                    var randomProperties = [];
                     scope.randomsize = angular.isDefined(scope.randomsize) ? scope.randomsize : 0;
                     for (var i = 0; i < scope.randomsize; i++) {
-                        randoms.push(Math.floor(Math.random() * scope.randomtotal + 1));
+                        randoms.push(getRandomNumber());
                     }
                     if (scope.randomsize > 0 && scope.randomtotal > 0) {
-                        var randomProperties = [];
+                        /* Push all hidden properties */
+                        angular.forEach(scope.schema.properties, function (property, index) {
+                            if (property.type === 'hidden') {
+                                randomProperties.push(property);  //scope.schema.properties.splice(index,1);
+                            }
+                        });
+                        _.remove(scope.schema.properties, { type: 'hidden' });
                         angular.forEach(randoms, function (randomItem) {
                             randomProperties.push(scope.schema.properties[randomItem]);
                         });
                         scope.schema.properties = randomProperties;
+                    }
+                    function mathRandom() {
+                        return Math.floor(Math.random() * scope.randomtotal + 1);
+                    }
+                    function getRandomNumber() {
+                        var randomNumber;
+                        while (1) {
+                            randomNumber = mathRandom();
+                            if (!_.contains(randoms, randomNumber)) {
+                                break;
+                            }
+                        }
+                        return randomNumber;
                     }
                     /* Initialize data in  scope to save all form data*/
                     scope.data = {};
@@ -466,7 +488,11 @@ angular.module('cgForm.surveyForm', [
             /* Posts  data to Sever */
             function postData() {
                 var done = function () {
-                    $state.go($scope.schema.onSave, $stateParams);  //$rootScope.$eval($scope.schema.onSave);
+                    if ($scope.schema.onSave !== '') {
+                        $state.go($scope.schema.onSave, $stateParams);
+                    } else {
+                        $scope.fnct({ data: $scope.data });
+                    }  //$rootScope.$eval($scope.schema.onSave);
                 };
                 var fail = function () {
                     throw new Error('Failed to post data');
@@ -484,6 +510,12 @@ angular.module('cgForm.surveyForm', [
                 }
                 if ($scope.flowIndex < $scope.schema.properties.length - 1) {
                     handleFlow();
+                    var nextCondition = $scope.schema.properties[$scope.flowIndex]['valdn'];
+                    var matches = nextCondition.match(/{.*}/);
+                    if (matches) {
+                        var evalValue = $scope.$eval(matches[0].replace('{', '').replace('}', ''));
+                        $scope.flow.properties[$scope.flowIndex].valdn = nextCondition.replace(/{.*}/, evalValue);
+                    }
                 } else {
                     postData();
                 }
@@ -498,7 +530,7 @@ angular.module('cgForm.surveyForm', [
                 }
                 if (nextItemInFlow.flow.length === 0 || $scope.$eval(nextItemInFlow.flow) === true) {
                     $scope.flowIndex = $scope.flowSeq;
-                    $scope.flow.properties.push($scope.schema.properties[$scope.flowIndex]);
+                    $scope.flow.properties.push(angular.copy($scope.schema.properties[$scope.flowIndex]));
                 } else {
                     handleFlow();
                 }
@@ -539,7 +571,10 @@ angular.module('cgForm.surveyForm', [
                 templateUrl: 'template/surveyForm/surveyForm.html',
                 restrict: 'E',
                 replace: true,
-                scope: { options: ' = ' },
+                scope: {
+                    options: ' = ',
+                    fnct: '&onSave'
+                },
                 link: function postLink(scope, element) {
                     /* Load Json Schema for current state if not supplied through attributes */
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
@@ -547,12 +582,23 @@ angular.module('cgForm.surveyForm', [
                     scope.data = {};
                     /* Merge schema with default config */
                     scope.schema = _.extend(scope.schema, FormConfig.getConfig());
-                    /* Load lookup data if any */
+                    /* Load lookup data and Cross Flow dynamic validation */
                     angular.forEach(scope.schema.properties, function (elem) {
                         if (elem.type === 'lookup') {
                             FormService.getLookupData(elem.lookup).then(function (resp) {
                                 elem.type = 'radio';
                                 elem.items = resp.data;
+                                var index = _.findIndex(scope.flow.properties, { name: elem.name });
+                                scope.flow.properties[index].type = 'radio';
+                                scope.flow.properties[index].items = resp.data;
+                            });
+                        }
+                        if (!_.isEmpty(elem.crossCheck)) {
+                            FormService.getCrossCheckData(elem.crossCheck).then(function (resp) {
+                                var condition = elem.crossCheck.condition.replace('{value}', resp.data.value);
+                                elem.valdn = condition;
+                                var index = _.findIndex(scope.flow.properties, { name: elem.name });
+                                scope.flow.properties[index].valdn = condition;
                             });
                         }
                     });
@@ -602,20 +648,23 @@ angular.module('cgForm.surveyForm', [
                     element.bValidator();
                     scope.flow = { properties: [] };
                     //Render All hidden elements
-                    var i = -1;
+                    var hiddenCount = -1;
                     //count all hidden elements
                     scope.flowSeq = -1;
                     scope.flowIndex = -1;
-                    angular.forEach(scope.schema.properties, function (elem) {
-                        if (elem.type === 'hidden') {
-                            scope.flow.properties.push(elem);
-                            i++;
+                    for (var j = 0; j < scope.schema.properties.length; j++) {
+                        var elem = scope.schema.properties[j];
+                        if (elem.type === 'hidden' || elem.type === 'heading') {
+                            scope.flow.properties.push(angular.copy(elem));
+                            hiddenCount++;
                             scope.flowSeq++;
                             scope.flowIndex++;
+                        } else {
+                            break;
                         }
-                    });
+                    }
                     /* Render Initial Item in the flow after all hidden elements(without conditions) */
-                    scope.flow.properties.push(scope.schema.properties[++i]);
+                    scope.flow.properties.push(angular.copy(scope.schema.properties[++hiddenCount]));
                     scope.flowSeq++;
                     scope.flowIndex++;
                 },
@@ -716,7 +765,7 @@ angular.module('template/formElement/textarea.html', []).run([
 angular.module('template/ffqForm/ffqForm.html', []).run([
     '$templateCache',
     function ($templateCache) {
-        $templateCache.put('template/ffqForm/ffqForm.html', '<form ng-submit="onSubmit(data)" action="javascript:void(0)" class="well">\n' + '\n' + '    <input ng-repeat="elm in schema.hiddenElements" type="hidden" id="{{elm.name}}" name="{{elm.name}}" value="{{elm.value}}" ng-model="data[elm.name]"/>\n' + '\n' + '    <table class="table table-bordered" style="margin-top:20px">\n' + '        <tr style="background-color:gray;color:#ffffff">\n' + '            <th>Foods and Amounts</th>\n' + '\n' + '            <th colspan="9" style="text-align:center">Average Use Last year</th>\n' + '\n' + '        </tr>\n' + '\n' + '        <tr style="background-color:gray;color:#ffffff">\n' + '            <th class="span2">Food/Drink Item</th>\n' + '\n' + '            <th class="span2">Never or less than once/month</th>\n' + '\n' + '            <th class="span2">1-3 per month</th>\n' + '\n' + '            <th class="span2">Once a week</th>\n' + '\n' + '            <th class="span2">2-4 per week</th>\n' + '\n' + '            <th class="span2">5-6 per week</th>\n' + '\n' + '            <th class="span2">Once a day</th>\n' + '\n' + '            <th class="span2">2-3 per day</th>\n' + '\n' + '            <th class="span2">Measure</th>\n' + '\n' + '            <th class="span2">Unit</th>\n' + '\n' + '        </tr>\n' + '\n' + '\n' + '        <tr ng-repeat="element in schema.properties">\n' + '            <td>{{element.label}}</td>\n' + '\n' + '            <td ng-repeat="item in element.items">\n' + '\n' + '                <label class="radio inline">\n' + '                    <div ng-if="$index==0">\n' + '\n' + '                        <input type="radio"\n' + '                               id="{{element.name}}_frequency"\n' + '                               name="{{element.name}}_frequency"\n' + '                               data-bvalidator="required"\n' + '                               data-bvalidator-msg="Please select an option"\n' + '                               value="{{item.value}}"\n' + '                               ng-model="data[element.name+\'_frequency\']"/>{{item.text}}\n' + '                    </div>\n' + '\n' + '                    <div ng-if="$index!=0">\n' + '\n' + '                        <input type="radio"\n' + '                               name="{{element.name}}_frequency"\n' + '                               value="{{item.value}}"\n' + '                               ng-model="data[element.name+\'_frequency\']"/>\n' + '                    </div>\n' + '                    {{item.text}} </label>\n' + '            </td>\n' + '\n' + '            <td><input type="text" placeholder="Measure" class="input input-mini" data-bvalidator="required,number"\n' + '                       name="{{element.name}}_measure" ng-model="data[element.name+\'_measure\']" ng-disabled="data[element.name+\'_frequency\']==0" />\n' + '            </td>\n' + '\n' + '            <td><select class="input-medium" data-bvalidator="required" name="{{element.name}}_unit"\n' + '                        ng-model="data[element.name+\'_unit\']" data-bvalidator-msg="Please select an option" ng-disabled="data[element.name+\'_frequency\']==0">\n' + '                <option value="T1">Tambya</option>\n' + '                <option value="G1">Glass</option>\n' + '                <option value="K1">Cup (Big)</option>\n' + '                <option value="K2">Cup (Medium)</option>\n' + '                <option value="K3">Cup (Small)</option>\n' + '                <option value="D1">Dish</option>\n' + '                <option value="W1">Wati</option>\n' + '                <option value="P1">Pali</option>\n' + '                <option value="S1">Spoon (Big)</option>\n' + '                <option value="S2">Spoon (Medium)</option>\n' + '                <option value="S3">Spoon (Small)</option>\n' + '            </select>\n' + '            </td>\n' + '\n' + '        </tr>\n' + '        </tr>\n' + '    </table>\n' + '\n' + '\n' + '    <div class="controls">\n' + '        <button class="btn  btn-primary"\n' + '                type="submit" data-plus-as-tab="false">Save\n' + '        </button>\n' + '    </div>\n' + '</form>\n' + '\n' + '\n' + '\n' + '');
+        $templateCache.put('template/ffqForm/ffqForm.html', '<form ng-submit="onSubmit(data)" action="javascript:void(0)" class="well">\n' + '\n' + '    <input ng-repeat="elm in schema.hiddenElements" type="hidden" id="{{elm.name}}" name="{{elm.name}}" value="{{elm.value}}" ng-model="data[elm.name]"/>\n' + '\n' + '    <table class="table table-bordered" style="margin-top:20px">\n' + '        <tr style="background-color:gray;color:#ffffff">\n' + '            <th>Foods and Amounts</th>\n' + '\n' + '            <th colspan="9" style="text-align:center">Average Use Last year</th>\n' + '\n' + '        </tr>\n' + '\n' + '        <tr style="background-color:gray;color:#ffffff">\n' + '            <th class="span2">Food/Drink Item</th>\n' + '\n' + '            <th class="span2">Never or less than once/month</th>\n' + '\n' + '            <th class="span2">1-3 per month</th>\n' + '\n' + '            <th class="span2">Once a week</th>\n' + '\n' + '            <th class="span2">2-4 per week</th>\n' + '\n' + '            <th class="span2">5-6 per week</th>\n' + '\n' + '            <th class="span2">Once a day</th>\n' + '\n' + '            <th class="span2">2-3 per day</th>\n' + '\n' + '            <th class="span2">Measure</th>\n' + '\n' + '            <th class="span2">Unit</th>\n' + '\n' + '        </tr>\n' + '\n' + '\n' + '        <tr ng-repeat="element in schema.properties">\n' + '            <td>{{element.label}}</td>\n' + '\n' + '            <td ng-repeat="item in element.items">\n' + '\n' + '                <label class="radio inline">\n' + '                    <div ng-if="$index==0">\n' + '\n' + '                        <input type="radio"\n' + '                               id="{{element.name}}_frequency"\n' + '                               name="{{element.name}}_frequency"\n' + '                               data-bvalidator="required"\n' + '                               data-bvalidator-msg="Please select an option"\n' + '                               value="{{item.value}}"\n' + '                               ng-model="data[element.name+\'_frequency\']"/>{{item.text}}\n' + '                    </div>\n' + '\n' + '                    <div ng-if="$index!=0">\n' + '\n' + '                        <input type="radio"\n' + '                               name="{{element.name}}_frequency"\n' + '                               value="{{item.value}}"\n' + '                               ng-model="data[element.name+\'_frequency\']"/>\n' + '                    </div>\n' + '                    {{item.text}} </label>\n' + '            </td>\n' + '\n' + '            <td><input type="text" placeholder="Measure" class="input input-mini" data-bvalidator="between[1:99],required"\n' + '                       name="{{element.name}}_measure" ng-model="data[element.name+\'_measure\']" ng-disabled="data[element.name+\'_frequency\']==0" />\n' + '            </td>\n' + '\n' + '            <td><select class="input-medium" data-bvalidator="required" name="{{element.name}}_unit"\n' + '                        ng-model="data[element.name+\'_unit\']" data-bvalidator-msg="Please select an option" ng-disabled="data[element.name+\'_frequency\']==0">\n' + '                <option value=""></option>        \n' + '                <option value="T1">Tambya</option>\n' + '                <option value="G1">Glass</option>\n' + '                <option value="K1">Cup (Big)</option>\n' + '                <option value="K2">Cup (Medium)</option>\n' + '                <option value="K3">Cup (Small)</option>\n' + '                <option value="D1">Dish</option>\n' + '                <option value="W1">Wati</option>\n' + '                <option value="P1">Pali</option>\n' + '                <option value="S1">Spoon (Big)</option>\n' + '                <option value="S2">Spoon (Medium)</option>\n' + '                <option value="S3">Spoon (Small)</option>\n' + '            </select>\n' + '            </td>\n' + '\n' + '        </tr>\n' + '        </tr>\n' + '    </table>\n' + '\n' + '\n' + '    <div class="controls">\n' + '        <button class="btn  btn-primary"\n' + '                type="submit" data-plus-as-tab="false">Save\n' + '        </button>\n' + '    </div>\n' + '</form>\n' + '\n' + '\n' + '\n' + '');
     }
 ]);
 angular.module('template/standardForm/standardForm.html', []).run([

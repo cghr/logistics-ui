@@ -20,7 +20,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -40,14 +44,18 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
         {
         "name":"salt",
         "type":"radio",
-        "valdn":"",
+        "valdn":"required",
         "label":"Salt",
         "flow":"",
         "value":"",
@@ -64,14 +72,18 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
         {
         "name":"gheeDalda",
         "type":"radio",
-        "valdn":"",
+        "valdn":"required",
         "label":"Dalda Ghee",
         "flow":"",
         "value":"",
@@ -88,14 +100,18 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
         {
         "name":"gheePure",
         "type":"radio",
-        "valdn":"",
+        "valdn":"required",
         "label":"Pure Ghee",
         "flow":"",
         "value":"",
@@ -112,14 +128,18 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
         {
         "name":"lemon",
         "type":"radio",
-        "valdn":"",
+        "valdn":"required",
         "label":"Lemon",
         "flow":"",
         "value":"",
@@ -136,7 +156,11 @@
         },
         "crossFlow":[
         
-        ]}
+        ],
+        "crossCheck":{
+        
+        }
+        }
 
 
 

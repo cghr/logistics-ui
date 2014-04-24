@@ -1,6 +1,6 @@
 {
-"schemaName":"enum.houseDetail.basicInf",
-"onSave":"enum.houseDetail.household",
+"schemaName":"enum.householdDetail.hospInf",
+"onSave":"",
 "properties":[
 
 
@@ -10,7 +10,7 @@
         "valdn":"",
         "label":"",
         "flow":"",
-        "value":"house",
+        "value":"hospInf",
         "items":[
         
         ],
@@ -29,12 +29,12 @@
 
 
         {
-        "name":"houseId",
+        "name":"householdId",
         "type":"hidden",
         "valdn":"",
         "label":"",
         "flow":"",
-        "value":"$stateParams.houseId",
+        "value":"$stateParams.householdId",
         "items":[
         
         ],
@@ -53,38 +53,18 @@
 
 
         {
-        "name":"areaId",
-        "type":"hidden",
-        "valdn":"",
-        "label":"",
-        "flow":"",
-        "value":"$stateParams.areaId",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"gps",
-        "type":"gps",
-        "valdn":"required",
-        "label":"GPS",
+        "name":"hospStatus",
+        "type":"radio",
+        "valdn":"required ",
+        "label":"Was any usually residing adult (30-69 years) household member admitted to the hospital during last year?",
         "flow":"",
         "value":"",
         "items":[
         
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
         ],
         "image":"",
         "lookup":{
@@ -101,11 +81,11 @@
 
 
         {
-        "name":"houseNs",
+        "name":"hospCount",
         "type":"text",
-        "valdn":"required",
-        "label":"House No. (NS- No)",
-        "flow":"",
+        "valdn":"between[1:20],required",
+        "label":"If yes, how many adults were admitted?",
+        "flow":"data.hospStatus=='Yes'",
         "value":"",
         "items":[
         

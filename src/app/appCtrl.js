@@ -12,8 +12,6 @@ angular.module('myApp')
                     }
                 });
             },function(fail){
-                console.log('failed');
-                console.log($state.current.name);
 
                 angular.forEach(StateTransitions, function (transition) {
                     if ($state.current.name === transition.from) {
@@ -23,10 +21,34 @@ angular.module('myApp')
                 });
             });
         };
-        $scope.sync = function () {
-            //$http.get("http://localhost:8080/hc-services/api/GridService/enum/area");
+        //Handle Hospitalization Inf
+        $scope.hospInf=function(data){
+            if(data.hospStatus=='Yes'){
+                $state.go('enum.householdDetail.hosp',$stateParams);
+                $rootScope.hosp=data;
+
+            }
+            else{
+                $state.go('enum.householdDetail.deathInf',$stateParams);
+            }
+        };
+
+        //Handle Death Inf
+        $scope.deathInf= function (data) {
+
+            if(data.deathStatus=='Yes'){
+                $state.go('enum.householdDetail.death',$stateParams);
+                $rootScope.death=data;
+
+            }
+            else{
+                $state.go('enum.houseDetail.household',$stateParams);
+            }
 
         };
+        $rootScope.death={deathStatus:'Yes',deathCount:3};
+        $rootScope.hosp={hospStatus:'Yes',hospCount:3};
+
 
 
     });

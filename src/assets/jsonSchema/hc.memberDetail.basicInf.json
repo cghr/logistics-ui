@@ -20,7 +20,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -40,7 +44,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -60,7 +68,93 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"photoStatusInd",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Please take a photo of the respondent for verification",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes, taken","value":"Yes, taken"},
+        
+            {"text":"Not taken","value":"Not taken"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"reasonNoPhotoInd",
+        "type":"radio",
+        "valdn":"required",
+        "label":"If not taken please specify why?",
+        "flow":"data.photoStatusInd=='Not taken'",
+        "value":"",
+        "items":[
+        
+            {"text":"Camera not functioning","value":"Camera not functioning"},
+        
+            {"text":"Respondent refused to take picture","value":"Respondent refused to take picture"},
+        
+            {"text":"Others","value":"Others"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"otherResonNoPhoto",
+        "type":"text",
+        "valdn":"required",
+        "label":"If others, please specify",
+        "flow":"data.reasonNoPhotoInd=='Others'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -98,7 +192,11 @@
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -136,83 +234,11 @@
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
         
-        ]},
-
-
-
-        {
-        "name":"photoStatusInd",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Please take a photo of the respondent for verification",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes, taken","value":"Yes, taken"},
-        
-            {"text":"Not taken","value":"Not taken"}
-        
         ],
-        "image":"",
-        "lookup":{
+        "crossCheck":{
         
+        }
         },
-        "crossFlow":[
-        
-        ]},
-
-
-
-        {
-        "name":"reasonNoPhotoInd",
-        "type":"radio",
-        "valdn":"required",
-        "label":"If not taken please specify why?",
-        "flow":"data.photoStatus=='Not taken'",
-        "value":"",
-        "items":[
-        
-            {"text":"Camera not functioning","value":"Camera not functioning"},
-        
-            {"text":"Respondent refused to take picture","value":"Respondent refused to take picture"},
-        
-            {"text":"Others","value":"Others"},
-        
-            {"text":"Per Day","value":"Per Day"},
-        
-            {"text":"Per Week","value":"Per Week"},
-        
-            {"text":"Per Month","value":"Per Month"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ]},
-
-
-
-        {
-        "name":"otherResonNoPhoto",
-        "type":"text",
-        "valdn":"required",
-        "label":"If others, please specify",
-        "flow":"data.reasonNoPhoto=='Others'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ]},
 
 
 
@@ -248,7 +274,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -268,7 +298,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -292,7 +326,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -301,7 +339,7 @@
         "type":"radio",
         "valdn":"required",
         "label":"If not taken please specify why?",
-        "flow":"data.photoIdStatus=='Not taken'",
+        "flow":"data.photoStatusId=='Not taken'",
         "value":"",
         "items":[
         
@@ -309,13 +347,7 @@
         
             {"text":"Respondent refused to take picture","value":"Respondent refused to take picture"},
         
-            {"text":"Others","value":"Others"},
-        
-            {"text":"Per Day","value":"Per Day"},
-        
-            {"text":"Per Week","value":"Per Week"},
-        
-            {"text":"Per Month","value":"Per Month"}
+            {"text":"Others","value":"Others"}
         
         ],
         "image":"",
@@ -324,7 +356,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -333,7 +369,7 @@
         "type":"text",
         "valdn":"required",
         "label":"If others, please specify",
-        "flow":"data.reasonNoPhoto=='Others'",
+        "flow":"data.reasonNoPhotoId=='Others'",
         "value":"",
         "items":[
         
@@ -344,7 +380,11 @@
         },
         "crossFlow":[
         
-        ]}
+        ],
+        "crossCheck":{
+        
+        }
+        }
 
 
 

@@ -20,7 +20,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -40,12 +44,16 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
         {
-        "name":"hospitalizedPerson",
+        "name":"name",
         "type":"lookup",
         "valdn":"required",
         "label":"Who was admitted in hospital during last year?",
@@ -64,12 +72,16 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
         {
-        "name":"reasonHospitalization",
+        "name":"reason",
         "type":"text",
         "valdn":"required",
         "label":"Why was he/she get admitted to the hospital?",
@@ -84,7 +96,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -104,7 +120,11 @@
         },
         "crossFlow":[
         
-        ]}
+        ],
+        "crossCheck":{
+        
+        }
+        }
 
 
 

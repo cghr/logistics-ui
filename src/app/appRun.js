@@ -36,7 +36,10 @@ angular.module('myApp')
             'hc.memberDetail.bp2',
             'enum.visitDetail.basicInf',
             'hc.ffqDetail.veg',
-            'hc.ffqDetail.general'
+            'hc.ffqDetail.general',
+            'enum.householdDetail.hospInf',
+            'enum.householdDetail.deathInf',
+            'resamp.memberDetail.basicInf'
         ];
         var promises = [];
 

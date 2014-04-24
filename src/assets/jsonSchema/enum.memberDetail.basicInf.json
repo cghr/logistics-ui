@@ -20,7 +20,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -40,7 +44,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -60,7 +68,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -80,7 +92,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -104,7 +120,11 @@
         },
         "crossFlow":[
         
-        ]},
+        ],
+        "crossCheck":{
+        
+        }
+        },
 
 
 
@@ -124,81 +144,11 @@
         },
         "crossFlow":[
         
-        ]},
-
-
-
-        {
-        "name":"otherReligion",
-        "type":"text",
-        "valdn":"required",
-        "label":"Specify any other religion followed if not specified in previous question",
-        "flow":"data.religion=='Others-Specify'",
-        "value":"",
-        "items":[
-        
         ],
-        "image":"",
-        "lookup":{
+        "crossCheck":{
         
-        },
-        "crossFlow":[
-        
-        ]},
-
-
-
-        {
-        "name":"benefitGovtScheme",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Is the household benefiting from any Government sponsored scheme?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"None","value":"None"},
-        
-            {"text":"Below Poverty Line (BPL) Card Holder","value":"Below Poverty Line (BPL) Card Holder"},
-        
-            {"text":"Rajiv Gandhi Health Insurance Scheme","value":"Rajiv Gandhi Health Insurance Scheme"},
-        
-            {"text":"Janani Suraksha Yojana (JSY)","value":"Janani Suraksha Yojana (JSY)"},
-        
-            {"text":"Mahatma Gandhi National Rural Employment Guarantee Act (NREGA)","value":"Mahatma Gandhi National Rural Employment Guarantee Act (NREGA)"},
-        
-            {"text":"Pradhan MantriRozgarYojna(PMRY)","value":"Pradhan MantriRozgarYojna(PMRY)"},
-        
-            {"text":"Others- Specify","value":"Others- Specify"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ]},
-
-
-
-        {
-        "name":"otherGovtScheme",
-        "type":"text",
-        "valdn":"required",
-        "label":"If any other Government scheme then please specify",
-        "flow":"data.benefitGovtScheme=='Others- Specify'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ]}
+        }
+        }
 
 
 
