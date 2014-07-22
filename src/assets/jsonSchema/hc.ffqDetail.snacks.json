@@ -1,6 +1,6 @@
 {
 "schemaName":"hc.ffqDetail.snacks",
-"onSave":"hc.ffqDetail.foodAdditives",
+"onSave":"hc.ffqDetail.salt",
 "properties":[
 
 
@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -61,19 +88,9 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
-        
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Number","value":"Number"}
         
         ],
         "image":"",
@@ -85,33 +102,24 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"phoe",
+        "name":"Pohe",
         "type":"ffq",
         "valdn":"",
-        "label":"Phoe",
+        "label":"Pohe",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
-        
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Number","value":"Number"}
         
         ],
         "image":"",
@@ -123,7 +131,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -137,19 +146,9 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
-        
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Number","value":"Number"}
         
         ],
         "image":"",
@@ -161,7 +160,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -175,19 +175,9 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
-        
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Number","value":"Number"}
         
         ],
         "image":"",
@@ -199,7 +189,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -213,19 +204,9 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
-        
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Number","value":"Number"}
         
         ],
         "image":"",
@@ -237,7 +218,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -251,19 +233,9 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
-        
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Number","value":"Number"}
         
         ],
         "image":"",
@@ -275,7 +247,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -289,19 +262,9 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
-        
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Number","value":"Number"}
         
         ],
         "image":"",
@@ -313,7 +276,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -327,19 +291,9 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
-        
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Number","value":"Number"}
         
         ],
         "image":"",
@@ -351,7 +305,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

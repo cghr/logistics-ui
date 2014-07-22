@@ -6,10 +6,10 @@ angular.module('navigation', ['auth'])
         $scope.accessLevels = Auth.accessLevels;
 
         $scope.logout = function () {
-            Auth.logout(function () {
-                $location.path('/login');
-            }, function () {
-                $rootScope.error = "Failed to logout";
-            });
+
+            Auth.logout().then(done, fail)
+
+            function done() { $location.path('/login') }
+            function fail() { $rootScope.error = "Failed to logout" }
         };
     });

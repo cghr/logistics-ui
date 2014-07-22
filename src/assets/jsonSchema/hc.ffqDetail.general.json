@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -77,7 +104,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report the diet practiced one year before the date of interview. Consider the respondent as vegetarian if he/she eats egg rarely such as utmost 3 times in year or has eaten mistakenly or eats bakery product that contains egg. If respondent eats bakery product she/she will be considered vegetarian. In such cases do not report frequency of egg consumption"
         },
 
 
@@ -105,7 +133,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"It encompasses the practice of following plant-based diet (fruits, vegetables, etc.) without the inclusion of eggs and meat (redmeat, poultry, and seafood)."
         },
 
 
@@ -133,7 +162,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"It encompasses the practice of consuming meat (redmeat, poultry, and seafood) or egg."
         },
 
 
@@ -161,7 +191,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report fasting details one year before the date of interview."
+        },
+
+
+
+        {
+        "name":"fastHours",
+        "type":"text",
+        "valdn":"between[1:24],required",
+        "label":"How many hours do you fast? (hours)",
+        "flow":"data.fastStatus=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -185,7 +241,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report the number of days respondent fasts (according to study definition) per week"
         },
 
 
@@ -207,6 +264,10 @@
         
             {"text":"Eat once/day","value":"Eat once/day"},
         
+            {"text":"Eat Twice a day","value":"Eat Twice a day"},
+        
+            {"text":"Fast with Sabut Dana","value":"Fast with Sabut Dana"},
+        
             {"text":"Other","value":"Other"}
         
         ],
@@ -219,7 +280,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -243,7 +305,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

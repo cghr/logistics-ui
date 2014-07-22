@@ -9,9 +9,12 @@
                 <li ng-class="{ active: $state.includes('hc') }"><a href="#/hc/area">HHQ</a></li>
                 <li ng-class="{ active: $state.includes('resamp') }"><a href="#/resamp/area">Resampling</a></li>
                 <li ng-class="{ active: $state.includes('report') }"><a href="#/report/11">Reports</a></li>
+                <li access-level="accessLevels.manager" ng-class="{ active: $state.includes('dashboard') }"><a
+                        href="#/dashboard">Dashboard</a></li>
+                <li ng-class=""><a href="" ng-click="cleanup()">Cleanup</a></li>
             </ul>
             <ul class='nav pull-right'>
-                <li class=''><a href='' ng-click='sync()'> Synchronize</a></li>
+                <li class=''><a href='#/sync'><i class='icon-refresh icon-white'></i> Synchronize</a></li>
                 <li class=''><a href='' ng-click='logout()'><i class='icon-off icon-white'></i> Logout</a></li>
             </ul>
         </div>

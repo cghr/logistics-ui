@@ -91,10 +91,10 @@ angular.module('appRoutes', [])
                         title: 'Food Items'
                     },
                     {
-                        name:'hospInf',
-                        url:'/hospInf',
-                        tpl:'enum/hospInf.tpl.html',
-                        title:'Hospitalization Inf'
+                        name: 'hospInf',
+                        url: '/hospInf',
+                        tpl: 'enum/hospInf.tpl.html',
+                        title: 'Hospitalization Inf'
                     },
                     {
                         name: 'hosp',
@@ -104,10 +104,10 @@ angular.module('appRoutes', [])
                         addNew: true
                     },
                     {
-                        name:'deathInf',
-                        url:'/deathInf',
-                        tpl:'enum/deathInf.tpl.html',
-                        title:'Death Inf'
+                        name: 'deathInf',
+                        url: '/deathInf',
+                        tpl: 'enum/deathInf.tpl.html',
+                        title: 'Death Inf'
                     },
                     {
                         name: 'death',
@@ -411,6 +411,18 @@ angular.module('appRoutes', [])
                         url: '/foodAdditives',
                         tpl: 'tpls/surveyForm.tpl.html',
                         title: 'Food Additives'
+                    },
+                    {
+                        name: 'salt',
+                        url: '/salt',
+                        tpl: 'tpls/standardForm.tpl.html',
+                        title: 'Salt Intake'
+                    },
+                    {
+                        name: 'invitationCard',
+                        url: '/invitationCard',
+                        tpl: 'tpls/surveyForm.tpl.html',
+                        title: 'Invitation Card'
                     }
                 ]
             }
@@ -490,6 +502,7 @@ angular.module('appRoutes', [])
                         url: '/basicInf',
                         tpl: 'tpls/resampling.tpl.html',
                         title: 'Basic Inf'
-                    }]
+                    }
+                ]
             }
         ]});

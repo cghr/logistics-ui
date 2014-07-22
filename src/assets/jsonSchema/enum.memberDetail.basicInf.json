@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -71,7 +73,58 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"houseId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.houseId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"areaId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.areaId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -79,7 +132,7 @@
         {
         "name":"name",
         "type":"text",
-        "valdn":"required",
+        "valdn":"alpha,minlength[3],required",
         "label":"Name",
         "flow":"",
         "value":"",
@@ -95,7 +148,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -123,7 +177,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -147,7 +202,62 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"signedConsent",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Detailed consent form signed",
+        "flow":"data.member=='Available'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"reasonNoConsent",
+        "type":"text",
+        "valdn":"required",
+        "label":"If no, please provide a reason for no consent",
+        "flow":"data.member=='Available' && data.signedConsent=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         }
 
 

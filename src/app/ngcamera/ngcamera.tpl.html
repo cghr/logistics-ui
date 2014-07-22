@@ -1,0 +1,11 @@
+<div ng-controller="camCtrl">
+    <ng-camera
+            type="photo"
+            enabled="true"
+            width="400"
+            height="300"
+            countdown="3"
+            ng-model="media"
+            capture="onSuccess(media)"
+            capture-message="Go!"></ng-camera>
+</div>

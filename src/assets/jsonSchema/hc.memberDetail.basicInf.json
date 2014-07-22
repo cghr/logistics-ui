@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"user",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"user.id",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -71,7 +98,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -99,7 +127,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -129,7 +158,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -153,7 +183,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -195,7 +226,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -237,153 +269,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"photoId",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Do you have any of the following valid Photo ID?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Aadhaar card","value":"Aadhaar card"},
-        
-            {"text":"Ration card","value":"Ration card"},
-        
-            {"text":"Driving license","value":"Driving license"},
-        
-            {"text":"PAN card","value":"PAN card"},
-        
-            {"text":"Voter ID","value":"Voter ID"},
-        
-            {"text":"Passport","value":"Passport"},
-        
-            {"text":"Others","value":"Others"},
-        
-            {"text":"Nothing","value":"Nothing"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"otherPhotoId",
-        "type":"text",
-        "valdn":"required",
-        "label":"If others, please specify",
-        "flow":"data.photoId=='Others'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"photoStatusId",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Please take a photo of respondent’s Photo ID for verification",
-        "flow":"data.photoId!='Nothing'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes, taken","value":"Yes, taken"},
-        
-            {"text":"Not taken","value":"Not taken"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"reasonNoPhotoId",
-        "type":"radio",
-        "valdn":"required",
-        "label":"If not taken please specify why?",
-        "flow":"data.photoStatusId=='Not taken'",
-        "value":"",
-        "items":[
-        
-            {"text":"Camera not functioning","value":"Camera not functioning"},
-        
-            {"text":"Respondent refused to take picture","value":"Respondent refused to take picture"},
-        
-            {"text":"Others","value":"Others"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"othersNoPhoto",
-        "type":"text",
-        "valdn":"required",
-        "label":"If others, please specify",
-        "flow":"data.reasonNoPhotoId=='Others'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         }
 
 

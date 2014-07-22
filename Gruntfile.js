@@ -40,8 +40,8 @@ module.exports = function(grunt) {
             coffee: [ 'src/**/*.coffee', '!src/**/*.spec.coffee' ],
             coffeeunit: [ 'src/**/*.spec.coffee' ],
 
-            appTemplates: [ 'src/app/**/*.tpl.html' ],
-            commonTemplates: [ 'src/common/**/*.tpl.html' ],
+            appTemplates: [ 'src/app/**/*.html' ],
+            commonTemplates: [ 'src/common/**/*.html' ],
 
             html: [ 'src/index.html' ],
             less: 'src/less/main.less'
@@ -80,7 +80,8 @@ module.exports = function(grunt) {
                 'vendor/lodash/dist/lodash.js',
                 'vendor/angular/angular.js',
                 'vendor/angular-loading-bar/build/loading-bar.js',
-                
+                'vendor/d3/d3.min.js',
+                'vendor/angular-charts/dist/angular-charts.js',
                 'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
                 'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.js',
                 'vendor/angular-ui-router/release/angular-ui-router.js',
@@ -93,7 +94,9 @@ module.exports = function(grunt) {
                 'vendor/lib-plusAsTab/release/scripts/plusastab.joelpurra.js',
                 'vendor/gridLib/release/scripts/dhtmlx.js',
                 'vendor/cgGrid/dist/cgGrid.js',
-                'vendor/cgForm/dist/cgForm-tpls.js'
+                'vendor/cgForm/dist/cgForm-tpls.js',
+                //'vendor/webcam/webcam.min.js',
+                'vendor/angular-camera/dist/angular-camera.js'
             ],
             css: [
             ],
@@ -317,13 +320,7 @@ module.exports = function(grunt) {
                 'Gruntfile.js'
             ],
             options: {
-                curly: true,
-                immed: true,
-                newcap: true,
-                noarg: true,
-                sub: true,
-                boss: true,
-                eqnull: true
+                jshintrc: '.jshintrc'
             },
             globals: {}
         },

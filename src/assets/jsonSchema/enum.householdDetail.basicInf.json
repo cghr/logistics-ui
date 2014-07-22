@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -71,7 +73,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"areaId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.areaId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -109,7 +137,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -133,69 +162,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"benefitGovtScheme",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Is the household benefiting from any Government sponsored scheme?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"None","value":"None"},
-        
-            {"text":"Below Poverty Line (BPL) Card Holder","value":"Below Poverty Line (BPL) Card Holder"},
-        
-            {"text":"Rajiv Gandhi Health Insurance Scheme","value":"Rajiv Gandhi Health Insurance Scheme"},
-        
-            {"text":"Janani Suraksha Yojana (JSY)","value":"Janani Suraksha Yojana (JSY)"},
-        
-            {"text":"Mahatma Gandhi National Rural Employment Guarantee Act (NREGA)","value":"Mahatma Gandhi National Rural Employment Guarantee Act (NREGA)"},
-        
-            {"text":"Pradhan MantriRozgarYojna(PMRY)","value":"Pradhan MantriRozgarYojna(PMRY)"},
-        
-            {"text":"Others- Specify","value":"Others- Specify"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"otherGovtScheme",
-        "type":"text",
-        "valdn":"required",
-        "label":"If any other Government scheme then please specify",
-        "flow":"data.benefitGovtScheme=='Others- Specify'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -219,7 +187,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -243,7 +212,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -267,7 +237,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -291,7 +262,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -315,7 +287,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -323,7 +296,7 @@
         {
         "name":"secondPersonName",
         "type":"text",
-        "valdn":"required",
+        "valdn":"alpha,minlength[3],required",
         "label":"Please name a second contact person for reference?",
         "flow":"",
         "value":"",
@@ -339,7 +312,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -363,7 +337,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -371,7 +346,7 @@
         {
         "name":"houseNsNo2",
         "type":"text",
-        "valdn":"required",
+        "valdn":"number",
         "label":"House No. (or) NS- No.",
         "flow":"",
         "value":"",
@@ -387,7 +362,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -395,7 +371,7 @@
         {
         "name":"nameStreet2",
         "type":"text",
-        "valdn":"required",
+        "valdn":"",
         "label":"Street name",
         "flow":"",
         "value":"",
@@ -411,7 +387,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -419,7 +396,7 @@
         {
         "name":"landmark2",
         "type":"text",
-        "valdn":"required",
+        "valdn":"",
         "label":"Landmark",
         "flow":"",
         "value":"",
@@ -435,7 +412,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -443,7 +421,7 @@
         {
         "name":"secondPersonMobile",
         "type":"text",
-        "valdn":"number,rangelength[10:10],required",
+        "valdn":"number,rangelength[10:10]",
         "label":"What is the second contact person’s permanent contact Mobile Number?",
         "flow":"",
         "value":"",
@@ -459,7 +437,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

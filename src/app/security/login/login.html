@@ -1,10 +1,10 @@
 <div class="box">
     <h4>Login</h4>
         <div id='content'>
-            <form ng-submit='login(data)' class="form-horizontal">
+            <form ng-submit='loginCtrl.login(user)' class="form-horizontal">
                 <table cellpadding="4" cellspacing="4">
-                    <tr><td>Username *</td><td> <input type="text" id="username"  ng-model="data.username" required  autofocus /></td></tr>
-                    <tr><td>Password *</td><td> <input type="password"  ng-model="data.password"  required /></td></tr>
+                    <tr><td>Username *</td><td> <input type="text" id="username"  ng-model="user.username" required  autofocus /></td></tr>
+                    <tr><td>Password *</td><td> <input type="password"  ng-model="user.password"  required /></td></tr>
                     <tr><td><button type="submit" class="btn btn-primary btn-small">Login</button></td></td></tr>
 
                 </table>

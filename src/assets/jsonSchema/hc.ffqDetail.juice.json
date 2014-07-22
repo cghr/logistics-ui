@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,33 +48,20 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"ambayacha",
-        "type":"ffq",
+        "name":"starttime",
+        "type":"hidden",
         "valdn":"",
-        "label":"Ambayacha",
+        "label":"",
         "flow":"",
-        "value":"",
+        "value":"timestamp",
         "items":[
-        
-            {"text":"","value":"0"},
-        
-            {"text":"","value":"1"},
-        
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
         
         ],
         "image":"",
@@ -85,7 +73,39 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ambyacha",
+        "type":"ffq",
+        "valdn":"",
+        "label":"Ambyacha Ras",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Wati","value":"Wati"},
+        
+            {"text":"Glass","value":"Glass"},
+        
+            {"text":"Fulpatra","value":"Fulpatra"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -99,19 +119,11 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Glass","value":"Glass"},
         
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Fulpatra","value":"Fulpatra"}
         
         ],
         "image":"",
@@ -123,7 +135,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

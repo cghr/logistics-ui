@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -71,7 +73,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -87,9 +90,7 @@
         
             {"text":"Available","value":"Available"},
         
-            {"text":"Unavailable","value":"Unavailable"},
-        
-            {"text":"Refused","value":"Refused"}
+            {"text":"Unavailable","value":"Unavailable"}
         
         ],
         "image":"",
@@ -101,83 +102,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"reasonNoPart",
-        "type":"text",
-        "valdn":"required",
-        "label":"If refused to participate, please provide reason",
-        "flow":"data.hhVisit=='Refused'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"signedConsent",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Detailed consent form signed",
-        "flow":"data.hhVisit=='Available'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"reasonNoConsent",
-        "type":"text",
-        "valdn":"required",
-        "label":"If no, please provide a reason for no consent",
-        "flow":"data.hhVisit=='Available' && data.signedConsent=='No'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         }
 
 

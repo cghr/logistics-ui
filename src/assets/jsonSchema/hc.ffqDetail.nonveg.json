@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -57,23 +84,15 @@
         "type":"ffq",
         "valdn":"",
         "label":"Egg Burgi",
-        "flow":"",
+        "flow":"data.typeFood!='Veg' ",
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
+            {"text":"Number","value":"Number"},
         
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Wati","value":"Wati"}
         
         ],
         "image":"",
@@ -85,7 +104,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -95,23 +115,15 @@
         "type":"ffq",
         "valdn":"",
         "label":"Egg Omlet",
-        "flow":"",
+        "flow":"data.typeFood!='Veg' ",
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
+            {"text":"Number","value":"Number"},
         
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Wati","value":"Wati"}
         
         ],
         "image":"",
@@ -123,7 +135,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -133,23 +146,15 @@
         "type":"ffq",
         "valdn":"",
         "label":"Egg Curry",
-        "flow":"",
+        "flow":"data.typeFood!='Veg' ",
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
+            {"text":"Number","value":"Number"},
         
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Wati","value":"Wati"}
         
         ],
         "image":"",
@@ -161,7 +166,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -171,23 +177,15 @@
         "type":"ffq",
         "valdn":"",
         "label":"Mutton",
-        "flow":"",
+        "flow":"data.typeFood!='Veg' ",
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
+            {"text":"Number","value":"Number"},
         
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Wati","value":"Wati"}
         
         ],
         "image":"",
@@ -199,7 +197,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -209,23 +208,15 @@
         "type":"ffq",
         "valdn":"",
         "label":"Fish",
-        "flow":"",
+        "flow":"data.typeFood!='Veg' ",
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
+            {"text":"Number","value":"Number"},
         
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Wati","value":"Wati"}
         
         ],
         "image":"",
@@ -237,7 +228,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -247,23 +239,15 @@
         "type":"ffq",
         "valdn":"",
         "label":"Chicken",
-        "flow":"",
+        "flow":"data.typeFood!='Veg' ",
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"1"},
+            {"text":"Number","value":"Number"},
         
-            {"text":"","value":"2"},
-        
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Wati","value":"Wati"}
         
         ],
         "image":"",
@@ -275,7 +259,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

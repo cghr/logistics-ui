@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -87,7 +114,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -101,22 +129,6 @@
         "value":"",
         "items":[
         
-            {"text":"Salaried","value":"Salaried"},
-        
-            {"text":"Wage earner","value":"Wage earner"},
-        
-            {"text":"Professional business","value":"Professional business"},
-        
-            {"text":"Farmers","value":"Farmers"},
-        
-            {"text":"Agriculture labour","value":"Agriculture labour"},
-        
-            {"text":"Housewife","value":"Housewife"},
-        
-            {"text":"Non worker","value":"Non worker"},
-        
-            {"text":"others","value":"others"}
-        
         ],
         "image":"",
         "lookup":{
@@ -127,7 +139,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -159,7 +172,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -191,7 +205,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -221,13 +236,14 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"casteMother",
+        "name":"motherCaste",
         "type":"radio",
         "valdn":"required",
         "label":"What is the caste of your mother?",
@@ -261,7 +277,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -275,53 +292,175 @@
         "value":"",
         "items":[
         
-            {"text":"Marathi","value":"Marathi"},
+            {"text":"Adi","value":"Adi"},
         
-            {"text":"Bengali","value":"Bengali"},
+            {"text":"Afghani/Kabuli/Pashto","value":"Afghani/Kabuli/Pashto"},
         
-            {"text":"Hindi","value":"Hindi"},
+            {"text":"Anal","value":"Anal"},
         
-            {"text":"English","value":"English"},
+            {"text":"Angami","value":"Angami"},
+        
+            {"text":"Ao","value":"Ao"},
+        
+            {"text":"Arabic/Arbi","value":"Arabic/Arbi"},
         
             {"text":"Assamese","value":"Assamese"},
         
-            {"text":"Dogri","value":"Dogri"},
+            {"text":"Bengali","value":"Bengali"},
         
-            {"text":"Gujarati","value":"Gujarati"},
+            {"text":"Bhili/Bhilodi","value":"Bhili/Bhilodi"},
+        
+            {"text":"Bhotia","value":"Bhotia"},
+        
+            {"text":"Bhumij","value":"Bhumij"},
         
             {"text":"Bodo","value":"Bodo"},
         
+            {"text":"Coorgi/Kodagu","value":"Coorgi/Kodagu"},
+        
+            {"text":"Deori","value":"Deori"},
+        
+            {"text":"Dimasa","value":"Dimasa"},
+        
+            {"text":"Dogri","value":"Dogri"},
+        
+            {"text":"English","value":"English"},
+        
+            {"text":"Gadaba","value":"Gadaba"},
+        
+            {"text":"Garo","value":"Garo"},
+        
+            {"text":"Gondi","value":"Gondi"},
+        
+            {"text":"Gujarati","value":"Gujarati"},
+        
+            {"text":"Halabi","value":"Halabi"},
+        
+            {"text":"Halam","value":"Halam"},
+        
+            {"text":"Hindi","value":"Hindi"},
+        
+            {"text":"Hmar","value":"Hmar"},
+        
+            {"text":"Ho","value":"Ho"},
+        
+            {"text":"Kabui","value":"Kabui"},
+        
             {"text":"Kannada","value":"Kannada"},
+        
+            {"text":"Karbi / Mikir","value":"Karbi / Mikir"},
         
             {"text":"Kashmiri","value":"Kashmiri"},
         
+            {"text":"Khandeshi","value":"Khandeshi"},
+        
+            {"text":"Kharia","value":"Kharia"},
+        
+            {"text":"Khasi","value":"Khasi"},
+        
+            {"text":"Khezha","value":"Khezha"},
+        
+            {"text":"Khond/Kondh","value":"Khond/Kondh"},
+        
+            {"text":"Kinnauri","value":"Kinnauri"},
+        
+            {"text":"Koch","value":"Koch"},
+        
+            {"text":"Koda/Kora","value":"Koda/Kora"},
+        
             {"text":"Konkani","value":"Konkani"},
+        
+            {"text":"Korku","value":"Korku"},
+        
+            {"text":"Korwa","value":"Korwa"},
+        
+            {"text":"Koya","value":"Koya"},
+        
+            {"text":"Kuki","value":"Kuki"},
+        
+            {"text":"Kurukh/Oraon","value":"Kurukh/Oraon"},
+        
+            {"text":"Lahauli","value":"Lahauli"},
+        
+            {"text":"Lahnda","value":"Lahnda"},
+        
+            {"text":"Lepcha","value":"Lepcha"},
+        
+            {"text":"Liangmei","value":"Liangmei"},
+        
+            {"text":"Limbu","value":"Limbu"},
+        
+            {"text":"Lushai/Mizo","value":"Lushai/Mizo"},
         
             {"text":"Maithili","value":"Maithili"},
         
             {"text":"Malayalam","value":"Malayalam"},
         
+            {"text":"Malto","value":"Malto"},
+        
             {"text":"Manipuri ","value":"Manipuri "},
+        
+            {"text":"Maram","value":"Maram"},
+        
+            {"text":"Marathi","value":"Marathi"},
+        
+            {"text":"Mishmi","value":"Mishmi"},
+        
+            {"text":"Munda","value":"Munda"},
+        
+            {"text":"Mundari","value":"Mundari"},
         
             {"text":"Nepali","value":"Nepali"},
         
+            {"text":"Nicobarese","value":"Nicobarese"},
+        
+            {"text":"Nissi/Dafla","value":"Nissi/Dafla"},
+        
             {"text":"Oriya","value":"Oriya"},
         
+            {"text":"Others","value":"Others"},
+        
+            {"text":"Paite","value":"Paite"},
+        
+            {"text":"Parji","value":"Parji"},
+        
+            {"text":"Pawi","value":"Pawi"},
+        
+            {"text":"Persian","value":"Persian"},
+        
             {"text":"Punjabi","value":"Punjabi"},
+        
+            {"text":"Rai","value":"Rai"},
         
             {"text":"Sanskrit","value":"Sanskrit"},
         
             {"text":"Santali","value":"Santali"},
         
+            {"text":"Savara","value":"Savara"},
+        
+            {"text":"Sema","value":"Sema"},
+        
+            {"text":"Sherpa","value":"Sherpa"},
+        
             {"text":"Sindhi","value":"Sindhi"},
+        
+            {"text":"Tamang","value":"Tamang"},
         
             {"text":"Tamil","value":"Tamil"},
         
             {"text":"Telugu","value":"Telugu"},
         
+            {"text":"Thado","value":"Thado"},
+        
+            {"text":"Tibetan","value":"Tibetan"},
+        
+            {"text":"Tripuri","value":"Tripuri"},
+        
+            {"text":"Tulu","value":"Tulu"},
+        
             {"text":"Urdu","value":"Urdu"},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Zou","value":"Zou"}
         
         ],
         "image":"",
@@ -333,7 +472,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -365,7 +505,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -397,7 +538,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -429,7 +571,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -461,7 +604,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -493,7 +637,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -525,7 +670,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -557,7 +703,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -589,7 +736,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -621,7 +769,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -653,7 +802,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -681,7 +831,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -709,7 +860,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -739,7 +891,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -767,7 +920,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -795,7 +949,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -823,7 +978,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -861,7 +1017,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -885,7 +1042,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -917,7 +1075,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -951,7 +1110,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -979,7 +1139,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1007,7 +1168,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1035,7 +1197,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1067,7 +1230,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1099,7 +1263,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1131,7 +1296,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1163,7 +1329,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1195,7 +1362,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1227,7 +1395,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1259,7 +1428,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1291,7 +1461,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1331,7 +1502,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1369,7 +1541,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

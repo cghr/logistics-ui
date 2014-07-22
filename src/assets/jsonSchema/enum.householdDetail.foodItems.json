@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -71,7 +73,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -79,7 +82,7 @@
         {
         "name":"onion",
         "type":"text",
-        "valdn":"between[1:99],required",
+        "valdn":"between[0:99],required",
         "label":"Onions (Kgs)",
         "flow":"",
         "value":"",
@@ -95,7 +98,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -103,7 +107,7 @@
         {
         "name":"garlic",
         "type":"text",
-        "valdn":"between[1:9999],required",
+        "valdn":"between[0:9999],required",
         "label":"Garlic (Gms)",
         "flow":"",
         "value":"",
@@ -119,7 +123,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -127,7 +132,7 @@
         {
         "name":"turmeric",
         "type":"text",
-        "valdn":"between[1:9999],required",
+        "valdn":"between[0:9999],required",
         "label":"Turmeric (Gms)",
         "flow":"",
         "value":"",
@@ -143,7 +148,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -151,8 +157,8 @@
         {
         "name":"oil",
         "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Oil as mentioned in the previous question (Liters)",
+        "valdn":"between[0:99],required",
+        "label":"Oil as mentioned in the previous question (Kgs)",
         "flow":"",
         "value":"",
         "items":[
@@ -167,31 +173,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"detergent",
-        "type":"text",
-        "valdn":"between[1:9999],required",
-        "label":"Detergent (Gms)",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         }
 
 

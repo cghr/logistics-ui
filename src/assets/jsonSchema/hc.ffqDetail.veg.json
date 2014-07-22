@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -61,19 +88,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -85,7 +106,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -99,19 +121,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -123,7 +139,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -137,19 +154,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -161,7 +172,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -175,19 +187,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -199,7 +205,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -213,19 +220,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -237,7 +238,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -251,19 +253,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -275,7 +271,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -289,19 +286,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -313,7 +304,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -327,19 +319,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -351,7 +337,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -365,19 +352,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -389,7 +370,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -403,19 +385,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -427,7 +403,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -441,19 +418,13 @@
         "value":"",
         "items":[
         
-            {"text":"","value":"0"},
+            {"text":"Wati","value":"Wati"},
         
-            {"text":"","value":"1"},
+            {"text":"Dish","value":"Dish"},
         
-            {"text":"","value":"2"},
+            {"text":"Spoon (Big)","value":"Spoon (Big)"},
         
-            {"text":"","value":"3"},
-        
-            {"text":"","value":"4"},
-        
-            {"text":"","value":"5"},
-        
-            {"text":"","value":"6"}
+            {"text":"Spoon (Medium)","value":"Spoon (Medium)"}
         
         ],
         "image":"",
@@ -465,7 +436,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

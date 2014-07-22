@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -71,7 +98,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"A normal day includes all days except festivals or any holidays."
         },
 
 
@@ -95,7 +123,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -104,7 +133,7 @@
         "name":"servantHh",
         "type":"radio",
         "valdn":"required",
-        "label":"Do you have servant(s) who help with household activities",
+        "label":"Do you have servant(s) who help with household activities?",
         "flow":"",
         "value":"",
         "items":[
@@ -123,7 +152,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -147,7 +177,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"A part time servant is one who does all or part of household work at employer’s house but does not live in his / her house or is working at employer’s house for less than 8 hours. Household work may involve caring of children, cleaning, cooking, ironing, food shopping, sweeping, dusting, mopping, washing clothes."
         },
 
 
@@ -171,7 +202,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"A full time servant is one who lives in employer’s household for 21 days in a month or more or who is working in employers house for 8 hours or more in a day"
         },
 
 
@@ -195,7 +227,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -219,19 +252,70 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
         "name":"hhMaintanence",
-        "type":"text",
-        "valdn":"between[1:999],required",
-        "label":"Household maintenance(sweeping, dusting, mopping etc) (mins)",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
+        "label":"Household maintenance(sweeping, dusting, mopping etc) (hours)",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
         
         ],
         "image":"",
@@ -243,19 +327,70 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
         "name":"cooking",
-        "type":"text",
-        "valdn":"between[1:999],required",
-        "label":"Cooking (mins)",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
+        "label":"Cooking (hours)",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
         
         ],
         "image":"",
@@ -267,19 +402,70 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
         "name":"walking",
-        "type":"text",
-        "valdn":"between[1:999],required",
-        "label":"Walking (to buy things/running errands/ to and from employment/school) (mins)",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
+        "label":"Walking (hours)",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
         
         ],
         "image":"",
@@ -291,19 +477,70 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"To buy things/ running errands/ to and from employment/school. Walking for exercise purpose should not be included under this heading."
         },
 
 
 
         {
         "name":"cycling",
-        "type":"text",
-        "valdn":"between[1:999],required",
-        "label":"Cycling (to buy things/running errands/to and from employment/school) (mins)",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
+        "label":"Cycling (hours)",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
         
         ],
         "image":"",
@@ -315,19 +552,70 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"To buy things/ running errands/ to and from employment/school. Cycling for exercise purpose should not be included in this section"
         },
 
 
 
         {
         "name":"takingcare",
-        "type":"text",
-        "valdn":"between[1:999],required",
-        "label":"Taking care (actively) of children/ grandchildren (mins)",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
+        "label":"Taking care (actively) of children/ grandchildren (hours)",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
         
         ],
         "image":"",
@@ -339,19 +627,70 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Taking care of children (aged 10 years or below): Include active involvement with the kid, any activity which requires physical movement."
         },
 
 
 
         {
         "name":"carryingwater",
-        "type":"text",
-        "valdn":"between[1:999],required",
-        "label":"Carrying water (mins)",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
+        "label":"Carrying water (hours)",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
         
         ],
         "image":"",
@@ -363,7 +702,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"When water source is not inside the house (tap) then the respondent may have to carry water from well/ hand pump, or a common tap for the group of people."
         },
 
 
@@ -391,7 +731,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -415,20 +756,71 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
         "name":"othersActivityTime",
-        "type":"text",
-        "valdn":"between[1:999],required",
-        "label":"If others, please specify time spent on that activity",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
+        "label":"If others, please specify time spent on that activity (hours)",
         "flow":"data.othersActivity=='Yes'",
         "value":"",
         "items":[
         
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
+        
         ],
         "image":"",
         "lookup":{
@@ -439,7 +831,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -448,7 +841,7 @@
         "name":"",
         "type":"heading",
         "valdn":"",
-        "label":"II. Detergents",
+        "label":"II. Rest/Entertainment",
         "flow":"",
         "value":"",
         "items":[
@@ -463,265 +856,70 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"How many times per day or per week or per month do you use any of the substances below?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"washingsoap",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Dish Washing Soap",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"freqWashingsoap",
-        "type":"duration",
-        "valdn":"between[1:99],required",
-        "label":"Frequency (No of times)",
-        "flow":"data.washingsoap=='Yes'",
-        "value":"",
-        "items":[
-        
-            {"text":"Per Day","value":"Per Day"},
-        
-            {"text":"Per Week","value":"Per Week"},
-        
-            {"text":"Per Month","value":"Per Month"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"floorCleaner",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Floor Cleaner",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"freqFloorcleaner",
-        "type":"duration",
-        "valdn":"between[1:99],required",
-        "label":"Frequency (No of times)",
-        "flow":"data.floorCleaner=='Yes'",
-        "value":"",
-        "items":[
-        
-            {"text":"Per Day","value":"Per Day"},
-        
-            {"text":"Per Week","value":"Per Week"},
-        
-            {"text":"Per Month","value":"Per Month"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"clothesDetergent",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Clothes Detergent",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"freqClothesDetergent",
-        "type":"duration",
-        "valdn":"between[1:99],required",
-        "label":"Frequency (No of times)",
-        "flow":"data.clothesDetergent=='Yes'",
-        "value":"",
-        "items":[
-        
-            {"text":"Per Day","value":"Per Day"},
-        
-            {"text":"Per Week","value":"Per Week"},
-        
-            {"text":"Per Month","value":"Per Month"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"noYrsDetergents",
-        "type":"text",
-        "valdn":"between[1:69],required",
-        "label":"For how many years has the respondent been using each of the substances above? (years)",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"III. Rest/Entertainment",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
 
         {
         "name":"hrsSleepNight",
-        "type":"text",
-        "valdn":"between[1:12],required",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
         "label":"How many hours at night do your sleep normally? (hours)",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
         
         ],
         "image":"",
@@ -733,19 +931,70 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report frequency of duration in hours. Report sleeping for night"
         },
 
 
 
         {
         "name":"hrsSleepDaylight",
-        "type":"text",
-        "valdn":"between[1:12],required",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
         "label":"How many hours during the daylight hours do you sleep? (hours)",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
         
         ],
         "image":"",
@@ -757,19 +1006,145 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report frequency of duration in hours. Report sleeping for day"
+        },
+
+
+
+        {
+        "name":"hrsSleepAfterEat",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
+        "label":"How many hours after eating you go to sleep?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
 
         {
         "name":"hrsWatchtvDay",
-        "type":"text",
-        "valdn":"between[1:24],required",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
         "label":"How many hours per day do you watch TV/movies (hours)",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
         
         ],
         "image":"",
@@ -781,19 +1156,70 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report frequency of duration in hours. Report the activity for only week days(Monday – Friday)"
         },
 
 
 
         {
         "name":"hrsWatchtvHoliday",
-        "type":"text",
-        "valdn":"between[1:24],required",
-        "label":"How many hours per day do you watch TV/movies on holidays? (Sundays, national holidays, etc.) (hours)",
+        "type":"dropdown",
+        "valdn":"between[0:12],required",
+        "label":"How many hours per day do you watch TV/movies on holidays?(hours)",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"0","value":"0"},
+        
+            {"text":"0.5","value":"0.5"},
+        
+            {"text":"1","value":"1"},
+        
+            {"text":"1.5","value":"1.5"},
+        
+            {"text":"2","value":"2"},
+        
+            {"text":"2.5","value":"2.5"},
+        
+            {"text":"3","value":"3"},
+        
+            {"text":"3.5","value":"3.5"},
+        
+            {"text":"4","value":"4"},
+        
+            {"text":"4.5","value":"4.5"},
+        
+            {"text":"5","value":"5"},
+        
+            {"text":"5.5","value":"5.5"},
+        
+            {"text":"6","value":"6"},
+        
+            {"text":"6.5","value":"6.5"},
+        
+            {"text":"7","value":"7"},
+        
+            {"text":"7.5","value":"7.5"},
+        
+            {"text":"8","value":"8"},
+        
+            {"text":"8.5","value":"8.5"},
+        
+            {"text":"9","value":"9"},
+        
+            {"text":"9.5","value":"9.5"},
+        
+            {"text":"10","value":"10"},
+        
+            {"text":"10.5","value":"10.5"},
+        
+            {"text":"11","value":"11"},
+        
+            {"text":"11.5","value":"11.5"},
+        
+            {"text":"12","value":"12"}
         
         ],
         "image":"",
@@ -805,7 +1231,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report the activity for only for Sunday, Saturday, National or Public holidays or any other holidays"
         },
 
 
@@ -829,7 +1256,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Recreation activities are those activities which are involved in refreshment of health or spirits by relaxation and enjoyment."
         },
 
 
@@ -857,7 +1285,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -881,7 +1310,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -905,7 +1335,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report every current ( 1 year before the date of interview) sports and exercise activity performed by respondent."
         },
 
 
@@ -1015,7 +1446,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1042,9 +1474,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":"Report the age at which respondent started exercise"
         },
 
 
@@ -1068,7 +1501,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report the total duration of exercise per week using frequency in hours"
         },
 
 
@@ -1178,7 +1612,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1188,7 +1623,7 @@
         "type":"text",
         "valdn":"between[5:69]",
         "label":"At what age did you start doing it? (years)",
-        "flow":"data.sportsExsCurrent=='Yes'",
+        "flow":"data.sportsExsCurrent=='Yes' && data.sportExs2!=''",
         "value":"",
         "items":[
         
@@ -1205,9 +1640,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":"Report the age at which respondent started exercise"
         },
 
 
@@ -1217,7 +1653,7 @@
         "type":"text",
         "valdn":"between[1:84]",
         "label":"How much time in total per week? (hours)",
-        "flow":"data.sportsExsCurrent=='Yes'",
+        "flow":"data.sportsExsCurrent=='Yes' && data.sportExs2!=''",
         "value":"",
         "items":[
         
@@ -1231,170 +1667,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"sportExs3",
-        "type":"dropdown",
-        "valdn":"",
-        "label":"Name of the Sport/exercise 3",
-        "flow":"data.sportsExsCurrent=='Yes'",
-        "value":"",
-        "items":[
-        
-            {"text":"Aerobics","value":"Aerobics"},
-        
-            {"text":"Andhala topi","value":"Andhala topi"},
-        
-            {"text":"Atayapataya","value":"Atayapataya"},
-        
-            {"text":"Badminton","value":"Badminton"},
-        
-            {"text":"Basketball","value":"Basketball"},
-        
-            {"text":"Bhajani Paul","value":"Bhajani Paul"},
-        
-            {"text":"Balla Phek","value":"Balla Phek"},
-        
-            {"text":"Bhukadi","value":"Bhukadi"},
-        
-            {"text":"Body Building","value":"Body Building"},
-        
-            {"text":"Boxing","value":"Boxing"},
-        
-            {"text":"Chikat Bhopala","value":"Chikat Bhopala"},
-        
-            {"text":"Cricket","value":"Cricket"},
-        
-            {"text":"Cycling","value":"Cycling"},
-        
-            {"text":"Dori","value":"Dori"},
-        
-            {"text":"Figadi","value":"Figadi"},
-        
-            {"text":"Football","value":"Football"},
-        
-            {"text":"Gajge","value":"Gajge"},
-        
-            {"text":"Gymnastics","value":"Gymnastics"},
-        
-            {"text":"Handball","value":"Handball"},
-        
-            {"text":"Holiball","value":"Holiball"},
-        
-            {"text":"Hututu","value":"Hututu"},
-        
-            {"text":"Jor Baithak","value":"Jor Baithak"},
-        
-            {"text":"Kabadi","value":"Kabadi"},
-        
-            {"text":"Karate","value":"Karate"},
-        
-            {"text":"Kho Kho","value":"Kho Kho"},
-        
-            {"text":"Kusti","value":"Kusti"},
-        
-            {"text":"Langadi","value":"Langadi"},
-        
-            {"text":"Lapamdaon","value":"Lapamdaon"},
-        
-            {"text":"Lezim","value":"Lezim"},
-        
-            {"text":"Lompat","value":"Lompat"},
-        
-            {"text":"Malkham","value":"Malkham"},
-        
-            {"text":"Running","value":"Running"},
-        
-            {"text":"Stretching exercises","value":"Stretching exercises"},
-        
-            {"text":"Sur Parumba","value":"Sur Parumba"},
-        
-            {"text":"Swimming","value":"Swimming"},
-        
-            {"text":"Talim","value":"Talim"},
-        
-            {"text":"Tennis","value":"Tennis"},
-        
-            {"text":"Throw Ball","value":"Throw Ball"},
-        
-            {"text":"Viti Dandu","value":"Viti Dandu"},
-        
-            {"text":"Walking","value":"Walking"},
-        
-            {"text":"Weight lifting","value":"Weight lifting"},
-        
-            {"text":"Yoga","value":"Yoga"},
-        
-            {"text":"Others","value":"Others"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"ageStartSportExs3",
-        "type":"text",
-        "valdn":"between[5:69]",
-        "label":"At what age did you start doing it? (years)",
-        "flow":"data.sportsExsCurrent=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age",
-            "ref":"memberId",
-            "condition":"max[{value}],required"
-        
-        }
-        },
-
-
-
-        {
-        "name":"timeSportExs3Wk",
-        "type":"text",
-        "valdn":"between[1:84]",
-        "label":"How much time in total per week? (hours)",
-        "flow":"data.sportsExsCurrent=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":"Report the total duration of exercise per week using frequency in hours"
         },
 
 
@@ -1402,9 +1676,9 @@
         {
         "name":"otherSportsExs",
         "type":"text",
-        "valdn":"required",
+        "valdn":"",
         "label":"If you do some other sports or exercise (please specify)",
-        "flow":"data.sportExs1=='Others' || data.sportExs2=='Others' || data.sportExs3=='Others'",
+        "flow":"data.sportExs1=='Others' || data.sportExs2=='Others'",
         "value":"",
         "items":[
         
@@ -1418,7 +1692,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1446,7 +1721,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report if respondent performed any sports/exercise in the past but not currently performing it."
         },
 
 
@@ -1470,7 +1746,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1580,7 +1857,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1607,9 +1885,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":"Report the age at which respondent started exercise"
         },
 
 
@@ -1636,9 +1915,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":"Report the age at which respondent stopped exercising"
         },
 
 
@@ -1662,7 +1942,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Report the total duration of exercise in week using frequency in hours"
         },
 
 
@@ -1772,7 +2053,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1799,9 +2081,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":"Report the age at which respondent started exercise"
         },
 
 
@@ -1828,9 +2111,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":"Report the age at which respondent stopped exercising"
         },
 
 
@@ -1854,199 +2138,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"sportExs3Past",
-        "type":"dropdown",
-        "valdn":"",
-        "label":"Name of the Sport/exercise 3",
-        "flow":"data.sportsExsPast=='Yes'",
-        "value":"",
-        "items":[
-        
-            {"text":"Aerobics","value":"Aerobics"},
-        
-            {"text":"Andhala topi","value":"Andhala topi"},
-        
-            {"text":"Atayapataya","value":"Atayapataya"},
-        
-            {"text":"Badminton","value":"Badminton"},
-        
-            {"text":"Basketball","value":"Basketball"},
-        
-            {"text":"Bhajani Paul","value":"Bhajani Paul"},
-        
-            {"text":"Balla Phek","value":"Balla Phek"},
-        
-            {"text":"Bhukadi","value":"Bhukadi"},
-        
-            {"text":"Body Building","value":"Body Building"},
-        
-            {"text":"Boxing","value":"Boxing"},
-        
-            {"text":"Chikat Bhopala","value":"Chikat Bhopala"},
-        
-            {"text":"Cricket","value":"Cricket"},
-        
-            {"text":"Cycling","value":"Cycling"},
-        
-            {"text":"Dori","value":"Dori"},
-        
-            {"text":"Figadi","value":"Figadi"},
-        
-            {"text":"Football","value":"Football"},
-        
-            {"text":"Gajge","value":"Gajge"},
-        
-            {"text":"Gymnastics","value":"Gymnastics"},
-        
-            {"text":"Handball","value":"Handball"},
-        
-            {"text":"Holiball","value":"Holiball"},
-        
-            {"text":"Hututu","value":"Hututu"},
-        
-            {"text":"Jor Baithak","value":"Jor Baithak"},
-        
-            {"text":"Kabadi","value":"Kabadi"},
-        
-            {"text":"Karate","value":"Karate"},
-        
-            {"text":"Kho Kho","value":"Kho Kho"},
-        
-            {"text":"Kusti","value":"Kusti"},
-        
-            {"text":"Langadi","value":"Langadi"},
-        
-            {"text":"Lapamdaon","value":"Lapamdaon"},
-        
-            {"text":"Lezim","value":"Lezim"},
-        
-            {"text":"Lompat","value":"Lompat"},
-        
-            {"text":"Malkham","value":"Malkham"},
-        
-            {"text":"Running","value":"Running"},
-        
-            {"text":"Stretching exercises","value":"Stretching exercises"},
-        
-            {"text":"Sur Parumba","value":"Sur Parumba"},
-        
-            {"text":"Swimming","value":"Swimming"},
-        
-            {"text":"Talim","value":"Talim"},
-        
-            {"text":"Tennis","value":"Tennis"},
-        
-            {"text":"Throw Ball","value":"Throw Ball"},
-        
-            {"text":"Viti Dandu","value":"Viti Dandu"},
-        
-            {"text":"Walking","value":"Walking"},
-        
-            {"text":"Weight lifting","value":"Weight lifting"},
-        
-            {"text":"Yoga","value":"Yoga"},
-        
-            {"text":"Others","value":"Others"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"ageStartSportExs3Past",
-        "type":"text",
-        "valdn":"between[5:69]",
-        "label":"At what age did you start doing it? (years)",
-        "flow":"data.sportsExsPast=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age",
-            "ref":"memberId",
-            "condition":"max[{value}],required"
-        
-        }
-        },
-
-
-
-        {
-        "name":"ageStopSportExs3",
-        "type":"text",
-        "valdn":"between[5:{data.ageStartSportExs3Past}]",
-        "label":"At what age did you stop doing it? (years)",
-        "flow":"data.sportsExsPast=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age",
-            "ref":"memberId",
-            "condition":"max[{value}],required"
-        
-        }
-        },
-
-
-
-        {
-        "name":"timeSportExs3WkPast",
-        "type":"text",
-        "valdn":"between[1:84]",
-        "label":"How much time in total per week? (hours)",
-        "flow":"data.sportsExsPast=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":"Report the total duration of exercise in week using frequency in hours"
         },
 
 
@@ -2054,9 +2147,9 @@
         {
         "name":"otherSportsExsPast",
         "type":"text",
-        "valdn":"required",
+        "valdn":"",
         "label":"If you have done some other sports or exercise in the past (please specify)",
-        "flow":"data.sportExs1Past=='Others' || data.sportExs2Past=='Others' || data.sportExs3Past=='Others'",
+        "flow":"data.sportExs1Past=='Others' || data.sportExs2Past=='Others'",
         "value":"",
         "items":[
         
@@ -2070,7 +2163,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2094,7 +2188,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2138,7 +2233,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2182,7 +2278,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2226,7 +2323,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2270,7 +2368,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2314,7 +2413,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2358,7 +2458,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

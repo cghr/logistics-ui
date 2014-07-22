@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -56,7 +58,7 @@
         "name":"hospStatus",
         "type":"radio",
         "valdn":"required ",
-        "label":"Was any usually residing adult (30-69 years) household member admitted to the hospital during last year?",
+        "label":"Was any usually residing household member admitted to the hospital during last year?",
         "flow":"",
         "value":"",
         "items":[
@@ -75,7 +77,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -84,7 +87,7 @@
         "name":"hospCount",
         "type":"text",
         "valdn":"between[1:20],required",
-        "label":"If yes, how many adults were admitted?",
+        "label":"If yes, how many members were admitted?",
         "flow":"data.hospStatus=='Yes'",
         "value":"",
         "items":[
@@ -99,7 +102,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

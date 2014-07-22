@@ -6,7 +6,7 @@
     "angular": "~1.2.9",
     "angular-mocks": "~1.2.9",
     "bootstrap": "~2.3.2",
-    "angular-bootstrap": "~0.10.0",
+    "angular-bootstrap": "~0.8.0",
     "angular-ui-router": "~0.2.7",
     "AngularJS-Toaster": "~0.4.5",
     "angular-md5": "~0.1.7",
@@ -17,5 +17,7 @@
     "lodash": "~2.4.1",
     "angular-loading-bar": "~0.4.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "angular-charts": "~0.2.1"
+  }
 }

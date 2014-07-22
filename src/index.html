@@ -3,10 +3,7 @@
 <head>
     <title ng-bind="pageTitle"></title>
 
-    <!-- font awesome from BootstrapCDN -->
-    <!--<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">-->
-
-    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>"/>
     <% }); %>
     <link rel="stylesheet" type="text/css" href="assets/dhtmlx/dhtmlx.css">
@@ -16,7 +13,7 @@
     <script type="text/javascript" src="<%= file %>"></script>
     <% }); %>
 </head>
-<body>
+<body key-press-events>
 <!-- Div for displaying toast messages -->
 <toaster-container toaster-options="{'time-out': 4000}"></toaster-container>
 
@@ -29,5 +26,6 @@
         <div ui-view="" style="margin-top:50px"></div>
     </div>
 </div>
+
 </body>
 </html>

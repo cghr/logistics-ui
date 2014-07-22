@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -71,7 +98,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -95,13 +123,14 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"nameMother",
+        "name":"motherName",
         "type":"text",
         "valdn":"required",
         "label":"What is your mother's name?",
@@ -119,13 +148,14 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"stateMother",
+        "name":"motherState",
         "type":"suggest",
         "valdn":"required",
         "label":"What is the state of origin of your mother?",
@@ -133,75 +163,75 @@
         "value":"",
         "items":[
         
-            {"text":"Andaman & nicobar islands","value":"Andaman & nicobar islands"},
+            {"text":"Andaman & Nicobar Islands (AN)","value":"Andaman & Nicobar Islands (AN)"},
         
-            {"text":"Andhra pradesh","value":"Andhra pradesh"},
+            {"text":"Andhra Pradesh (AP)","value":"Andhra Pradesh (AP)"},
         
-            {"text":"Arunachal pradesh","value":"Arunachal pradesh"},
+            {"text":"Arunachal Pradesh (AR)","value":"Arunachal Pradesh (AR)"},
         
-            {"text":"Assam","value":"Assam"},
+            {"text":"Assam (AS)","value":"Assam (AS)"},
         
-            {"text":"Bihar","value":"Bihar"},
+            {"text":"Bihar (BR)","value":"Bihar (BR)"},
         
-            {"text":"Chandigarh","value":"Chandigarh"},
+            {"text":"Chandigarh (CH)","value":"Chandigarh (CH)"},
         
-            {"text":"Chhattisgarh","value":"Chhattisgarh"},
+            {"text":"Chhattisgarh (CT)","value":"Chhattisgarh (CT)"},
         
-            {"text":"Dadra & nagar haveli","value":"Dadra & nagar haveli"},
+            {"text":"Dadra & Nagar Haveli (DN)","value":"Dadra & Nagar Haveli (DN)"},
         
-            {"text":"Daman & diu","value":"Daman & diu"},
+            {"text":"Daman & Diu (DD)","value":"Daman & Diu (DD)"},
         
-            {"text":"Delhi","value":"Delhi"},
+            {"text":"Delhi (DL)","value":"Delhi (DL)"},
         
-            {"text":"Goa","value":"Goa"},
+            {"text":"Goa (GA)","value":"Goa (GA)"},
         
-            {"text":"Gujarat","value":"Gujarat"},
+            {"text":"Gujarat (GJ)","value":"Gujarat (GJ)"},
         
-            {"text":"Haryana","value":"Haryana"},
+            {"text":"Haryana (HR)","value":"Haryana (HR)"},
         
-            {"text":"Himachal pradesh","value":"Himachal pradesh"},
+            {"text":"Himachal Pradesh (HP)","value":"Himachal Pradesh (HP)"},
         
-            {"text":"Jammu & kashmir","value":"Jammu & kashmir"},
+            {"text":"Jammu & Kashmir (JK)","value":"Jammu & Kashmir (JK)"},
         
-            {"text":"Jharkhand","value":"Jharkhand"},
+            {"text":"Jharkhand (JH)","value":"Jharkhand (JH)"},
         
-            {"text":"Karnataka","value":"Karnataka"},
+            {"text":"Karnataka (KA)","value":"Karnataka (KA)"},
         
-            {"text":"Kerala","value":"Kerala"},
+            {"text":"Kerala (KL)","value":"Kerala (KL)"},
         
-            {"text":"Lakshadweep","value":"Lakshadweep"},
+            {"text":"Lakshadweep (LD)","value":"Lakshadweep (LD)"},
         
-            {"text":"Madhya pradesh","value":"Madhya pradesh"},
+            {"text":"Madhya Pradesh (MP)","value":"Madhya Pradesh (MP)"},
         
-            {"text":"Maharashtra","value":"Maharashtra"},
+            {"text":"Maharashtra (MH)","value":"Maharashtra (MH)"},
         
-            {"text":"Manipur","value":"Manipur"},
+            {"text":"Manipur (MN)","value":"Manipur (MN)"},
         
-            {"text":"Meghalaya","value":"Meghalaya"},
+            {"text":"Meghalaya (ML)","value":"Meghalaya (ML)"},
         
-            {"text":"Mizoram","value":"Mizoram"},
+            {"text":"Mizoram (MZ)","value":"Mizoram (MZ)"},
         
-            {"text":"Nagaland","value":"Nagaland"},
+            {"text":"Nagaland (NL)","value":"Nagaland (NL)"},
         
-            {"text":"Orissa","value":"Orissa"},
+            {"text":"Orissa (OR)","value":"Orissa (OR)"},
         
-            {"text":"Pondicherry","value":"Pondicherry"},
+            {"text":"Pondicherry (PY)","value":"Pondicherry (PY)"},
         
-            {"text":"Punjab","value":"Punjab"},
+            {"text":"Punjab (PB)","value":"Punjab (PB)"},
         
-            {"text":"Rajasthan","value":"Rajasthan"},
+            {"text":"Rajasthan (RJ)","value":"Rajasthan (RJ)"},
         
-            {"text":"Sikkim","value":"Sikkim"},
+            {"text":"Sikkim (SK)","value":"Sikkim (SK)"},
         
-            {"text":"Tamil nadu","value":"Tamil nadu"},
+            {"text":"Tamil Nadu (TN)","value":"Tamil Nadu (TN)"},
         
-            {"text":"Tripura","value":"Tripura"},
+            {"text":"Tripura (TR)","value":"Tripura (TR)"},
         
-            {"text":"Uttar pradesh","value":"Uttar pradesh"},
+            {"text":"Uttar Pradesh (UP)","value":"Uttar Pradesh (UP)"},
         
-            {"text":"Uttarakhand","value":"Uttarakhand"},
+            {"text":"Uttarakhand (UT)","value":"Uttarakhand (UT)"},
         
-            {"text":"West bengal","value":"West bengal"}
+            {"text":"West Bengal (WB)","value":"West Bengal (WB)"}
         
         ],
         "image":"",
@@ -213,13 +243,14 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"districtMother",
+        "name":"motherdistrict ",
         "type":"suggest",
         "valdn":"required",
         "label":"What is the district of origin of your Mother?",
@@ -1517,13 +1548,14 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"casteMother",
+        "name":"motherCaste",
         "type":"radio",
         "valdn":"required",
         "label":"What is the caste of your mother?",
@@ -1557,7 +1589,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1581,7 +1614,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1595,53 +1629,175 @@
         "value":"",
         "items":[
         
-            {"text":"Marathi","value":"Marathi"},
+            {"text":"Adi","value":"Adi"},
         
-            {"text":"Bengali","value":"Bengali"},
+            {"text":"Afghani/Kabuli/Pashto","value":"Afghani/Kabuli/Pashto"},
         
-            {"text":"Hindi","value":"Hindi"},
+            {"text":"Anal","value":"Anal"},
         
-            {"text":"English","value":"English"},
+            {"text":"Angami","value":"Angami"},
+        
+            {"text":"Ao","value":"Ao"},
+        
+            {"text":"Arabic/Arbi","value":"Arabic/Arbi"},
         
             {"text":"Assamese","value":"Assamese"},
         
-            {"text":"Dogri","value":"Dogri"},
+            {"text":"Bengali","value":"Bengali"},
         
-            {"text":"Gujarati","value":"Gujarati"},
+            {"text":"Bhili/Bhilodi","value":"Bhili/Bhilodi"},
+        
+            {"text":"Bhotia","value":"Bhotia"},
+        
+            {"text":"Bhumij","value":"Bhumij"},
         
             {"text":"Bodo","value":"Bodo"},
         
+            {"text":"Coorgi/Kodagu","value":"Coorgi/Kodagu"},
+        
+            {"text":"Deori","value":"Deori"},
+        
+            {"text":"Dimasa","value":"Dimasa"},
+        
+            {"text":"Dogri","value":"Dogri"},
+        
+            {"text":"English","value":"English"},
+        
+            {"text":"Gadaba","value":"Gadaba"},
+        
+            {"text":"Garo","value":"Garo"},
+        
+            {"text":"Gondi","value":"Gondi"},
+        
+            {"text":"Gujarati","value":"Gujarati"},
+        
+            {"text":"Halabi","value":"Halabi"},
+        
+            {"text":"Halam","value":"Halam"},
+        
+            {"text":"Hindi","value":"Hindi"},
+        
+            {"text":"Hmar","value":"Hmar"},
+        
+            {"text":"Ho","value":"Ho"},
+        
+            {"text":"Kabui","value":"Kabui"},
+        
             {"text":"Kannada","value":"Kannada"},
+        
+            {"text":"Karbi / Mikir","value":"Karbi / Mikir"},
         
             {"text":"Kashmiri","value":"Kashmiri"},
         
+            {"text":"Khandeshi","value":"Khandeshi"},
+        
+            {"text":"Kharia","value":"Kharia"},
+        
+            {"text":"Khasi","value":"Khasi"},
+        
+            {"text":"Khezha","value":"Khezha"},
+        
+            {"text":"Khond/Kondh","value":"Khond/Kondh"},
+        
+            {"text":"Kinnauri","value":"Kinnauri"},
+        
+            {"text":"Koch","value":"Koch"},
+        
+            {"text":"Koda/Kora","value":"Koda/Kora"},
+        
             {"text":"Konkani","value":"Konkani"},
+        
+            {"text":"Korku","value":"Korku"},
+        
+            {"text":"Korwa","value":"Korwa"},
+        
+            {"text":"Koya","value":"Koya"},
+        
+            {"text":"Kuki","value":"Kuki"},
+        
+            {"text":"Kurukh/Oraon","value":"Kurukh/Oraon"},
+        
+            {"text":"Lahauli","value":"Lahauli"},
+        
+            {"text":"Lahnda","value":"Lahnda"},
+        
+            {"text":"Lepcha","value":"Lepcha"},
+        
+            {"text":"Liangmei","value":"Liangmei"},
+        
+            {"text":"Limbu","value":"Limbu"},
+        
+            {"text":"Lushai/Mizo","value":"Lushai/Mizo"},
         
             {"text":"Maithili","value":"Maithili"},
         
             {"text":"Malayalam","value":"Malayalam"},
         
+            {"text":"Malto","value":"Malto"},
+        
             {"text":"Manipuri ","value":"Manipuri "},
+        
+            {"text":"Maram","value":"Maram"},
+        
+            {"text":"Marathi","value":"Marathi"},
+        
+            {"text":"Mishmi","value":"Mishmi"},
+        
+            {"text":"Munda","value":"Munda"},
+        
+            {"text":"Mundari","value":"Mundari"},
         
             {"text":"Nepali","value":"Nepali"},
         
+            {"text":"Nicobarese","value":"Nicobarese"},
+        
+            {"text":"Nissi/Dafla","value":"Nissi/Dafla"},
+        
             {"text":"Oriya","value":"Oriya"},
         
+            {"text":"Others","value":"Others"},
+        
+            {"text":"Paite","value":"Paite"},
+        
+            {"text":"Parji","value":"Parji"},
+        
+            {"text":"Pawi","value":"Pawi"},
+        
+            {"text":"Persian","value":"Persian"},
+        
             {"text":"Punjabi","value":"Punjabi"},
+        
+            {"text":"Rai","value":"Rai"},
         
             {"text":"Sanskrit","value":"Sanskrit"},
         
             {"text":"Santali","value":"Santali"},
         
+            {"text":"Savara","value":"Savara"},
+        
+            {"text":"Sema","value":"Sema"},
+        
+            {"text":"Sherpa","value":"Sherpa"},
+        
             {"text":"Sindhi","value":"Sindhi"},
+        
+            {"text":"Tamang","value":"Tamang"},
         
             {"text":"Tamil","value":"Tamil"},
         
             {"text":"Telugu","value":"Telugu"},
         
+            {"text":"Thado","value":"Thado"},
+        
+            {"text":"Tibetan","value":"Tibetan"},
+        
+            {"text":"Tripuri","value":"Tripuri"},
+        
+            {"text":"Tulu","value":"Tulu"},
+        
             {"text":"Urdu","value":"Urdu"},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Zou","value":"Zou"}
         
         ],
         "image":"",
@@ -1653,7 +1809,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1677,7 +1834,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1693,9 +1851,7 @@
         
             {"text":"No","value":"No"},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
-        
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes","value":"Yes"},
         
             {"text":"Unknown","value":"Unknown"}
         
@@ -1709,31 +1865,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ageHtnMother",
-        "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Age at which it was diagnosed (In completed years):",
-        "flow":"data.htnMother=='Yes, on medications' || data.htnMother=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -1749,9 +1882,7 @@
         
             {"text":"No","value":"No"},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
-        
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes","value":"Yes"},
         
             {"text":"Unknown","value":"Unknown"}
         
@@ -1765,31 +1896,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ageDmMother",
-        "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Age at which it was diagnosed (In completed years):",
-        "flow":"data.dmMother=='Yes, on medications' || data.dmMother=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -1805,9 +1913,7 @@
         
             {"text":"No","value":"No"},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
-        
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes","value":"Yes"},
         
             {"text":"Unknown","value":"Unknown"}
         
@@ -1821,31 +1927,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ageAsthmaMother",
-        "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Age at which it was diagnosed (In completed years):",
-        "flow":"data.asthmaMother=='Yes, on medications' || data.asthmaMother=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -1861,9 +1944,7 @@
         
             {"text":"No","value":"No"},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
-        
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes","value":"Yes"},
         
             {"text":"Unknown","value":"Unknown"}
         
@@ -1877,31 +1958,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ageHdMother",
-        "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Age at which it was diagnosed (In completed years):",
-        "flow":"data.hdMother=='Yes, on medications' || data.hdMother=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -1917,9 +1975,7 @@
         
             {"text":"No","value":"No"},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
-        
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes","value":"Yes"},
         
             {"text":"Unknown","value":"Unknown"}
         
@@ -1933,31 +1989,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ageCancerMother",
-        "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Age at which it was diagnosed (In completed years):",
-        "flow":"data.cancerMother=='Yes, on medications' || data.cancerMother=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -1967,7 +2000,7 @@
         "type":"radio",
         "valdn":"required",
         "label":"Location of the cancer",
-        "flow":"data.cancerMother=='Yes, on medications' || data.cancerMother=='Yes, but not on medications'",
+        "flow":"data.cancerMother=='Yes' ",
         "value":"",
         "items":[
         
@@ -2003,7 +2036,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2027,7 +2061,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2051,7 +2086,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2083,31 +2119,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ageHtnFather",
-        "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Age at which it was diagnosed (In completed years):",
-        "flow":"data.htnFather=='Yes, on medications' || data.htnFather=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -2139,31 +2152,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ageDmFather",
-        "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Age at which it was diagnosed (In completed years):",
-        "flow":"data.dmFather=='Yes, on medications' || data.dmFather=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -2195,31 +2185,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ageAsthmaFather",
-        "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Age at which it was diagnosed (In completed years):",
-        "flow":"data.asthmaFather=='Yes, on medications' || data.asthmaFather=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -2251,31 +2218,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ageHdFather",
-        "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Age at which it was diagnosed (In completed years):",
-        "flow":"data.hdFather=='Yes, on medications' || data.hdFather=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -2307,31 +2251,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ageCancerFather",
-        "type":"text",
-        "valdn":"between[1:99],required",
-        "label":"Age at which it was diagnosed (In completed years):",
-        "flow":"data.cancerFather=='Yes, on medications' || data.cancerFather=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -2341,7 +2262,7 @@
         "type":"radio",
         "valdn":"required",
         "label":"Location of the cancer",
-        "flow":"data.cancerFather=='Yes, on medications' || data.cancerFather=='Yes, but not on medications'",
+        "flow":"data.cancerFather=='Yes'",
         "value":"",
         "items":[
         
@@ -2375,7 +2296,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -2399,7 +2321,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

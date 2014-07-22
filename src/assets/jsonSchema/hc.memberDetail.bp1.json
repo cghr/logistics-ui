@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -71,7 +98,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -79,7 +107,7 @@
         {
         "name":"bp1Systolic",
         "type":"text",
-        "valdn":"between[30:250],required",
+        "valdn":"between[60:250],required",
         "label":"Systolic Blood pressure 1(left arm – sitting) of the respondent (mm/hg)",
         "flow":"",
         "value":"",
@@ -95,7 +123,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -103,7 +132,7 @@
         {
         "name":"bp1Diastolic",
         "type":"text",
-        "valdn":"between[30:{data.bp1Systolic}],required",
+        "valdn":"between[40:{data.bp1Systolic}],required",
         "label":"Diastolic Blood pressure 1(left arm – sitting) of the respondent (mm/hg)",
         "flow":"",
         "value":"",
@@ -119,7 +148,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -127,7 +157,7 @@
         {
         "name":"heartrate1",
         "type":"text",
-        "valdn":"between[30:150],required",
+        "valdn":"between[40:200],required",
         "label":"Heart rate / min measure-1 of the respondent (Per Minute)",
         "flow":"",
         "value":"",
@@ -143,7 +173,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -183,7 +214,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -221,17 +253,18 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"nameSpouse",
+        "name":"noChildren",
         "type":"text",
-        "valdn":"required",
-        "label":"What is your spouse’s name?",
-        "flow":"data.mstatus=='Married' || data.mstatus=='Remarried'",
+        "valdn":"between[0:15],required",
+        "label":"How many children do you have?",
+        "flow":"",
         "value":"",
         "items":[
         
@@ -245,13 +278,80 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"occupation",
+        "name":"childName",
+        "type":"text",
+        "valdn":"required",
+        "label":"What is your oldest child's name? ",
+        "flow":"data.noChildren!='0'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"occupationMale",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Occupation",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Salaried","value":"Salaried"},
+        
+            {"text":"Wage earner","value":"Wage earner"},
+        
+            {"text":"Professional business","value":"Professional business"},
+        
+            {"text":"Farmers","value":"Farmers"},
+        
+            {"text":"Agriculture labour","value":"Agriculture labour"},
+        
+            {"text":"Non worker","value":"Non worker"},
+        
+            {"text":"Others","value":"Others"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"occupationFemale",
         "type":"radio",
         "valdn":"required",
         "label":"Occupation",
@@ -273,7 +373,7 @@
         
             {"text":"Non worker","value":"Non worker"},
         
-            {"text":"others","value":"others"}
+            {"text":"Others","value":"Others"}
         
         ],
         "image":"",
@@ -282,10 +382,13 @@
         },
         "crossFlow":[
         
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
+        
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

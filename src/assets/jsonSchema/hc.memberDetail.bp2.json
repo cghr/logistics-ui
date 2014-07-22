@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -71,7 +98,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -79,7 +107,7 @@
         {
         "name":"bp2Systolic",
         "type":"text",
-        "valdn":"between[30:250],required",
+        "valdn":"between[60:250],required",
         "label":"Systolic Blood pressure 2(left arm – sitting) of the respondent (mm/hg)",
         "flow":"",
         "value":"",
@@ -95,7 +123,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Blood pressure measurement is taken at household level.The blood pressure is taken at sitting position."
         },
 
 
@@ -103,7 +132,7 @@
         {
         "name":"bp2Diastolic",
         "type":"text",
-        "valdn":"between[30:{data.bp2Systolic}],required",
+        "valdn":"between[40:{data.bp2Systolic}],required",
         "label":"Diastolic Blood pressure 2(left arm – sitting) of the respondent (mm/hg)",
         "flow":"",
         "value":"",
@@ -119,7 +148,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Blood pressure measurement is taken at household level.The blood pressure is taken at sitting position."
         },
 
 
@@ -127,7 +157,7 @@
         {
         "name":"heartrate2",
         "type":"text",
-        "valdn":"between[30:150],required",
+        "valdn":"between[40:200],required",
         "label":"Heart rate / min measure-2 of the respondent (Per Minute)",
         "flow":"",
         "value":"",
@@ -143,7 +173,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

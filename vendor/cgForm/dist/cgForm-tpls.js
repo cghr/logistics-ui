@@ -2,7 +2,7 @@
  * cgForm
  * 
 
- * Version: 0.1.0 - 2014-04-23
+ * Version: 0.1.0 - 2014-06-27
  * License: MIT
  */
 angular.module('cgForm', [
@@ -167,6 +167,7 @@ angular.module('cgForm.formConfig', []).factory('FormConfig', [
                     throw new Error('serviceBaseUrl  not found in $rootScope');
                 }
                 var context = $rootScope.serviceBaseUrl;
+                //Update Date Prototypes to have today and timeNow
                 return {
                     submitUrl: context + 'api/data/dataStoreService/',
                     resourceBaseUrl: context + 'api/data/dataAccessService/',
@@ -273,6 +274,14 @@ angular.module('cgForm.ffqForm', [
                 replace: true,
                 scope: { options: ' = ' },
                 link: function postLink(scope, element) {
+                    Date.prototype.today = function () {
+                        return this.getFullYear() + '-' + (this.getMonth() + 1 < 10 ? '0' : '') + (this.getMonth() + 1) + '-' + (this.getDate() < 10 ? '0' : '') + this.getDate();
+                    };
+                    Date.prototype.timeNow = function () {
+                        return (this.getHours() < 10 ? '0' : '') + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + (this.getSeconds() < 10 ? '0' : '') + this.getSeconds();
+                    };
+                    var newDate = new Date();
+                    $rootScope.timestamp = newDate.today() + ' ' + newDate.timeNow();
                     /* Load Json Schema for current state if not supplied through attributes */
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
                     /* Initialize form data */
@@ -365,9 +374,18 @@ angular.module('cgForm.standardForm', [
                 scope: {
                     options: '=',
                     randomtotal: '@',
-                    randomsize: '@'
+                    randomsize: '@',
+                    formdata: '='
                 },
                 link: function postLink(scope, element, attrs) {
+                    Date.prototype.today = function () {
+                        return this.getFullYear() + '-' + (this.getMonth() + 1 < 10 ? '0' : '') + (this.getMonth() + 1) + '-' + (this.getDate() < 10 ? '0' : '') + this.getDate();
+                    };
+                    Date.prototype.timeNow = function () {
+                        return (this.getHours() < 10 ? '0' : '') + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + (this.getSeconds() < 10 ? '0' : '') + this.getSeconds();
+                    };
+                    var newDate = new Date();
+                    $rootScope.timestamp = newDate.today() + ' ' + newDate.timeNow();
                     /* Load Json Schema for current state if not supplied through attributes */
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
                     /* Generates a random form */
@@ -403,8 +421,10 @@ angular.module('cgForm.standardForm', [
                         }
                         return randomNumber;
                     }
+                    console.log('random properties');
+                    console.log(scope.schema.properties);
                     /* Initialize data in  scope to save all form data*/
-                    scope.data = {};
+                    scope.data = scope.formdata || {};
                     /* Extend the current schema with default config */
                     scope.schema = _.extend(scope.schema, FormConfig.getConfig());
                     /* Load lookup data if any and add initFocus attr to every elem to disable initFocus attribute */
@@ -576,6 +596,14 @@ angular.module('cgForm.surveyForm', [
                     fnct: '&onSave'
                 },
                 link: function postLink(scope, element) {
+                    Date.prototype.today = function () {
+                        return this.getFullYear() + '-' + (this.getMonth() + 1 < 10 ? '0' : '') + (this.getMonth() + 1) + '-' + (this.getDate() < 10 ? '0' : '') + this.getDate();
+                    };
+                    Date.prototype.timeNow = function () {
+                        return (this.getHours() < 10 ? '0' : '') + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + (this.getSeconds() < 10 ? '0' : '') + this.getSeconds();
+                    };
+                    var newDate = new Date();
+                    $rootScope.timestamp = newDate.today() + ' ' + newDate.timeNow();
                     /* Load Json Schema for current state if not supplied through attributes */
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
                     /* Initialize form data */
@@ -585,6 +613,7 @@ angular.module('cgForm.surveyForm', [
                     /* Load lookup data and Cross Flow dynamic validation */
                     angular.forEach(scope.schema.properties, function (elem) {
                         if (elem.type === 'lookup') {
+                            console.log('lookup ');
                             FormService.getLookupData(elem.lookup).then(function (resp) {
                                 elem.type = 'radio';
                                 elem.items = resp.data;
@@ -632,6 +661,8 @@ angular.module('cgForm.surveyForm', [
                     angular.forEach(scope.schema.properties, function (elem) {
                         if (elem.name !== 'datastore' && elem.type === 'hidden') {
                             elem.value = $rootScope.$eval(elem.value);
+                            console.log(elem);
+                            console.log(elem.value);
                         }
                         if (elem.type === 'hidden') {
                             scope.data[elem.name] = elem.value;
@@ -681,13 +712,13 @@ angular.module('template/formElement/checkbox.html', []).run([
 angular.module('template/formElement/control-group-heading.html', []).run([
     '$templateCache',
     function ($templateCache) {
-        $templateCache.put('template/formElement/control-group-heading.html', '<div class="control-group" id="{{config.name}}-control-group" scroll-top="{{config.scrollTop}}">\n' + '    <div class="control-label" >\n' + '        <div class="alert alert-error" style="font-weight:bold">{{config.label}}</div>\n' + '    </div>\n' + '    <div class="controls"></div>\n' + '</div>');
+        $templateCache.put('template/formElement/control-group-heading.html', '<div class="control-group" id="{{config.name}}-control-group" scroll-top="{{config.scrollTop}}">\n' + '    <div class="control-label" >\n' + '        <div class="alert alert-error" style="font-weight:bold">{{config.label}}<a  ng-if="config.help" popover="{{config.help}}" popover-trigger="mouseenter">Help</a></div>\n' + '    </div>\n' + '    <div class="controls"></div>\n' + '</div>');
     }
 ]);
 angular.module('template/formElement/control-group.html', []).run([
     '$templateCache',
     function ($templateCache) {
-        $templateCache.put('template/formElement/control-group.html', '<div class="control-group" id="{{config.name}}-control-group" scroll-top="{{config.scrollTop}}">\n' + '    <div class="control-label">\n' + '        <label style="font-weight:bold">{{config.label}} </label>\n' + '        <div ng-if="config.image!=\'\'"><img ng-src="{{config.image}}" /></div>\n' + '    </div>\n' + '    <div class="controls" ng-click="jumpFlow(config.name)"></div>\n' + '\n' + '</div>');
+        $templateCache.put('template/formElement/control-group.html', '<div class="control-group" id="{{config.name}}-control-group" scroll-top="{{config.scrollTop}}">\n' + '    <div class="control-label">\n' + '        <label style="font-weight:bold">{{config.label}} <a  ng-if="config.help" popover="{{config.help}}" popover-trigger="mouseenter">Help</a></label>\n' + '        <div ng-if="config.image!=\'\'"><img ng-src="{{config.image}}" /></div>\n' + '    </div>\n' + '    <div class="controls" ng-click="jumpFlow(config.name)"></div>\n' + '\n' + '</div>');
     }
 ]);
 angular.module('template/formElement/dropdown.html', []).run([
@@ -765,7 +796,7 @@ angular.module('template/formElement/textarea.html', []).run([
 angular.module('template/ffqForm/ffqForm.html', []).run([
     '$templateCache',
     function ($templateCache) {
-        $templateCache.put('template/ffqForm/ffqForm.html', '<form ng-submit="onSubmit(data)" action="javascript:void(0)" class="well">\n' + '\n' + '    <input ng-repeat="elm in schema.hiddenElements" type="hidden" id="{{elm.name}}" name="{{elm.name}}" value="{{elm.value}}" ng-model="data[elm.name]"/>\n' + '\n' + '    <table class="table table-bordered" style="margin-top:20px">\n' + '        <tr style="background-color:gray;color:#ffffff">\n' + '            <th>Foods and Amounts</th>\n' + '\n' + '            <th colspan="9" style="text-align:center">Average Use Last year</th>\n' + '\n' + '        </tr>\n' + '\n' + '        <tr style="background-color:gray;color:#ffffff">\n' + '            <th class="span2">Food/Drink Item</th>\n' + '\n' + '            <th class="span2">Never or less than once/month</th>\n' + '\n' + '            <th class="span2">1-3 per month</th>\n' + '\n' + '            <th class="span2">Once a week</th>\n' + '\n' + '            <th class="span2">2-4 per week</th>\n' + '\n' + '            <th class="span2">5-6 per week</th>\n' + '\n' + '            <th class="span2">Once a day</th>\n' + '\n' + '            <th class="span2">2-3 per day</th>\n' + '\n' + '            <th class="span2">Measure</th>\n' + '\n' + '            <th class="span2">Unit</th>\n' + '\n' + '        </tr>\n' + '\n' + '\n' + '        <tr ng-repeat="element in schema.properties">\n' + '            <td>{{element.label}}</td>\n' + '\n' + '            <td ng-repeat="item in element.items">\n' + '\n' + '                <label class="radio inline">\n' + '                    <div ng-if="$index==0">\n' + '\n' + '                        <input type="radio"\n' + '                               id="{{element.name}}_frequency"\n' + '                               name="{{element.name}}_frequency"\n' + '                               data-bvalidator="required"\n' + '                               data-bvalidator-msg="Please select an option"\n' + '                               value="{{item.value}}"\n' + '                               ng-model="data[element.name+\'_frequency\']"/>{{item.text}}\n' + '                    </div>\n' + '\n' + '                    <div ng-if="$index!=0">\n' + '\n' + '                        <input type="radio"\n' + '                               name="{{element.name}}_frequency"\n' + '                               value="{{item.value}}"\n' + '                               ng-model="data[element.name+\'_frequency\']"/>\n' + '                    </div>\n' + '                    {{item.text}} </label>\n' + '            </td>\n' + '\n' + '            <td><input type="text" placeholder="Measure" class="input input-mini" data-bvalidator="between[1:99],required"\n' + '                       name="{{element.name}}_measure" ng-model="data[element.name+\'_measure\']" ng-disabled="data[element.name+\'_frequency\']==0" />\n' + '            </td>\n' + '\n' + '            <td><select class="input-medium" data-bvalidator="required" name="{{element.name}}_unit"\n' + '                        ng-model="data[element.name+\'_unit\']" data-bvalidator-msg="Please select an option" ng-disabled="data[element.name+\'_frequency\']==0">\n' + '                <option value=""></option>        \n' + '                <option value="T1">Tambya</option>\n' + '                <option value="G1">Glass</option>\n' + '                <option value="K1">Cup (Big)</option>\n' + '                <option value="K2">Cup (Medium)</option>\n' + '                <option value="K3">Cup (Small)</option>\n' + '                <option value="D1">Dish</option>\n' + '                <option value="W1">Wati</option>\n' + '                <option value="P1">Pali</option>\n' + '                <option value="S1">Spoon (Big)</option>\n' + '                <option value="S2">Spoon (Medium)</option>\n' + '                <option value="S3">Spoon (Small)</option>\n' + '            </select>\n' + '            </td>\n' + '\n' + '        </tr>\n' + '        </tr>\n' + '    </table>\n' + '\n' + '\n' + '    <div class="controls">\n' + '        <button class="btn  btn-primary"\n' + '                type="submit" data-plus-as-tab="false">Save\n' + '        </button>\n' + '    </div>\n' + '</form>\n' + '\n' + '\n' + '\n' + '');
+        $templateCache.put('template/ffqForm/ffqForm.html', '<form ng-submit="onSubmit(data)" action="javascript:void(0)" class="well">\n' + '\n' + '    <input ng-repeat="elm in schema.hiddenElements" type="hidden" id="{{elm.name}}" name="{{elm.name}}" value="{{elm.value}}" ng-model="data[elm.name]"/>\n' + '\n' + '    <table class="table table-bordered" style="margin-top:20px">\n' + '        <tr style="background-color:gray;color:#ffffff">\n' + '            <th>Foods and Amounts</th>\n' + '\n' + '            <th colspan="9" style="text-align:center">Average Use Last year</th>\n' + '\n' + '        </tr>\n' + '\n' + '        <tr style="background-color:gray;color:#ffffff">\n' + '            <th class="span2">Food/Drink Item</th>\n' + '\n' + '            <th class="span2">Never or less than once/month</th>\n' + '\n' + '            <th class="span2">1-3 per month</th>\n' + '\n' + '            <th class="span2">Once a week</th>\n' + '\n' + '            <th class="span2">2-4 per week</th>\n' + '\n' + '            <th class="span2">5-6 per week</th>\n' + '\n' + '            <th class="span2">Once a day</th>\n' + '\n' + '            <th class="span2">2-3 per day</th>\n' + '\n' + '            <th class="span2">Measure</th>\n' + '\n' + '            <th class="span2">Unit</th>\n' + '\n' + '        </tr>\n' + '\n' + '\n' + '        <tr ng-repeat="element in schema.properties">\n' + '            <td>{{element.label}}</td>\n' + '\n' + '            <td ng-repeat="item in [0,1,2,3,4,5,6]">\n' + '\n' + '                <label class="radio inline">\n' + '                    <div ng-if="$index==0">\n' + '\n' + '                        <input type="radio"\n' + '                               id="{{element.name}}_frequency"\n' + '                               name="{{element.name}}_frequency"\n' + '                               data-bvalidator="required"\n' + '                               data-bvalidator-msg="Please select an option"\n' + '                               value="{{item}}"\n' + '                               ng-model="data[element.name+\'_frequency\']"/>\n' + '                    </div>\n' + '\n' + '                    <div ng-if="$index!=0">\n' + '\n' + '                        <input type="radio"\n' + '                               name="{{element.name}}_frequency"\n' + '                               value="{{item}}"\n' + '                               ng-model="data[element.name+\'_frequency\']"/>\n' + '                    </div>\n' + '                    </label>\n' + '            </td>\n' + '\n' + '            <td><input type="text" placeholder="Measure" class="input input-mini" data-bvalidator="between[1:99],required"\n' + '                       name="{{element.name}}_measure" ng-model="data[element.name+\'_measure\']" ng-disabled="data[element.name+\'_frequency\']==0" />\n' + '            </td>\n' + '\n' + '            <td><select class="input-medium" data-bvalidator="required" name="{{element.name}}_unit"\n' + '                        ng-model="data[element.name+\'_unit\']" data-bvalidator-msg="Please select an option" ng-disabled="data[element.name+\'_frequency\']==0">\n' + '                <option ng-repeat="item in element.items" value="{{item.value}}">{{item.text}}</option>\n' + '            </select>\n' + '            </td>\n' + '\n' + '        </tr>\n' + '        </tr>\n' + '    </table>\n' + '\n' + '\n' + '    <div class="controls">\n' + '        <button class="btn  btn-primary"\n' + '                type="submit" data-plus-as-tab="false">Save\n' + '        </button>\n' + '    </div>\n' + '</form>\n' + '\n' + '\n' + '\n' + '');
     }
 ]);
 angular.module('template/standardForm/standardForm.html', []).run([

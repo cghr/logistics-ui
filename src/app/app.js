@@ -1,6 +1,10 @@
 angular.module("myApp", [
+        'schemaLoader',
+        'lodash',
         'chieffancypants.loadingBar',
         'ui.bootstrap',
+        'dashboard',
+        'sync',
         'cgForm',
         'cgGrid',
         'appDefaultConfig',
@@ -12,15 +16,14 @@ angular.module("myApp", [
         'templates-common',
         'ui.router.state',
         'ui.router',
-        'myApp.security',
-        'myApp.report',
-        'myApp.enum',
-        'myApp.hc',
-        'myApp.resamp'
-    ])
+        'security',
+        'report',
+        'enum',
+        'hc',
+        'resamp',
+        'ngcamera',
+        'toaster']
+    )
     .config(function ($stateProvider, $urlRouterProvider) {
-
-        //Todo add default landing page
-        $urlRouterProvider.otherwise('/enum/area');
-
-    });
+        $urlRouterProvider.otherwise('/enum/area')
+    })

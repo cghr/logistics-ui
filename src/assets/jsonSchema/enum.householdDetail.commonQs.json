@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -55,8 +57,8 @@
         {
         "name":"roomCount",
         "type":"text",
-        "valdn":"between[1:20],required",
-        "label":"How many rooms are there in your house? (excluding kitchen)",
+        "valdn":"between[0:20],required",
+        "label":"How many rooms are there in your house? (including kitchen)",
         "flow":"",
         "value":"",
         "items":[
@@ -71,7 +73,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -101,7 +104,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -115,13 +119,13 @@
         "value":"",
         "items":[
         
-            {"text":"Own Tap","value":"Own Tap"},
-        
             {"text":"Shared Tap","value":"Shared Tap"},
         
             {"text":"Handpump/Hapsa","value":"Handpump/Hapsa"},
         
             {"text":"Vihir","value":"Vihir"},
+        
+            {"text":"Own Tap","value":"Own Tap"},
         
             {"text":"Others","value":"Others"}
         
@@ -135,7 +139,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -149,13 +154,21 @@
         "value":"",
         "items":[
         
-            {"text":"Electricity","value":"Electricity"},
+            {"text":"Coal","value":"Coal"},
+        
+            {"text":"Wood","value":"Wood"},
+        
+            {"text":"Cowdung cakes","value":"Cowdung cakes"},
         
             {"text":"LPG/CNG/ PNG / Biogas","value":"LPG/CNG/ PNG / Biogas"},
         
+            {"text":"Charcoal","value":"Charcoal"},
+        
             {"text":"Kerosene","value":"Kerosene"},
         
-            {"text":"Solid fuel (Coal, wood, charcol etc)","value":"Solid fuel (Coal, wood, charcol etc)"}
+            {"text":"Agricultural crop waste","value":"Agricultural crop waste"},
+        
+            {"text":"Electricity","value":"Electricity"}
         
         ],
         "image":"",
@@ -167,7 +180,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -199,7 +213,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -233,39 +248,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"levelSmokiness",
-        "type":"radio",
-        "valdn":"required",
-        "label":"What is the level of smokiness due to cooking?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"No smokiness","value":"No smokiness"},
-        
-            {"text":"Little","value":"Little"},
-        
-            {"text":"Much, but not enough to irritate the eyes","value":"Much, but not enough to irritate the eyes"},
-        
-            {"text":"Smokiness enough to irritate the eyes","value":"Smokiness enough to irritate the eyes"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -293,43 +277,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"cookingOil",
-        "type":"radio",
-        "valdn":"required",
-        "label":"What kind of cooking oil is used in the household?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Gingelly Oil","value":"Gingelly Oil"},
-        
-            {"text":"Groundnut Oil","value":"Groundnut Oil"},
-        
-            {"text":"Mustartd Oil","value":"Mustartd Oil"},
-        
-            {"text":"Palm Oil","value":"Palm Oil"},
-        
-            {"text":"Sunflower oil","value":"Sunflower oil"},
-        
-            {"text":"Others","value":"Others"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         }
 
 

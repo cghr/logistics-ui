@@ -1,0 +1,339 @@
+{
+"schemaName":"hc.ffqDetail.salt",
+"onSave":"hc.ffqDetail.foodAdditives",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"ffqSalt",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"memberId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.memberId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Salt Intake Assessment",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"selfReportSalt",
+        "type":"radio-inline",
+        "valdn":"required",
+        "label":"Self reported overconsumption of salt intake ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Never","value":"Never"},
+        
+            {"text":"Rarely","value":"Rarely"},
+        
+            {"text":"Sometimes","value":"Sometimes"},
+        
+            {"text":"Often","value":"Often"},
+        
+            {"text":"Always","value":"Always"},
+        
+            {"text":"Don’t know","value":"Don’t know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"extraSaltDining",
+        "type":"radio-inline",
+        "valdn":"required",
+        "label":"Addition of extra salt at the dining table (Table salt)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"modeAddSalt",
+        "type":"radio-inline",
+        "valdn":"required",
+        "label":"How you will add the table salt?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Salt shaker","value":"Salt shaker"},
+        
+            {"text":"Spoon","value":"Spoon"},
+        
+            {"text":"Hand","value":"Hand"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"freqAddSalt",
+        "type":"radio-inline",
+        "valdn":"required",
+        "label":"How often do you add salt to food at the table?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Never","value":"Never"},
+        
+            {"text":"Rarely","value":"Rarely"},
+        
+            {"text":"Sometimes","value":"Sometimes"},
+        
+            {"text":"Often","value":"Often"},
+        
+            {"text":"Always","value":"Always"},
+        
+            {"text":"Don’t know","value":"Don’t know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"amtSaltConsump",
+        "type":"radio-inline",
+        "valdn":"required",
+        "label":"How much salt do you think you consume?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Too much","value":"Too much"},
+        
+            {"text":"Right amount","value":"Right amount"},
+        
+            {"text":"Too little","value":"Too little"},
+        
+            {"text":"Dont know","value":"Dont know"},
+        
+            {"text":"No answer","value":"No answer"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"mnthlySaltUse",
+        "type":"text",
+        "valdn":"required",
+        "label":"Monthly usage of salt in gm in your family ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ctrlSaltIntake",
+        "type":"radio-inline",
+        "valdn":"required",
+        "label":"Do you do to control your salt intake?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Never","value":"Never"},
+        
+            {"text":"Rarely","value":"Rarely"},
+        
+            {"text":"Sometimes","value":"Sometimes"},
+        
+            {"text":"Often","value":"Often"},
+        
+            {"text":"Always","value":"Always"},
+        
+            {"text":"Don’t know","value":"Don’t know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

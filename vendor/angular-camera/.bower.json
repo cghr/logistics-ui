@@ -1,0 +1,30 @@
+{
+  "name": "angular-camera",
+  "version": "0.1.2",
+  "homepage": "https://github.com/onemightyroar/angular-camera",
+  "authors": [
+    "Zach Dunn <zach@onemightyroar.com>"
+  ],
+  "description": "A camera directive for Angular",
+  "main": "./src/directives/angular-camera.js",
+  "keywords": [
+    "webcam",
+    "camera",
+    "photo",
+    "video"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0"
+  },
+  "license": "GNU",
+  "_release": "0.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.2",
+    "commit": "fdd50bb5265046b696267cf5584527c21234c2ac"
+  },
+  "_source": "git://github.com/onemightyroar/angular-camera.git",
+  "_target": "~0.1.2",
+  "_originalSource": "angular-camera",
+  "_direct": true
+}

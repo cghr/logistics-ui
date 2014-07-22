@@ -1,12 +1,9 @@
 angular.module('myApp')
-    .run(function ($rootScope, AppDefaultConfig, $state, $stateParams, $http, $q, SchemaFactory) {
+    .run(function ($rootScope, $state, $stateParams, SchemaFactory, _, SchemaLoader) {
 
-        $rootScope.serviceBaseUrl = AppDefaultConfig.serviceBaseUrl;
+        $rootScope.$state = $state
+        $rootScope.$stateParams = $stateParams
 
-        $rootScope.$state = $state;
-        $rootScope.$stateParams = $stateParams;
-
-        //Todo all the states with forms
         var states = [
             'hc.visitDetail.basicInf',
             'hc.ffqDetail.bev',
@@ -21,6 +18,7 @@ angular.module('myApp')
             'hc.memberDetail.pa',
             'hc.memberDetail.bp1',
             'hc.ffqDetail.snacks',
+            'hc.ffqDetail.salt',
             'enum.hospDetail.basicInf',
             'hc.ffqDetail.nonveg',
             'hc.ffqDetail.foodAdditives',
@@ -39,23 +37,17 @@ angular.module('myApp')
             'hc.ffqDetail.general',
             'enum.householdDetail.hospInf',
             'enum.householdDetail.deathInf',
-            'resamp.memberDetail.basicInf'
+            'resamp.memberDetail.basicInf',
+            'hc.ffqDetail.invitationCard'
         ];
-        var promises = [];
 
-        /* Construct Promises for states which have forms */
-        angular.forEach(states, function (state) {
-            promises.push($http.get('assets/jsonSchema/' + state+'.json'));
-        });
+        SchemaLoader
+            .loadAllSchemas(states, 'assets/jsonSchema/')
+            .then(function () {
+                _.each(SchemaLoader.allSchemas, function (schema, index) {
+                    SchemaFactory.put(states[index], schema)
+                })
 
-        /* Fire XHR requests and store schemas in JsonSchema Object */
-        $q.all(promises).then(function (responses) {
-            var i = 0;
-            angular.forEach(responses, function (response) {
-                SchemaFactory.put(states[i], response.data);
-                i++;
-            });
-        });
+            })
 
-
-    });
+    })

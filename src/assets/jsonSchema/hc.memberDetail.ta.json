@@ -23,7 +23,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -47,7 +48,33 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -71,7 +98,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -95,7 +123,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":"Subjects who smokes for at least once a week for at least six months is considered to be current smoker"
         },
 
 
@@ -127,16 +156,17 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"smokingYrs",
+        "name":"ageStartSmokeCurrent",
         "type":"text",
-        "valdn":"between[1:69],required",
-        "label":"How long have you been smoking tobacco? (In completed years)",
+        "valdn":"",
+        "label":"What age have you started smoking tobacco? (In completed years)",
         "flow":"data.smokeTobacco=='Daily' || data.smokeTobacco=='Less than daily'",
         "value":"",
         "items":[
@@ -154,9 +184,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":""
         },
 
 
@@ -180,7 +211,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -204,35 +236,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"cigarettes",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Cigarette",
-        "flow":"data.smokeTobacco=='Daily' || data.smokeTobacco=='Less than daily'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -240,9 +245,9 @@
         {
         "name":"freqCigarettesDay",
         "type":"text",
-        "valdn":"between[1:40],required",
+        "valdn":"between[0:40],required",
         "label":"Frequency of cigarettes (Nos.)/Day",
-        "flow":"data.cigarettes=='Yes' && data.smokeTobacco=='Daily'",
+        "flow":"data.smokeTobacco=='Daily'",
         "value":"",
         "items":[
         
@@ -256,7 +261,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -264,9 +270,9 @@
         {
         "name":"freqCigarettesWeek",
         "type":"text",
-        "valdn":"between[1:200],required",
+        "valdn":"between[0:200],required",
         "label":"Frequency of cigarettes (Nos.)/Week",
-        "flow":"data.cigarettes=='Yes' && data.smokeTobacco=='Less than daily'",
+        "flow":"data.smokeTobacco=='Less than daily'",
         "value":"",
         "items":[
         
@@ -280,35 +286,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"bidis",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Bidis",
-        "flow":"data.smokeTobacco=='Daily' || data.smokeTobacco=='Less than daily'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -316,9 +295,9 @@
         {
         "name":"freqBidisDay",
         "type":"text",
-        "valdn":"between[1:40],required",
+        "valdn":"between[0:40],required",
         "label":"Frequency of bidis (Nos.)/Day",
-        "flow":"data.bidis=='Yes' && data.smokeTobacco=='Daily'",
+        "flow":"data.smokeTobacco=='Daily'",
         "value":"",
         "items":[
         
@@ -332,7 +311,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -340,9 +320,9 @@
         {
         "name":"freqBidisWeek",
         "type":"text",
-        "valdn":"between[1:200],required",
+        "valdn":"between[0:200],required",
         "label":"Frequency of bidis (Nos.)/Week",
-        "flow":"data.bidis=='Yes' && data.smokeTobacco=='Less than daily'",
+        "flow":"data.smokeTobacco=='Less than daily'",
         "value":"",
         "items":[
         
@@ -356,35 +336,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"otherTobacco",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Other Tobacco Smoked",
-        "flow":"data.smokeTobacco=='Daily' || data.smokeTobacco=='Less than daily'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -392,9 +345,9 @@
         {
         "name":"freqOtherTobaccoDay",
         "type":"text",
-        "valdn":"between[1:40],required",
+        "valdn":"between[0:40],required",
         "label":"Frequency of any other tobacco smoked (Nos.)/Day",
-        "flow":"data.otherTobacco=='Yes' && data.smokeTobacco=='Daily'",
+        "flow":"data.smokeTobacco=='Daily'",
         "value":"",
         "items":[
         
@@ -408,7 +361,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -416,9 +370,9 @@
         {
         "name":"freqOtherTobaccoWeek",
         "type":"text",
-        "valdn":"between[1:200],required",
+        "valdn":"between[0:200],required",
         "label":"Frequency of any other tobacco smoked (Nos.)/Week",
-        "flow":"data.otherTobacco=='Yes' && data.smokeTobacco=='Less than daily'",
+        "flow":"data.smokeTobacco=='Less than daily'",
         "value":"",
         "items":[
         
@@ -432,7 +386,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -456,7 +411,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -486,16 +442,17 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"ageStartSmoking",
+        "name":"ageStartSmokingPast",
         "type":"text",
-        "valdn":"between[1:69],required",
-        "label":"How long ago did you first start smoking daily? (In completed years)",
+        "valdn":"between[10:69],required",
+        "label":"What age did you first start smoking? (In completed years)",
         "flow":"data.smokeTobacco=='Not at all' && data.smokeTobaccoPast=='Yes'",
         "value":"",
         "items":[
@@ -513,18 +470,19 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"ageStopSmoking",
+        "name":"ageStopSmokingPast",
         "type":"text",
-        "valdn":"between[1:{data.ageStartSmoking}],required",
-        "label":"How long has it been since you stopped smoking? (In completed years)",
+        "valdn":"between[10:{data.ageStartSmoking}],required",
+        "label":"How long ago were you stopped smoking? (In completed years)",
         "flow":"data.smokeTobacco=='Not at all' && data.smokeTobaccoPast=='Yes'",
         "value":"",
         "items":[
@@ -542,9 +500,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":""
         },
 
 
@@ -580,7 +539,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -604,7 +564,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -636,16 +597,17 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"smokelessTobaccoYrs",
+        "name":"ageSmokelessTobaccoCurrent",
         "type":"text",
-        "valdn":"between[1:69],required",
-        "label":"How long ago did you first start using smokeless tobacco?",
+        "valdn":"between[10:69],required",
+        "label":"What age have you started using smokeless tobacco?",
         "flow":"data.smokelessTobacco=='Daily' || data.smokelessTobacco=='Less than daily'",
         "value":"",
         "items":[
@@ -663,9 +625,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":""
         },
 
 
@@ -689,7 +652,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -713,35 +677,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"chewTobacco",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Chewing only Tobacco",
-        "flow":"data.smokelessTobacco=='Daily' || data.smokelessTobacco=='Less than daily'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -749,9 +686,9 @@
         {
         "name":"freqChewTobaccoDay",
         "type":"text",
-        "valdn":"between[1:40],required",
+        "valdn":"between[0:40],required",
         "label":"Frequency of chewing tobacco (Nos.)/Day",
-        "flow":"data.chewTobacco=='Yes' && data.smokelessTobacco=='Daily'",
+        "flow":"data.smokelessTobacco=='Daily'",
         "value":"",
         "items":[
         
@@ -765,7 +702,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -773,9 +711,9 @@
         {
         "name":"freqChewTobaccoWeek",
         "type":"text",
-        "valdn":"between[1:200],required",
+        "valdn":"between[0:200],required",
         "label":"Frequency of chewing tobacco (Nos.)/Week",
-        "flow":"data.chewTobacco=='Yes' && data.smokelessTobacco=='Less than daily'",
+        "flow":"data.smokelessTobacco=='Less than daily'",
         "value":"",
         "items":[
         
@@ -789,35 +727,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"khainiLimemix",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Khaini or tobacco lime mix",
-        "flow":"data.smokelessTobacco=='Daily' || data.smokelessTobacco=='Less than daily'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -825,9 +736,9 @@
         {
         "name":"freqKhainiLimemixDay",
         "type":"text",
-        "valdn":"between[1:40],required",
+        "valdn":"between[0:40],required",
         "label":"Frequency of khaini or tobacco lime mix (Nos.)/Day",
-        "flow":"data.khainiLimemix=='Yes' && data.smokelessTobacco=='Daily'",
+        "flow":"data.smokelessTobacco=='Daily'",
         "value":"",
         "items":[
         
@@ -841,7 +752,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -849,9 +761,9 @@
         {
         "name":"freqKhainiLimemixWeek",
         "type":"text",
-        "valdn":"between[1:200],required",
+        "valdn":"between[0:200],required",
         "label":"Frequency of khaini or tobacco lime mix (Nos.)/Week",
-        "flow":"data.khainiLimemix=='Yes' && data.smokelessTobacco=='Less than daily'",
+        "flow":"data.smokelessTobacco=='Less than daily'",
         "value":"",
         "items":[
         
@@ -865,35 +777,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"ghutka",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Ghutka or tobacco lime, areca nut mix?",
-        "flow":"data.smokelessTobacco=='Daily' || data.smokelessTobacco=='Less than daily'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -901,9 +786,9 @@
         {
         "name":"freqGhutkaDay",
         "type":"text",
-        "valdn":"between[1:40],required",
+        "valdn":"between[0:40],required",
         "label":"Frequency of ghutka or tobacco lime, areca nut mix (Nos.)/Day",
-        "flow":"data.ghutka=='Yes' && data.smokelessTobacco=='Daily'",
+        "flow":"data.smokelessTobacco=='Daily'",
         "value":"",
         "items":[
         
@@ -917,7 +802,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -925,9 +811,9 @@
         {
         "name":"freqGhutkaWeek",
         "type":"text",
-        "valdn":"between[1:200],required",
+        "valdn":"between[0:200],required",
         "label":"Frequency of ghutka or tobacco lime, areca nut mix (Nos.)/Week",
-        "flow":"data.ghutka=='Yes' && data.smokelessTobacco=='Less than daily'",
+        "flow":"data.smokelessTobacco=='Less than daily'",
         "value":"",
         "items":[
         
@@ -941,35 +827,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"oralTobacco",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Oral tobacco use (as snuff, misri, qul, gudaku)?",
-        "flow":"data.smokelessTobacco=='Daily' || data.smokelessTobacco=='Less than daily'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -977,9 +836,9 @@
         {
         "name":"freqOralTobaccoDay",
         "type":"text",
-        "valdn":"between[1:40],required",
+        "valdn":"between[0:40],required",
         "label":"Frequency of oral tobacco use (as snuff, misri, qul, gudaku)? (Nos.)/Day",
-        "flow":"data.oralTobacco=='Yes' && data.smokelessTobacco=='Daily'",
+        "flow":"data.smokelessTobacco=='Daily'",
         "value":"",
         "items":[
         
@@ -993,7 +852,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1001,9 +861,9 @@
         {
         "name":"freqOralTobaccoWeek",
         "type":"text",
-        "valdn":"between[1:200],required",
+        "valdn":"between[0:200],required",
         "label":"Frequency of oral tobacco use (as snuff, misri, qul, gudaku)? (Nos.)/Week",
-        "flow":"data.oralTobacco=='Yes' && data.smokelessTobacco=='Less than daily'",
+        "flow":"data.smokelessTobacco=='Less than daily'",
         "value":"",
         "items":[
         
@@ -1017,35 +877,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"panmasalaBetelquid",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Pan-masala and betel quid without tobacco?",
-        "flow":"data.smokelessTobacco=='Less than daily' || data.smokelessTobacco=='Daily'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -1053,9 +886,9 @@
         {
         "name":"freqPanmasalaBetelquidDay",
         "type":"text",
-        "valdn":"between[1:40],required",
+        "valdn":"between[0:40],required",
         "label":"Frequency of pan-masala and betel quid without tobacco?(Nos.)/Day",
-        "flow":"data.panmasalaBetelquid=='Yes' && data.smokelessTobacco=='Daily'",
+        "flow":"data.smokelessTobacco=='Daily'",
         "value":"",
         "items":[
         
@@ -1069,7 +902,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1077,9 +911,9 @@
         {
         "name":"freqPanmasalaBetelquidWeek",
         "type":"text",
-        "valdn":"between[1:200],required",
+        "valdn":"between[0:200],required",
         "label":"Frequency of pan-masala and betel quid without tobacco?(Nos.)/Week",
-        "flow":"data.panmasalaBetelquid=='Yes' && data.smokelessTobacco=='Less than daily'",
+        "flow":"data.smokelessTobacco=='Less than daily'",
         "value":"",
         "items":[
         
@@ -1093,35 +927,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"nasalSnuff",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Nasal use of snuff?",
-        "flow":"data.smokelessTobacco=='Daily' || data.smokelessTobacco=='Less than daily'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -1129,9 +936,9 @@
         {
         "name":"freqNasalSnuffDay",
         "type":"text",
-        "valdn":"between[1:40],required",
+        "valdn":"between[0:40],required",
         "label":"Frequency of nasal use of snuff?(Nos.)/Day",
-        "flow":"data.nasalSnuff=='Yes' && data.smokelessTobacco=='Daily'",
+        "flow":"data.smokelessTobacco=='Daily'",
         "value":"",
         "items":[
         
@@ -1145,7 +952,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1153,9 +961,9 @@
         {
         "name":"freqNasalSnuffWeek",
         "type":"text",
-        "valdn":"between[1:200],required",
+        "valdn":"between[0:200],required",
         "label":"Frequency of nasal use of snuff?(Nos.)/Week",
-        "flow":"data.nasalSnuff=='Yes' && data.smokelessTobacco=='Less than daily'",
+        "flow":"data.smokelessTobacco=='Less than daily'",
         "value":"",
         "items":[
         
@@ -1169,35 +977,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"otherSmokelessTobacco",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Any other smokeless tobacco product used?",
-        "flow":"data.smokelessTobacco=='Daily' || data.smokelessTobacco=='Less than daily'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -1205,9 +986,9 @@
         {
         "name":"freqOtherSmokelessTobaccoDay",
         "type":"text",
-        "valdn":"between[1:40],required",
+        "valdn":"between[0:40],required",
         "label":"Frequency of other smokeless tobacco product used?(Nos.)/Day",
-        "flow":"data.otherSmokelessTobacco=='Yes' && data.smokelessTobacco=='Daily'",
+        "flow":"data.smokelessTobacco=='Daily'",
         "value":"",
         "items":[
         
@@ -1221,7 +1002,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1229,9 +1011,9 @@
         {
         "name":"freqOtherSmokelessTobaccoWeek",
         "type":"text",
-        "valdn":"between[1:200],required",
+        "valdn":"between[0:200],required",
         "label":"Frequency of other smokeless tobacco product used?(Nos.)/Week",
-        "flow":"data.otherSmokelessTobacco=='Yes' && data.smokelessTobacco=='Less than daily'",
+        "flow":"data.smokelessTobacco=='Less than daily'",
         "value":"",
         "items":[
         
@@ -1245,7 +1027,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1269,7 +1052,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1299,16 +1083,17 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"ageStartSmokelessTobacco",
+        "name":"ageStartSmokelessTobaccoPast",
         "type":"text",
-        "valdn":"between[1:69],required",
-        "label":"How long ago did you first start using smokeless tobacco daily? (In completed years)",
+        "valdn":"between[10:69],required",
+        "label":"What age did you first start using smokeless tobacco? (In completed years)",
         "flow":"data.smokelessTobacco=='Not at all' && data.smokelessTobaccoPast=='Yes'",
         "value":"",
         "items":[
@@ -1326,18 +1111,19 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"ageStopSmokelessTobacco",
+        "name":"ageStopSmokelessTobaccoPast",
         "type":"text",
-        "valdn":"between[1:{data.ageStartSmokelessTobacco}],required",
-        "label":"How long has it been since you have stopped using smokeless tobacco? (In completed years)",
+        "valdn":"between[10:{data.ageStartSmokelessTobacco}],required",
+        "label":"How long ago were you stopped using smokeless tobacco? (In completed years)",
         "flow":"data.smokelessTobacco=='Not at all' && data.smokelessTobaccoPast=='Yes'",
         "value":"",
         "items":[
@@ -1355,9 +1141,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1393,7 +1180,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1417,7 +1205,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1441,7 +1230,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1471,16 +1261,17 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"ageStartDrinking",
+        "name":"ageStartDrinkingCurrent",
         "type":"text",
-        "valdn":"between[1:69],required",
-        "label":"How long ago did you first start drinking? (In completed years)",
+        "valdn":"between[10:69],required",
+        "label":"What age did you first start drinking? (In completed years)",
         "flow":"data.consumeAlcohol=='Yes'",
         "value":"",
         "items":[
@@ -1498,9 +1289,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1524,35 +1316,8 @@
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"countryliquor",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Country Liquor/arrack/sugar cane",
-        "flow":"data.consumeAlcohol=='Yes'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -1560,40 +1325,12 @@
         {
         "name":"freqCountryliquor",
         "type":"text",
-        "valdn":"between[1:7],required",
+        "valdn":"between[0:7],required",
         "label":"Frequency of Country Liquor/arrack/sugar cane (No of Days per week)",
-        "flow":"data.consumeAlcohol=='Yes' && data.countryliquor=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"sprit",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Spirit (Rum, Whisky, Gin, Vodka, etc.):",
         "flow":"data.consumeAlcohol=='Yes'",
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
         ],
         "image":"",
         "lookup":{
@@ -1604,7 +1341,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1612,40 +1350,12 @@
         {
         "name":"freqSprit",
         "type":"text",
-        "valdn":"between[1:7],required",
-        "label":"Frequency of Spirits (No of Days per week)",
-        "flow":"data.consumeAlcohol=='Yes' && data.sprit=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"beer",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Beer",
+        "valdn":"between[0:7],required",
+        "label":"Frequency of Spirit (Rum, Whisky, Gin, Vodka, etc.) (No of Days per week)",
         "flow":"data.consumeAlcohol=='Yes'",
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
         ],
         "image":"",
         "lookup":{
@@ -1656,7 +1366,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1664,40 +1375,12 @@
         {
         "name":"freqBeer",
         "type":"text",
-        "valdn":"between[1:7],required",
+        "valdn":"between[0:7],required",
         "label":"Frequency of Beer (No of Days per week)",
-        "flow":"data.consumeAlcohol=='Yes' && data.beer=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"wine",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Wine",
         "flow":"data.consumeAlcohol=='Yes'",
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
         ],
         "image":"",
         "lookup":{
@@ -1708,7 +1391,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1716,9 +1400,9 @@
         {
         "name":"freqWine",
         "type":"text",
-        "valdn":"between[1:7],required",
+        "valdn":"between[0:7],required",
         "label":"Frequency of Wine (No of Days per week)",
-        "flow":"data.consumeAlcohol=='Yes' && data.wine=='Yes'",
+        "flow":"data.consumeAlcohol=='Yes'",
         "value":"",
         "items":[
         
@@ -1732,7 +1416,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1756,7 +1441,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1786,16 +1472,17 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"ageStartAlcohol",
+        "name":"ageStartAlcoholPast",
         "type":"text",
-        "valdn":"between[1:69],required",
-        "label":"How long ago did you first start drinking daily? (In completed years)",
+        "valdn":"between[10:69],required",
+        "label":"What age did you first start drinking? (In completed years)",
         "flow":"data.consumeAlcohol=='No' && data.alcoholPast=='Yes'",
         "value":"",
         "items":[
@@ -1813,18 +1500,19 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"ageStopAlcohol",
+        "name":"ageStopAlcoholPast",
         "type":"text",
-        "valdn":"between[1:{data.ageStartAlcohol}],required",
-        "label":"How long has it been since you stopped drinking? (In completed years)",
+        "valdn":"between[10:{data.ageStartAlcohol}],required",
+        "label":"How long ago were you stopped drinking? (In completed years)",
         "flow":"data.consumeAlcohol=='No' && data.alcoholPast=='Yes'",
         "value":"",
         "items":[
@@ -1842,9 +1530,10 @@
             "entity":"member",
             "field":"age",
             "ref":"memberId",
-            "condition":"max[{value}],required"
+            "condition":"between[10:{value}],required"
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1880,7 +1569,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1908,7 +1598,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1942,7 +1633,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1950,7 +1642,7 @@
         {
         "name":"freqDrinkHusband",
         "type":"text",
-        "valdn":"between[1:7],required",
+        "valdn":"between[0:7],required",
         "label":"No of days he drinks in a week",
         "flow":"data.drinkStatusHusband!='Does not drink at all'",
         "value":"",
@@ -1970,7 +1662,8 @@
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 
