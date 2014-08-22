@@ -5,6 +5,7 @@ angular.module('appService', ['toaster'])
 
 
             return $http.get('api/data/cleanup')
+
                 .success(function () {
                     toaster.pop('success', '', 'Cleaned up Successfully')
                 })

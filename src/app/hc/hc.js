@@ -1,4 +1,4 @@
-angular.module('myApp.hc', ['ui.router', 'routeConfigHandler', 'hcRoutes'])
+angular.module('hc', ['ui.router', 'routeConfigHandler', 'hcRoutes'])
     .config(function ($stateProvider, hcRoutes, RouteConfigHandler) {
 
         $stateProvider.state(hcRoutes.name, {

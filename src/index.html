@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp" ng-controller="AppController">
+<html ng-app="myApp" ng-controller="AppCtrl as AppCtrl">
 <head>
     <title ng-bind="pageTitle"></title>
 
@@ -18,7 +18,7 @@
 <toaster-container toaster-options="{'time-out': 4000}"></toaster-container>
 
 <!-- Menu division -->
-<div ng-include="'menu/menu-static.tpl.html'" access-level="accessLevels.user" ng-controller="NavCtrl"></div>
+<div ng-include="'menu/menu-static.tpl.html'" access-level="accessLevels.user" ng-controller="NavCtrl as NavCtrl"></div>
 
 <!-- Div for loading partials -->
 <div class="container-fluid">

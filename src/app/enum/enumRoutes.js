@@ -71,6 +71,12 @@ angular.module('enumRoutes', [])
                         title: 'Basic Information'
                     },
                     {
+                        name: 'respondent',
+                        url: '/respondent',
+                        tpl: 'tpls/surveyForm.html',
+                        title: 'Respondent'
+                    },
+                    {
                         name: 'member',
                         url: '/member',
                         tpl: 'tpls/dataGrid.html',
@@ -84,34 +90,15 @@ angular.module('enumRoutes', [])
                         title: 'Common Qs'
                     },
                     {
-                        name: 'foodItems',
-                        url: '/foodItems',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'Food Items'
-                    },
-                    {
-                        name: 'hospInf',
-                        url: '/hospInf',
-                        tpl: 'enum/hospInf.html',
-                        title: 'Hospitalization Inf'
-                    },
-                    {
-                        name: 'hosp',
-                        url: '/hosp',
-                        tpl: 'enum/hosp.html',
-                        title: 'Hospitalization',
-                        addNew: true
-                    },
-                    {
                         name: 'deathInf',
                         url: '/deathInf',
-                        tpl: 'enum/deathInf.html',
+                        tpl: 'tpls/surveyForm.html',
                         title: 'Death Inf'
                     },
                     {
                         name: 'death',
                         url: '/death',
-                        tpl: 'enum/death.html',
+                        tpl: 'tpls/dataGrid.html',
                         title: 'Deaths',
                         addNew: true
                     }
@@ -139,22 +126,6 @@ angular.module('enumRoutes', [])
                 tpl: 'tpls/pageDetail.html',
                 title: '',
                 prevState: {name: 'enum.householdDetail.member', title: 'Members'},
-                children: [
-                    {
-                        name: 'basicInf',
-                        url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'Basic Inf'
-                    }
-                ]
-
-            },
-            {
-                name: 'hospDetail',
-                url: '/area/:areaId/house/:houseId/household/:householdId/hosp/:memberId',
-                tpl: 'tpls/pageDetail.html',
-                title: '',
-                prevState: {name: 'enum.householdDetail.hosp', title: 'Hospitalization'},
                 children: [
                     {
                         name: 'basicInf',

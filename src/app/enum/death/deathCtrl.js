@@ -1,5 +1,5 @@
 angular.module('death', ['cgGrid', 'ui.router'])
-    .controller('deathCtrl', function ($scope, $state, $rootScope, GridFactory) {
+    .controller('DeathCtrl', function ($scope, $state, $rootScope, GridFactory) {
 
         $scope.canAddMore = true
 

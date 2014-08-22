@@ -2,7 +2,7 @@
  * cgForm
  * 
 
- * Version: 0.1.0 - 2014-06-27
+ * Version: 0.1.0 - 2014-08-20
  * License: MIT
  */
 angular.module('cgForm', [
@@ -14,13 +14,14 @@ angular.module('cgForm', [
     'cgForm.ngEnter',
     'cgForm.myFocus',
     'cgForm.formElement',
-    'cgForm.formConfig',
     'cgForm.lodash',
+    'cgForm.formConfig',
     'cgForm.formService',
     'cgForm.schemaFactory',
     'cgForm.joelpurra',
+    'cgForm.timelog',
+    'cgForm.schemaResolver',
     'cgForm.ffqForm',
-    'cgForm.plusAsTab',
     'cgForm.standardForm',
     'cgForm.surveyForm'
 ]);
@@ -29,7 +30,6 @@ angular.module('cgForm.tpls', [
     'template/formElement/control-group-heading.html',
     'template/formElement/control-group.html',
     'template/formElement/dropdown.html',
-    'template/formElement/duration.html',
     'template/formElement/gps.html',
     'template/formElement/hidden.html',
     'template/formElement/lookup.html',
@@ -37,8 +37,10 @@ angular.module('cgForm.tpls', [
     'template/formElement/radio-inline.html',
     'template/formElement/radio.html',
     'template/formElement/readonly.html',
+    'template/formElement/select_text.html',
     'template/formElement/suggest.html',
     'template/formElement/text.html',
+    'template/formElement/text_select.html',
     'template/formElement/textarea.html',
     'template/ffqForm/ffqForm.html',
     'template/standardForm/standardForm.html',
@@ -47,64 +49,59 @@ angular.module('cgForm.tpls', [
 angular.module('cgForm.templateFactory', []).factory('TemplateFactory', [
     '$http',
     '$templateCache',
-    function ($http, $templateCache) {
-        return {
-            get: function (template) {
-                return $http.get('template/formElement/' + template + '.html', { cache: $templateCache });
-            }
-        };
+    function TemplateFactory($http, $templateCache) {
+        function getTemplate(templateName) {
+            var template = 'template/formElement/' + templateName + '.html';
+            return $http.get(template, { cache: $templateCache });
+        }
+        return { get: getTemplate };
     }
 ]);
 angular.module('cgForm.initFocus', []).directive('initFocus', [
     '$timeout',
     function ($timeout) {
-        return {
-            link: function (scope, elm, attrs) {
-                if (attrs.initFocus == 'false') {
-                    return false;
-                }
-                $timeout(function () {
-                    elm.focus();
-                }, 0);
+        function postLink(scope, elm, attrs) {
+            if (attrs.initFocus === 'false')
+                return;
+            function elmFocus() {
+                elm.focus();
             }
+            $timeout(elmFocus, 0);
+        }
+        return {
+            restrict: 'A',
+            link: postLink
         };
     }
 ]);
-angular.module('cgForm.jQuery', []).factory('jQuery', [
-    '$window',
-    function ($window) {
-        if (!$window.jQuery) {
-            throw new Error('Lodash library not available');
-        }
-        return $window.jQuery;
-    }
-]);
+;
+angular.module('cgForm.jQuery', []).constant('jQuery', window.jQuery);
 angular.module('cgForm.scrollTop', ['cgForm.jQuery']).directive('scrollTop', [
     '$timeout',
     'jQuery',
     function ($timeout, jQuery) {
-        return {
-            link: function (scope, elm, attrs) {
-                if (attrs.scrollTop == 'false') {
-                    return false;
-                }
-                /* Scroll to the newly added element */
-                $timeout(function () {
-                    jQuery('body, html').animate({ scrollTop: jQuery(elm).offset().top }, 100);
-                }, 0);
+        function postLink(scope, elm, attrs) {
+            if (attrs.scrollTop == 'false')
+                return false;
+            function scrollTop() {
+                jQuery('body, html').animate({ scrollTop: jQuery(elm).offset().top }, 100);
             }
-        };
+            /* Scroll to the newly added element */
+            $timeout(scrollTop, 0);
+        }
+        return { link: postLink };
     }
 ]);
 angular.module('cgForm.ngEnter', []).directive('ngEnter', function () {
+    function postLink(scope, elem, attrs) {
+        elem.bind('keypress', function (e) {
+            if (e.charCode === 13 && !e.shiftKey)
+                scope.$apply(attrs.ngEnter);
+        });
+    }
     return {
-        link: function postLink(scope, elem, attrs) {
-            elem.bind('keypress', function (e) {
-                if (e.charCode === 13 && !e.shiftKey) {
-                    scope.$apply(attrs.ngEnter);
-                }
-            });
-        }
+        restrict: 'A',
+        link: postLink
     };
 });
 angular.module('cgForm.myFocus', []).directive('myFocus', function () {
@@ -128,68 +125,48 @@ angular.module('cgForm.formElement', [
         '$templateCache',
         'TemplateFactory',
         function ($http, $compile, $templateCache, TemplateFactory) {
+            function postLink(scope, element, attrs) {
+                /* Evaluate data supplied in attrs */
+                scope.config = scope.$eval(attrs.config);
+                attrs.$observe('config', function () {
+                    scope.config = scope.$eval(attrs.config);
+                });
+                /* Create a templateUrl from config.type */
+                var isHeading = scope.config.type === 'heading';
+                var controlGroup = isHeading ? 'control-group-heading' : 'control-group';
+                /* Get the control group template first and insert the input widget template */
+                TemplateFactory.get(controlGroup).then(function (response) {
+                    element.html(response.data);
+                    $compile(element)(scope);
+                    if (isHeading)
+                        return;
+                    TemplateFactory.get(scope.config.type).then(function (response) {
+                        element.find('div.controls').html(response.data);
+                        $compile(element)(scope);
+                    });
+                });
+            }
             return {
                 replace: true,
                 restrict: 'E',
                 template: '<div></div>',
                 scope: true,
-                link: function postLink(scope, element, attrs) {
-                    /* Evaluate data supplied in attrs */
-                    scope.config = scope.$eval(attrs.config);
-                    attrs.$observe('config', function () {
-                        scope.config = scope.$eval(attrs.config);
-                    });
-                    /* Create a templateUrl from config.type */
-                    var isHeading = scope.config.type === 'heading';
-                    var controlGroup = isHeading ? 'control-group-heading' : 'control-group';
-                    /* Get the control group template first and insert the input widget template */
-                    TemplateFactory.get(controlGroup).then(function (response) {
-                        element.html(response.data);
-                        $compile(element)(scope);
-                        if (isHeading) {
-                            return;
-                        }
-                        TemplateFactory.get(scope.config.type).then(function (response) {
-                            element.find('div.controls').html(response.data);
-                            $compile(element)(scope);
-                        });
-                    });
-                }
+                link: postLink
             };
         }
     ]);
-angular.module('cgForm.formConfig', []).factory('FormConfig', [
-    '$rootScope',
-    function ($rootScope) {
-        return {
-            getConfig: function () {
-                if (angular.isUndefined($rootScope.serviceBaseUrl)) {
-                    throw new Error('serviceBaseUrl  not found in $rootScope');
-                }
-                var context = $rootScope.serviceBaseUrl;
-                //Update Date Prototypes to have today and timeNow
-                return {
-                    submitUrl: context + 'api/data/dataStoreService/',
-                    resourceBaseUrl: context + 'api/data/dataAccessService/',
-                    lookupBaseUrl: context + 'api/LookupService/',
-                    crossFlowBaseUrl: context + 'api/CrossFlowService',
-                    crossCheckBaseUrl: context + 'api/CrossCheckService',
-                    submitLabel: 'Save',
-                    style: 'well'
-                };
-            }
-        };
-    }
-]);
-angular.module('cgForm.lodash', []).factory('_', [
-    '$window',
-    function ($window) {
-        if (!$window._) {
-            throw new Error('Lodash library not available');
-        }
-        return $window._;
-    }
-]);
+angular.module('cgForm.lodash', []).constant('_', window._);
+angular.module('cgForm.formConfig', ['cgForm.lodash']).factory('FormConfig', function () {
+    return {
+        submitUrl: 'api/data/dataStoreService/',
+        resourceBaseUrl: 'api/data/dataAccessService/',
+        lookupBaseUrl: 'api/LookupService/',
+        crossFlowBaseUrl: 'api/CrossFlowService',
+        crossCheckBaseUrl: 'api/CrossCheckService',
+        submitLabel: 'Save',
+        style: 'well'
+    };
+});
 angular.module('cgForm.formService', [
         'cgForm.formConfig',
         'cgForm.lodash',
@@ -200,57 +177,108 @@ angular.module('cgForm.formService', [
         '$location',
         '_',
         '$stateParams',
-        function (FormConfig, $http, $location, _, $stateParams) {
+        '$log',
+        function (FormConfig, $http, $location, _, $stateParams, $log) {
+            function postData(url, data) {
+                return $http.post(url, data);
+            }
+            function getData(url) {
+                return $http.get(url);
+            }
+            function getResource(entity) {
+                var params = $location.url().split('/');
+                var entityId = _.last(params);
+                var dataUrl = FormConfig.resourceBaseUrl + entity + '/' + entityId;
+                return getData(dataUrl);
+            }
+            function postResource(data) {
+                return postData(FormConfig.submitUrl, data);
+            }
+            function getLookupData(reqData) {
+                reqData.refId = $stateParams[reqData.ref];
+                return postData(FormConfig.lookupBaseUrl, reqData);
+            }
+            function getCrossCheckData(reqData) {
+                reqData.refId = $stateParams[reqData.ref];
+                return postData(FormConfig.crossCheckBaseUrl, reqData);
+            }
+            function checkCrossFlow(crossFlows) {
+                angular.forEach(crossFlows, function (crossFlow) {
+                    crossFlow.refId = $stateParams[crossFlow.ref];
+                });
+                return postData(FormConfig.crossFlowBaseUrl, crossFlows);
+            }
             return {
-                getResource: function (entity) {
-                    var params = $location.url().split('/');
-                    var entityId = _.last(params);
-                    var dataUrl = FormConfig.getConfig().resourceBaseUrl + entity + '/' + entityId;
-                    return $http.get(dataUrl);
-                },
-                postResource: function (data) {
-                    return $http.post(FormConfig.getConfig().submitUrl, data);
-                },
-                getLookupData: function (reqData) {
-                    reqData.refId = $stateParams[reqData.ref];
-                    return $http.post(FormConfig.getConfig().lookupBaseUrl, reqData);
-                },
-                getCrossCheckData: function (reqData) {
-                    reqData.refId = $stateParams[reqData.ref];
-                    return $http.post(FormConfig.getConfig().crossCheckBaseUrl, reqData);
-                },
-                checkCrossFlow: function (crossFlows) {
-                    angular.forEach(crossFlows, function (crossFlow) {
-                        crossFlow.refId = $stateParams[crossFlow.ref];
-                    });
-                    return $http.post(FormConfig.getConfig().crossFlowBaseUrl, crossFlows);
-                }
+                getResource: getResource,
+                postResource: postResource,
+                getLookupData: getLookupData,
+                getCrossCheckData: getCrossCheckData,
+                checkCrossFlow: checkCrossFlow
             };
         }
     ]);
-angular.module('cgForm.schemaFactory', []).factory('SchemaFactory', function () {
-    return {
-        get: function (schemaName) {
-            if (!this[schemaName]) {
-                throw new Error('Schema Not found for ' + schemaName);
-            }
+angular.module('cgForm.schemaFactory', ['cgForm.lodash']).factory('SchemaFactory', [
+    '_',
+    function (_) {
+        function getSchema(schemaName) {
+            if (_.isUndefined(this[schemaName]))
+                throw 'Schema Not found for ' + schemaName;
             return this[schemaName];
-        },
-        put: function (schemaName, schemaObject) {
+        }
+        function putSchema(schemaName, schemaObject) {
             this[schemaName] = schemaObject;
         }
-    };
-});
+        return {
+            get: getSchema,
+            put: putSchema
+        };
+    }
+]);
 angular.module('cgForm.joelpurra', []).factory('JoelPurra', [
     '$window',
     function ($window) {
-        if (!$window.JoelPurra) {
-            throw new Error('plusAsTab library not available');
-        }
-        $window.JoelPurra.PlusAsTab.setOptions({ key: 13 });
-        return $window.JoelPurra;
+        var JoelPurra = $window.JoelPurra;
+        JoelPurra.PlusAsTab.setOptions({ key: 13 });
+        return JoelPurra;
     }
 ]);
+angular.module('cgForm.timelog', []).factory('TimeLogFactory', function () {
+    function twoDigits(d) {
+        if (0 <= d && d < 10)
+            return '0' + d.toString();
+        if (-10 < d && d < 0)
+            return '-0' + (-1 * d).toString();
+        return d.toString();
+    }
+    Date.prototype.toMysqlFormat = function () {
+        return this.getUTCFullYear() + '-' + twoDigits(1 + this.getUTCMonth()) + '-' + twoDigits(this.getUTCDate()) + ' ' + twoDigits(this.getUTCHours() + 5) + ':' + twoDigits(this.getUTCMinutes() + 30) + ':' + twoDigits(this.getUTCSeconds());
+    };
+    return {
+        getCurrentTime: function () {
+            return new Date().toMysqlFormat();
+        }
+    };
+});
+angular.module('cgForm.schemaResolver', [
+        'cgForm.schemaFactory',
+        'cgForm.lodash',
+        'ui.router',
+        'cgForm.formConfig'
+    ]).factory('SchemaResolver', [
+        'SchemaFactory',
+        '_',
+        '$state',
+        'FormConfig',
+        function (SchemaFactory, _, $state, FormConfig) {
+            function resolveSchema(scope) {
+                /* Load Json Schema for current state if not supplied through attributes */
+                var schema = _.clone(scope.options) || _.clone(SchemaFactory.get($state.current.name));
+                /* Extend the current schema with default config */
+                return _.extend(schema, FormConfig);
+            }
+            return { resolve: resolveSchema };
+        }
+    ]);
 angular.module('cgForm.ffqForm', [
         'cgForm.formElement',
         'cgForm.formConfig',
@@ -258,7 +286,9 @@ angular.module('cgForm.ffqForm', [
         'cgForm.lodash',
         'cgForm.schemaFactory',
         'ui.router',
-        'cgForm.joelpurra'
+        'cgForm.joelpurra',
+        'cgForm.timelog',
+        'cgForm.schemaResolver'
     ]).directive('ffqForm', [
         'FormConfig',
         '_',
@@ -267,89 +297,63 @@ angular.module('cgForm.ffqForm', [
         'FormService',
         '$rootScope',
         'JoelPurra',
-        function (FormConfig, _, SchemaFactory, $state, FormService, $rootScope, JoelPurra) {
+        'TimeLogFactory',
+        'SchemaResolver',
+        function (FormConfig, _, SchemaFactory, $state, FormService, $rootScope, JoelPurra, TimeLogFactory, SchemaResolver) {
+            function postLink(scope, element) {
+                $rootScope.timestamp = TimeLogFactory.getCurrentTime();
+                /* Initialize form data */
+                scope.data = {};
+                /* Load Json Schema for current state if not supplied through attributes */
+                scope.schema = SchemaResolver.resolve(scope);
+                /* Evaluate information in hidden fields */
+                _.each(scope.schema.properties, function (elem) {
+                    if (elem.name !== 'datastore' && elem.type === 'hidden')
+                        elem.value = $rootScope.$eval(elem.value);
+                    if (elem.type === 'hidden')
+                        scope.data[elem.name] = elem.value;
+                });
+                /* Initialize checkbox element's data with empty objects in scope.data */
+                var multipleSelectElements = _.filter(scope.schema.properties, { type: 'checkbox' });
+                _.each(multipleSelectElements, function (item) {
+                    scope.data[item.name] = {};
+                });
+                /* Store datastore value in scope to use in controller */
+                scope.data.datastore = _.find(scope.schema.properties, { name: 'datastore' }).value;
+                /* Create a separate collection for hidden elements  */
+                scope.schema.hiddenElements = _.filter(scope.schema.properties, { type: 'hidden' });
+                /* Remove hidden items from schema */
+                _.remove(scope.schema.properties, { type: 'hidden' });
+                /* Bind Enter as Tab and Validation to form */
+                element.plusAsTab();
+                element.bValidator();
+            }
+            function controllerFn($scope, $element, $state, $stateParams) {
+                $scope.onSubmit = function (data) {
+                    /* Validate form before submit */
+                    if (isValidForm())
+                        postData(data);
+                };
+                function isValidForm() {
+                    return $element.data('bValidator').validate();
+                }
+                /* Posts form data to Sever */
+                function postData(data) {
+                    FormService.postResource().then(function () {
+                        $state.go($scope.schema.onSave, $stateParams);
+                    });
+                }
+            }
             return {
                 templateUrl: 'template/ffqForm/ffqForm.html',
                 restrict: 'E',
                 replace: true,
                 scope: { options: ' = ' },
-                link: function postLink(scope, element) {
-                    Date.prototype.today = function () {
-                        return this.getFullYear() + '-' + (this.getMonth() + 1 < 10 ? '0' : '') + (this.getMonth() + 1) + '-' + (this.getDate() < 10 ? '0' : '') + this.getDate();
-                    };
-                    Date.prototype.timeNow = function () {
-                        return (this.getHours() < 10 ? '0' : '') + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + (this.getSeconds() < 10 ? '0' : '') + this.getSeconds();
-                    };
-                    var newDate = new Date();
-                    $rootScope.timestamp = newDate.today() + ' ' + newDate.timeNow();
-                    /* Load Json Schema for current state if not supplied through attributes */
-                    scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
-                    /* Initialize form data */
-                    scope.data = {};
-                    /* Extend the current schema with default config */
-                    scope.schema = _.extend(scope.schema, FormConfig.getConfig());
-                    /* Evaluate information in hidden fields */
-                    angular.forEach(scope.schema.properties, function (elem) {
-                        if (elem.name !== 'datastore' && elem.type === 'hidden') {
-                            elem.value = $rootScope.$eval(elem.value);
-                        }
-                        if (elem.type === 'hidden') {
-                            scope.data[elem.name] = elem.value;
-                        }
-                    });
-                    /* Initialize checkbox element's data with empty objects in scope.data */
-                    var multipleSelectElements = _.filter(scope.schema.properties, { type: 'checkbox' });
-                    _.each(multipleSelectElements, function (item) {
-                        scope.data[item.name] = {};
-                    });
-                    /* Store datastore value in scope to use in controller */
-                    scope.data.datastore = _.find(scope.schema.properties, { name: 'datastore' }).value;
-                    /* Create a separate collection for hidden elements  */
-                    scope.schema.hiddenElements = _.filter(scope.schema.properties, { type: 'hidden' });
-                    /* Remove hidden items from schema */
-                    _.remove(scope.schema.properties, { type: 'hidden' });
-                    /* Bind Enter as Tab and Validation to form */
-                    element.plusAsTab();
-                    element.bValidator();
-                },
-                controller: [
-                    '$scope',
-                    '$element',
-                    '$state',
-                    '$stateParams',
-                    function ($scope, $element, $state, $stateParams) {
-                        $scope.onSubmit = function (data) {
-                            /* Validate form before submit */
-                            if (!$element.data('bValidator').validate()) {
-                                return;
-                            }
-                            postData(data);
-                        };
-                        /* Posts form data to Sever */
-                        function postData(data) {
-                            var done = function () {
-                                $state.go($scope.schema.onSave, $stateParams);
-                            };
-                            var fail = function () {
-                                throw new Error('Failed to post data');
-                            };
-                            FormService.postResource(data).then(done, fail);
-                        }
-                    }
-                ]
+                link: postLink,
+                controller: controllerFn
             };
         }
     ]);
-angular.module('cgForm.plusAsTab', []).factory('JoelPurra', [
-    '$window',
-    function ($window) {
-        if (!$window.JoelPurra) {
-            throw new Error('Plus As Tab library not available');
-        }
-        $window.JoelPurra.PlusAsTab.setOptions({ key: 13 });
-        return $window.JoelPurra;
-    }
-]);
 angular.module('cgForm.standardForm', [
         'cgForm.formElement',
         'cgForm.formConfig',
@@ -426,7 +430,7 @@ angular.module('cgForm.standardForm', [
                     /* Initialize data in  scope to save all form data*/
                     scope.data = scope.formdata || {};
                     /* Extend the current schema with default config */
-                    scope.schema = _.extend(scope.schema, FormConfig.getConfig());
+                    scope.schema = _.extend(scope.schema, FormConfig);
                     /* Load lookup data if any and add initFocus attr to every elem to disable initFocus attribute */
                     angular.forEach(scope.schema.properties, function (elem) {
                         elem.initFocus = false;
@@ -504,7 +508,8 @@ angular.module('cgForm.surveyForm', [
         'FormService',
         '$state',
         '$stateParams',
-        function ($scope, $element, FormService, $state, $stateParams) {
+        '_',
+        function ($scope, $element, FormService, $state, $stateParams, _) {
             /* Posts  data to Sever */
             function postData() {
                 var done = function () {
@@ -517,6 +522,15 @@ angular.module('cgForm.surveyForm', [
                 var fail = function () {
                     throw new Error('Failed to post data');
                 };
+                //Format muliselect values
+                angular.forEach($scope.data, function (value, key) {
+                    if (_.isObject(value)) {
+                        var selections = _.keys(value, function (val) {
+                            return val;
+                        });
+                        $scope.data[key] = selections.join(',');
+                    }
+                });
                 FormService.postResource($scope.data).then(done, fail);
             }
             /* Validate form before submit */
@@ -544,6 +558,10 @@ angular.module('cgForm.surveyForm', [
             function handleFlow() {
                 $scope.flowSeq++;
                 var nextItemInFlow = $scope.schema.properties[$scope.flowSeq];
+                if (!_.isUndefined(nextItemInFlow)) {
+                    if (nextItemInFlow.type == 'checkbox')
+                        $scope.data[nextItemInFlow.name] = {};
+                }
                 if (!nextItemInFlow) {
                     postData();
                     return;
@@ -606,14 +624,19 @@ angular.module('cgForm.surveyForm', [
                     $rootScope.timestamp = newDate.today() + ' ' + newDate.timeNow();
                     /* Load Json Schema for current state if not supplied through attributes */
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
+                    /* Prompt before form submit */
+                    scope.schema.properties.push({
+                        flow:'',
+                        type: 'heading',
+                        label: 'Section Completed. Press Enter to Continue '
+                    });
                     /* Initialize form data */
                     scope.data = {};
                     /* Merge schema with default config */
-                    scope.schema = _.extend(scope.schema, FormConfig.getConfig());
+                    scope.schema = _.extend(scope.schema, FormConfig);
                     /* Load lookup data and Cross Flow dynamic validation */
                     angular.forEach(scope.schema.properties, function (elem) {
                         if (elem.type === 'lookup') {
-                            console.log('lookup ');
                             FormService.getLookupData(elem.lookup).then(function (resp) {
                                 elem.type = 'radio';
                                 elem.items = resp.data;
@@ -661,8 +684,6 @@ angular.module('cgForm.surveyForm', [
                     angular.forEach(scope.schema.properties, function (elem) {
                         if (elem.name !== 'datastore' && elem.type === 'hidden') {
                             elem.value = $rootScope.$eval(elem.value);
-                            console.log(elem);
-                            console.log(elem.value);
                         }
                         if (elem.type === 'hidden') {
                             scope.data[elem.name] = elem.value;
@@ -718,19 +739,13 @@ angular.module('template/formElement/control-group-heading.html', []).run([
 angular.module('template/formElement/control-group.html', []).run([
     '$templateCache',
     function ($templateCache) {
-        $templateCache.put('template/formElement/control-group.html', '<div class="control-group" id="{{config.name}}-control-group" scroll-top="{{config.scrollTop}}">\n' + '    <div class="control-label">\n' + '        <label style="font-weight:bold">{{config.label}} <a  ng-if="config.help" popover="{{config.help}}" popover-trigger="mouseenter">Help</a></label>\n' + '        <div ng-if="config.image!=\'\'"><img ng-src="{{config.image}}" /></div>\n' + '    </div>\n' + '    <div class="controls" ng-click="jumpFlow(config.name)"></div>\n' + '\n' + '</div>');
+        $templateCache.put('template/formElement/control-group.html', '<div class="control-group" id="{{config.name}}-control-group" scroll-top="{{config.scrollTop}}">\n' + '    <div class="control-label">\n' + '        <label style="font-weight:bold">{{config.label}} {{config.dynamicValue}}<a  ng-if="config.help" popover="{{config.help}}" popover-trigger="mouseenter">Help</a></label>\n' + '        <div ng-if="config.image!=\'\'"><img ng-src="{{config.image}}" /></div>\n' + '    </div>\n' + '    <div class="controls" ng-click="jumpFlow(config.name)"></div>\n' + '\n' + '</div>');
     }
 ]);
 angular.module('template/formElement/dropdown.html', []).run([
     '$templateCache',
     function ($templateCache) {
         $templateCache.put('template/formElement/dropdown.html', '<select  data-bvalidator="{{config.valdn}}"\n' + '        data-bvalidator-msg="Please select an option"\n' + '        ng-model="data[config.name]"\n' + '        init-focus>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}" init-focus="{{config.initFocus}}" >{{item.text}}</option>\n' + '\n' + '</select>');
-    }
-]);
-angular.module('template/formElement/duration.html', []).run([
-    '$templateCache',
-    function ($templateCache) {
-        $templateCache.put('template/formElement/duration.html', '<input type="text"  data-bvalidator="{{config.valdn}}"\n' + '       ng-model="data[config.name+\'_value\']" init-focus="{{config.initFocus}}" />\n' + '\n' + '<select   data-bvalidator="required" data-bvalidator-msg="Please select an option"\n' + '         ng-model="data[config.name+\'_unit\']"  >\n' + '    <option value=""></option>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}">{{item.text}}</option>\n' + '</select>');
     }
 ]);
 angular.module('template/formElement/gps.html', []).run([
@@ -742,7 +757,7 @@ angular.module('template/formElement/gps.html', []).run([
 angular.module('template/formElement/hidden.html', []).run([
     '$templateCache',
     function ($templateCache) {
-        $templateCache.put('template/formElement/hidden.html', '<input type="text"  value="{{config.value}}" ng-model="data[config.name]" style="display: none;" />');
+        $templateCache.put('template/formElement/hidden.html', '<input type="text" value="{{config.value}}" ng-model="data[config.name]" style="display: none;" />');
     }
 ]);
 angular.module('template/formElement/lookup.html', []).run([
@@ -775,6 +790,12 @@ angular.module('template/formElement/readonly.html', []).run([
         $templateCache.put('template/formElement/readonly.html', '<input type="text"  ng-model="data[config.name]" readonly="readonly"/>');
     }
 ]);
+angular.module('template/formElement/select_text.html', []).run([
+    '$templateCache',
+    function ($templateCache) {
+        $templateCache.put('template/formElement/select_text.html', '<select data-bvalidator="required" data-bvalidator-msg="Please select an option"\n' + '        ng-model="data[config.name+\'_unit\']">\n' + '    <option value=""></option>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}">{{item.text}}</option>\n' + '</select>\n' + '<input type="text" data-bvalidator="{{config.valdn}}"\n' + '       ng-model="data[config.name+\'_value\']" init-focus="{{config.initFocus}}"/>\n' + '\n' + '');
+    }
+]);
 angular.module('template/formElement/suggest.html', []).run([
     '$templateCache',
     function ($templateCache) {
@@ -785,6 +806,12 @@ angular.module('template/formElement/text.html', []).run([
     '$templateCache',
     function ($templateCache) {
         $templateCache.put('template/formElement/text.html', '<input type="text"  data-bvalidator="{{config.valdn}}"\n' + '       ng-model="data[config.name]" init-focus="{{config.initFocus}}" />');
+    }
+]);
+angular.module('template/formElement/text_select.html', []).run([
+    '$templateCache',
+    function ($templateCache) {
+        $templateCache.put('template/formElement/text_select.html', '<input type="text"  data-bvalidator="{{config.valdn}}"\n' + '       ng-model="data[config.name+\'_value\']" init-focus="{{config.initFocus}}" />\n' + '\n' + '<select   data-bvalidator="required" data-bvalidator-msg="Please select an option"\n' + '         ng-model="data[config.name+\'_unit\']"  >\n' + '    <option value=""></option>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}">{{item.text}}</option>\n' + '</select>');
     }
 ]);
 angular.module('template/formElement/textarea.html', []).run([
@@ -808,6 +835,6 @@ angular.module('template/standardForm/standardForm.html', []).run([
 angular.module('template/surveyForm/surveyForm.html', []).run([
     '$templateCache',
     function ($templateCache) {
-        $templateCache.put('template/surveyForm/surveyForm.html', '<form  class="well" ng-enter="showNext()">\n' + '    <div ng-repeat="element in flow.properties">\n' + '        <form-element config="{{element}}" ></form-element>\n' + '    </div>\n' + '\n' + '    <div class="">\n' + '        <div class="control-label"><label></label></div>\n' + '\n' + '        <div class="controls">\n' + '            <a class="btn btn-small btn-primary" ng-click="showNext()">Next &#187;</a>\n' + '        </div>\n' + '\n' + '    </div>\n' + '</form>\n' + '\n' + '\n' + '\n' + '\n' + '\n' + '');
+        $templateCache.put('template/surveyForm/surveyForm.html', '<form class="well" ng-enter="showNext()">\n' + '    <div ng-repeat="element in flow.properties">\n' + '        <form-element config="{{element}}"></form-element>\n' + '    </div>\n' + '\n' + '    <div class="">\n' + '        <div class="control-label"><label></label></div>\n' + '\n' + '        <div class="controls">\n' + '            <a class="btn btn-small btn-primary" ng-click="showNext()">Next &#187;</a>\n' + '        </div>\n' + '\n' + '    </div>\n' + '</form>\n' + '\n' + '\n' + '\n' + '\n' + '\n' + '');
     }
 ]);

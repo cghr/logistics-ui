@@ -11,7 +11,7 @@ angular.module('login', ['ui.router', 'auth', 'toaster', 'angular-md5'])
             access: access.anon
         })
     })
-    .controller('LoginCtrl', function ($rootScope, $location, $window, Auth, toaster, md5) {
+    .controller('LoginCtrl', function ($scope, $rootScope, $location, $window, Auth, toaster, md5) {
 
         this.login = function (data) {
             var user = {username: data.username, password: md5.createHash(data.password)}

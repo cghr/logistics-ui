@@ -5,7 +5,7 @@ angular.module('dashboard', ['ui.router', 'angularCharts', 'lodash', 'chartServi
             url: '/dashboard',
             templateUrl: 'dashboard/dashboard.html',
             controller: 'dashboardCtrl',
-            controllerAs: 'vm'
+            controllerAs: 'dashboard'
         })
 
     })
@@ -25,12 +25,14 @@ angular.module('dashboard', ['ui.router', 'angularCharts', 'lodash', 'chartServi
 
         function updateDashboard() {
 
-            ChartService.getPendingDownloads().then(function () {
-                vm.pendingDownloads = ChartService.pendingDownloads
-            })
-            ChartService.getTotalProgress().then(function () {
-                vm.totalProgress = ChartService.totalProgress
-            })
+            ChartService.getPendingDownloads()
+                .then(function () {
+                    vm.pendingDownloads = ChartService.pendingDownloads
+                })
+            ChartService.getTotalProgress()
+                .then(function () {
+                    vm.totalProgress = ChartService.totalProgress
+                })
         }
 
         function getChartConfig(title) {

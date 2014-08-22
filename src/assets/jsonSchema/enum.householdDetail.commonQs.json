@@ -1,6 +1,6 @@
 {
 "schemaName":"enum.householdDetail.commonQs",
-"onSave":"enum.householdDetail.foodItems",
+"onSave":"enum.householdDetail.deathInf",
 "properties":[
 
 
@@ -10,7 +10,7 @@
         "valdn":"",
         "label":"",
         "flow":"",
-        "value":"householdCommonQs",
+        "value":"commonQs",
         "items":[
         
         ],
@@ -55,10 +55,10 @@
 
 
         {
-        "name":"roomCount",
+        "name":"rooms",
         "type":"text",
-        "valdn":"between[0:20],required",
-        "label":"How many rooms are there in your house? (including kitchen)",
+        "valdn":"between[0:95],required",
+        "label":"How many rooms are in the household?",
         "flow":"",
         "value":"",
         "items":[
@@ -80,19 +80,19 @@
 
 
         {
-        "name":"constructionType",
+        "name":"kitchen",
         "type":"radio",
         "valdn":"required",
-        "label":"What is the type of house?",
+        "label":"Do you have a separate room which is used as a kitchen?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Kuccha","value":"Kuccha"},
+            {"text":"Yes","value":"Yes"},
         
-            {"text":"Pucca","value":"Pucca"},
+            {"text":"No","value":"No"},
         
-            {"text":"Mixed","value":"Mixed"}
+            {"text":"Dont Know","value":"Dont Know"}
         
         ],
         "image":"",
@@ -111,23 +111,65 @@
 
 
         {
-        "name":"sourceDrinkingWater",
-        "type":"radio",
+        "name":"householdItems",
+        "type":"checkbox",
         "valdn":"required",
-        "label":"Where do you get drinking water from ?",
+        "label":"Which of the following does your household have:",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Shared Tap","value":"Shared Tap"},
+            {"text":"Electricity?","value":"Electricity"},
         
-            {"text":"Handpump/Hapsa","value":"Handpump/Hapsa"},
+            {"text":"A mattress?","value":"A mattress"},
         
-            {"text":"Vihir","value":"Vihir"},
+            {"text":"A pressure cooker?","value":"A pressure cooker"},
         
-            {"text":"Own Tap","value":"Own Tap"},
+            {"text":"A chair?","value":"A chair"},
         
-            {"text":"Others","value":"Others"}
+            {"text":"A cot/bed?","value":"A cot/bed"},
+        
+            {"text":"A table?","value":"A table"},
+        
+            {"text":"An electric fan?","value":"An electric fan"},
+        
+            {"text":"A radio/transistor","value":"A radio/transistor"},
+        
+            {"text":"A black & white television?","value":"A black & white television"},
+        
+            {"text":"A colour television?","value":"A colour television"},
+        
+            {"text":"A sewing machine?","value":"A sewing machine"},
+        
+            {"text":"A mobile telephone?","value":"A mobile telephone"},
+        
+            {"text":"A land line telephone?","value":"A land line telephone"},
+        
+            {"text":"Internet?","value":"Internet"},
+        
+            {"text":"A computer?","value":"A computer"},
+        
+            {"text":"A refrigerator?","value":"A refrigerator"},
+        
+            {"text":"An air conditioner/cooler?","value":"An air conditioner/cooler"},
+        
+            {"text":"A washing machine?","value":"A washing machine"},
+        
+            {"text":"A watch/clock?","value":"A watch/clock"},
+        
+            {"text":"A bicycle?","value":"A bicycle"},
+        
+            {"text":"A motorcycle/scooter?","value":"A motorcycle/scooter"},
+        
+            {"text":"An animal-drawn cart?","value":"An animal-drawn cart"},
+        
+            {"text":"A car?","value":"A car"},
+        
+            {"text":"A water pump?","value":"A water pump"},
+        
+            {"text":"A thresher?","value":"A thresher"},
+        
+            {"text":"A tractor?","value":"A tractor"}
         
         ],
         "image":"",
@@ -146,29 +188,111 @@
 
 
         {
-        "name":"cookFuel",
+        "name":"toiletType",
         "type":"radio",
         "valdn":"required",
-        "label":"What is the main cooking fuel used in your household?",
+        "label":"What kind of toilet facility do members of your household usually use?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Coal","value":"Coal"},
+            {"text":"Flush to piped sewer system","value":"Flush to piped sewer system"},
         
-            {"text":"Wood","value":"Wood"},
+            {"text":"Flush to septic tank","value":"Flush to septic tank"},
         
-            {"text":"Cowdung cakes","value":"Cowdung cakes"},
+            {"text":"Flush to pit latrine","value":"Flush to pit latrine"},
         
-            {"text":"LPG/CNG/ PNG / Biogas","value":"LPG/CNG/ PNG / Biogas"},
+            {"text":"Flush to somewhere else","value":"Flush to somewhere else"},
         
-            {"text":"Charcoal","value":"Charcoal"},
+            {"text":"Flush , Don’t know where","value":"Flush , Don’t know where"},
+        
+            {"text":"Ventilated improved system","value":"Ventilated improved system"},
+        
+            {"text":"Pit Latrine with slab","value":"Pit Latrine with slab"},
+        
+            {"text":"Pit Latrine without slab/open pit","value":"Pit Latrine without slab/open pit"},
+        
+            {"text":"Twin Pit/composting toilet ","value":"Twin Pit/composting toilet "},
+        
+            {"text":"Dry toilet ","value":"Dry toilet "},
+        
+            {"text":"No Facility /uses open space or field ","value":"No Facility /uses open space or field "},
+        
+            {"text":"Other","value":"Other"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"toiletTypeSpecify",
+        "type":"text",
+        "valdn":"",
+        "label":"Specify the type of toilet facility used.",
+        "flow":"data.toiletType=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"cookingEnergy",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What type of fuel does your household mainly use for cooking?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Electricity","value":"Electricity"},
+        
+            {"text":"LPG/Natural gas","value":"LPG/Natural gas"},
+        
+            {"text":"Biogas","value":"Biogas"},
         
             {"text":"Kerosene","value":"Kerosene"},
         
+            {"text":"Coal/Lignite","value":"Coal/Lignite"},
+        
+            {"text":"Charcoal","value":"Charcoal"},
+        
+            {"text":"Wood","value":"Wood"},
+        
+            {"text":"Straw/Shrubs/Grass","value":"Straw/Shrubs/Grass"},
+        
             {"text":"Agricultural crop waste","value":"Agricultural crop waste"},
         
-            {"text":"Electricity","value":"Electricity"}
+            {"text":"Dung cakes","value":"Dung cakes"},
+        
+            {"text":"No food cooked in household","value":"No food cooked in household"},
+        
+            {"text":"Other","value":"Other"}
         
         ],
         "image":"",
@@ -187,21 +311,44 @@
 
 
         {
-        "name":"cookingPlace",
+        "name":"cookingEnergySpecify",
+        "type":"text",
+        "valdn":"",
+        "label":"Specify the type of fuel used.",
+        "flow":"data.cookingEnergy=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"houseType",
         "type":"radio",
         "valdn":"required",
-        "label":"Where do you do most of your cooking in your household?",
+        "label":"Type of House? (By observation)",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Indoor, in the main living area","value":"Indoor, in the main living area"},
+            {"text":"Pakka","value":"Pakka"},
         
-            {"text":"Indoor, in separate area used as kitchen","value":"Indoor, in separate area used as kitchen"},
+            {"text":"Semi pakka","value":"Semi pakka"},
         
-            {"text":"Outdoor, in a shed","value":"Outdoor, in a shed"},
-        
-            {"text":"Outdoor, in the open air","value":"Outdoor, in the open air"}
+            {"text":"Kaccha","value":"Kaccha"}
         
         ],
         "image":"",
@@ -220,23 +367,41 @@
 
 
         {
-        "name":"kitchenVentilation",
+        "name":"drinkingWater",
         "type":"radio",
         "valdn":"required",
-        "label":"What kind of ventilation is there in the kitchen?",
+        "label":"What is the main source of drinking water for members of your household?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Cooking done outside","value":"Cooking done outside"},
+            {"text":"Piped into dwelling ","value":"Piped into dwelling "},
         
-            {"text":"Exhaust Fan","value":"Exhaust Fan"},
+            {"text":"Piped to Yard/Plot","value":"Piped to Yard/Plot"},
         
-            {"text":"Window","value":"Window"},
+            {"text":"Public tab/standpipe","value":"Public tab/standpipe"},
         
-            {"text":"Chimney","value":"Chimney"},
+            {"text":"Tube well or borehole","value":"Tube well or borehole"},
         
-            {"text":"No ventilation","value":"No ventilation"}
+            {"text":"Protected well","value":"Protected well"},
+        
+            {"text":"Unprotected well","value":"Unprotected well"},
+        
+            {"text":"Protected spring","value":"Protected spring"},
+        
+            {"text":"Unprotected spring","value":"Unprotected spring"},
+        
+            {"text":"Rain water","value":"Rain water"},
+        
+            {"text":"Tanker trunk","value":"Tanker trunk"},
+        
+            {"text":"Cart with small tank","value":"Cart with small tank"},
+        
+            {"text":"Surface water(River/Dam/Lake/Pond/Stream/Canal/Irrigation Channel)","value":"Surface water"},
+        
+            {"text":"Bottled water","value":"Bottled water"},
+        
+            {"text":"Other","value":"Other"}
         
         ],
         "image":"",
@@ -255,21 +420,17 @@
 
 
         {
-        "name":"cookingPerson",
-        "type":"lookup",
+        "name":"drinkingWaterSpecify",
+        "type":"text",
         "valdn":"required",
-        "label":"Who cooks in the household most of the time?",
-        "flow":"",
+        "label":"Specify the type of drinking water used.",
+        "flow":"data.drinkingWater=='Other'",
         "value":"",
         "items":[
         
         ],
         "image":"",
         "lookup":{
-        
-            "entity":"member",
-            "field":"name",
-            "ref":"householdId"
         
         },
         "crossFlow":[

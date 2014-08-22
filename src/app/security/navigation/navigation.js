@@ -1,15 +1,20 @@
 angular.module('navigation', ['auth'])
-    .controller('NavCtrl', function ($scope, $location, Auth) {
+    .controller('NavCtrl', function ($location, Auth,$rootScope) {
 
-        $scope.user = Auth.user;
-        $scope.userRoles = Auth.userRoles;
-        $scope.accessLevels = Auth.accessLevels;
+        var vm = this
+        vm.user = Auth.user;
+        vm.userRoles = Auth.userRoles;
+        vm.accessLevels = Auth.accessLevels;
 
-        $scope.logout = function () {
+        vm.logout = function () {
 
-            Auth.logout().then(done, fail)
+            Auth.logout(function () {
+                $rootScope.user = { username: '', role: vm.userRoles.public }
+                $location.path('/login')
 
-            function done() { $location.path('/login') }
-            function fail() { $rootScope.error = "Failed to logout" }
+            }, function () {
+                $rootScope.error = "Failed to logout"
+            })
+
         };
     });

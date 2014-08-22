@@ -1,4 +1,4 @@
-angular.module('sync', ['appDefaultConfig', 'ui.bootstrap', 'toaster', 'progressService'])
+angular.module('sync', [ 'ui.bootstrap', 'toaster', 'progressService'])
     .config(function ($stateProvider) {
 
         $stateProvider

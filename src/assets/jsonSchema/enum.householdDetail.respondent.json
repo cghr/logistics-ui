@@ -1,5 +1,5 @@
 {
-"schemaName":"enum.memberDetail.basicInf",
+"schemaName":"enum.householdDetail.respondent",
 "onSave":"enum.householdDetail.member",
 "properties":[
 
@@ -10,32 +10,7 @@
         "valdn":"",
         "label":"",
         "flow":"",
-        "value":"member",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"memberId",
-        "type":"hidden",
-        "valdn":"",
-        "label":"",
-        "flow":"",
-        "value":"$stateParams.memberId",
+        "value":"respondent",
         "items":[
         
         ],
@@ -80,60 +55,10 @@
 
 
         {
-        "name":"houseId",
-        "type":"hidden",
-        "valdn":"",
-        "label":"",
-        "flow":"",
-        "value":"$stateParams.houseId",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"areaId",
-        "type":"hidden",
-        "valdn":"",
-        "label":"",
-        "flow":"",
-        "value":"$stateParams.areaId",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
         "name":"name",
         "type":"text",
         "valdn":"required",
-        "label":"What is name of the next household member.",
+        "label":"What is your (the respondent's) name?",
         "flow":"",
         "value":"",
         "items":[
@@ -158,7 +83,7 @@
         "name":"sex",
         "type":"radio",
         "valdn":"required",
-        "label":"What is the sex of this household member?",
+        "label":"What is your (the respondent's) sex?",
         "flow":"",
         "value":"",
         "items":[
@@ -186,10 +111,35 @@
 
 
         {
+        "name":"age",
+        "type":"text",
+        "valdn":"between[1:99],required",
+        "label":"How old were you (the respondent) at your last birthday?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
         "name":"relationHeadF",
-        "type":"radio",
+        "type":"suggest",
         "valdn":"required",
-        "label":"What is the realtionship of this member with head of household?",
+        "label":"What is your (the respondent's) relationship to the head of household?",
         "flow":"data.sex=='Female'",
         "value":"",
         "items":[
@@ -242,9 +192,9 @@
 
         {
         "name":"relationHeadM",
-        "type":"radio",
+        "type":"suggest",
         "valdn":"required",
-        "label":"What is the realtionship of this member with head of household?",
+        "label":"What is your (the respondent's) relationship to the head of household?",
         "flow":"data.sex=='Male'",
         "value":"",
         "items":[
@@ -321,42 +271,11 @@
 
 
         {
-        "name":"age",
-        "type":"text_select",
-        "valdn":"between[1:100],required",
-        "label":"How old is the member?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Days","value":"Days"},
-        
-            {"text":"Months","value":"Months"},
-        
-            {"text":"Years","value":"Years"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
         "name":"maritalStatus",
         "type":"radio",
         "valdn":"required",
-        "label":"What is her/his current marital status ?",
-        "flow":"data.age >= 12",
+        "label":"What is your (the repondent's) current marital status ?",
+        "flow":"",
         "value":"",
         "items":[
         
@@ -396,14 +315,14 @@
         "name":"schoolingLevel",
         "type":"radio",
         "valdn":"required",
-        "label":"What is the highest standard s/he has completed?",
+        "label":"What is your (the respondent's) highest level of schooling completed?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Less than 1 year ","value":"Less than 1 year "},
+            {"text":"Less than 1 year","value":"Less than 1 year"},
         
-            {"text":"Grade completed","value":"Grade completed"}
+            {"text":"Grade 1 or more completed","value":"Grade 1 or more completed"}
         
         ],
         "image":"",
@@ -424,9 +343,9 @@
         {
         "name":"grade",
         "type":"text",
-        "valdn":"required",
-        "label":"What is the highest standard s/he has completed?",
-        "flow":"data.schoolingLevel='Grade completed'",
+        "valdn":"between[0:50],required",
+        "label":"Enter the grade completed",
+        "flow":"",
         "value":"",
         "items":[
         
@@ -450,7 +369,36 @@
         "name":"aadharCard",
         "type":"radio",
         "valdn":"required",
-        "label":"Whether s/he has an Aadhar card?",
+        "label":"Whether you (the respondent) have an Aadhar card?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"living",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you (the respondent) live with the deceased in the period leading to her/his death?",
         "flow":"",
         "value":"",
         "items":[

@@ -1,10 +1,9 @@
 angular.module('myApp')
-    .controller('AppController', function ($scope, $window, AppService) {
+    .controller('AppCtrl', function ($window, AppService) {
 
-        $scope.cleanup = function () {
+        this.cleanup = function () {
 
             var confirm = $window.confirm("Are you sure to cleanup ?")
-
             if (confirm)
                 AppService.cleanup()
         }

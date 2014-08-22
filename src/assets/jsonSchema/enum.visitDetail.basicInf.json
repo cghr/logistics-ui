@@ -63,13 +63,15 @@
         "value":"",
         "items":[
         
-            {"text":"Respondents Available","value":"Respondents Available"},
+            {"text":"Available","value":"Available"},
         
-            {"text":"Door temporarily locked","value":"Door temporarily locked"},
+            {"text":"No Household member at home or no competent respondent at home at the time of visit","value":"TempAbsent"},
         
-            {"text":"Door permanently locked","value":"Door permanently locked"},
+            {"text":"Entire household was absent for extended period (atleast for 3 days) of time","value":"PermAbsent"},
         
-            {"text":"Refused to participate","value":"Refused to participate"}
+            {"text":"Postponed","value":"Postponed"},
+        
+            {"text":"Refused","value":"Refused"}
         
         ],
         "image":"",

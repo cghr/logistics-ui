@@ -1,4 +1,4 @@
-angular.module('myApp.resamp', ['ui.router', 'routeConfigHandler', 'appRoutes'])
+angular.module('resamp', ['ui.router', 'routeConfigHandler', 'resampRoutes'])
     .config(function ($stateProvider, resampRoutes, RouteConfigHandler) {
 
         $stateProvider.state(resampRoutes.name, {

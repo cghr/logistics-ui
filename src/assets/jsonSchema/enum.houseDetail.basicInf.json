@@ -105,10 +105,60 @@
 
 
         {
-        "name":"houseNs",
+        "name":"address",
         "type":"text",
-        "valdn":"between[1:9999],required",
-        "label":"House No. (NS- No)",
+        "valdn":"required",
+        "label":"Address",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"contact",
+        "type":"text",
+        "valdn":"between[1000000000:9999999999],required",
+        "label":"Contact number",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"houseno",
+        "type":"text",
+        "valdn":"required",
+        "label":"House number",
         "flow":"",
         "value":"",
         "items":[

@@ -1,6 +1,6 @@
 {
 "schemaName":"enum.householdDetail.deathInf",
-"onSave":"",
+"onSave":"enum.householdDetail.death",
 "properties":[
 
 
@@ -55,10 +55,10 @@
 
 
         {
-        "name":"deathStatus",
+        "name":"deaths",
         "type":"radio",
         "valdn":"required",
-        "label":"Did any usually residing adult household member die since 1 January 2007 till date?",
+        "label":"Where there any deaths in the house in past [reference period] year ?",
         "flow":"",
         "value":"",
         "items":[
@@ -84,11 +84,11 @@
 
 
         {
-        "name":"deathCount",
+        "name":"deceasedCount",
         "type":"text",
-        "valdn":"between[1:20],required",
-        "label":"If yes, then how many?",
-        "flow":"data.deathStatus=='Yes'",
+        "valdn":"between[0:9],required",
+        "label":"Total deaths in household",
+        "flow":"",
         "value":"",
         "items":[
         

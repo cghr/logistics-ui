@@ -10,7 +10,7 @@
         "valdn":"",
         "label":"",
         "flow":"",
-        "value":"householdDeath",
+        "value":"death",
         "items":[
         
         ],
@@ -57,8 +57,8 @@
         {
         "name":"name",
         "type":"text",
-        "valdn":"alpha,minlength[3],required",
-        "label":"Name(s) of the deceased?",
+        "valdn":"required",
+        "label":"What was the full name of the deceased?",
         "flow":"",
         "value":"",
         "items":[
@@ -80,10 +80,139 @@
 
 
         {
+        "name":"sex",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What is the sex of the deceased?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Female","value":"Female"},
+        
+            {"text":"Male","value":"Male"},
+        
+            {"text":"Other","value":"Other"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"dob",
+        "type":"select_text",
+        "valdn":"between[1900:2014],required",
+        "label":"In what month and year was the deceased (NAME) born?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Jan","value":"Jan"},
+        
+            {"text":"Feb","value":"Feb"},
+        
+            {"text":"Mar","value":"Mar"},
+        
+            {"text":"Apr","value":"Apr"},
+        
+            {"text":"May","value":"May"},
+        
+            {"text":"Jun","value":"Jun"},
+        
+            {"text":"Jul","value":"Jul"},
+        
+            {"text":"Aug","value":"Aug"},
+        
+            {"text":"Sep","value":"Sep"},
+        
+            {"text":"Oct","value":"Oct"},
+        
+            {"text":"Nov","value":"Nov"},
+        
+            {"text":"Dec","value":"Dec"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"dod",
+        "type":"select_text",
+        "valdn":"between[2004:2014],required",
+        "label":"In what month and year did the deceased (NAME) die?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Jan","value":"Jan"},
+        
+            {"text":"Feb","value":"Feb"},
+        
+            {"text":"Mar","value":"Mar"},
+        
+            {"text":"Apr","value":"Apr"},
+        
+            {"text":"May","value":"May"},
+        
+            {"text":"Jun","value":"Jun"},
+        
+            {"text":"Jul","value":"Jul"},
+        
+            {"text":"Aug","value":"Aug"},
+        
+            {"text":"Sep","value":"Sep"},
+        
+            {"text":"Oct","value":"Oct"},
+        
+            {"text":"Nov","value":"Nov"},
+        
+            {"text":"Dec","value":"Dec"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
         "name":"age",
-        "type":"duration",
-        "valdn":"between[1:99],required",
-        "label":"Age at the time of death? (in completed years)",
+        "type":"text_select",
+        "valdn":"required",
+        "label":"How old was the deceased (NAME) at the time of death?",
         "flow":"",
         "value":"",
         "items":[
@@ -111,17 +240,23 @@
 
 
         {
-        "name":"gender",
+        "name":"religion",
         "type":"radio",
         "valdn":"required",
-        "label":"Gender of the deceased?",
+        "label":"What is the religion of the deceased?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Male","value":"Male"},
+            {"text":"Hindu","value":"Hindu"},
         
-            {"text":"Female","value":"Female"}
+            {"text":"Muslim","value":"Muslim"},
+        
+            {"text":"Buddhist","value":"Buddhist"},
+        
+            {"text":"Other religion","value":"Other religion"},
+        
+            {"text":"Don’t know","value":"Don’t know"}
         
         ],
         "image":"",
@@ -140,23 +275,821 @@
 
 
         {
-        "name":"reasonWomenDeath",
-        "type":"radio",
-        "valdn":"required",
-        "label":"If female, was this death for any of the following reasons?",
-        "flow":"data.gender=='Female'",
+        "name":"religionSpecify",
+        "type":"text",
+        "valdn":"",
+        "label":"Specify the type of religion",
+        "flow":"data.religion=='Other religion'",
         "value":"",
         "items":[
         
-            {"text":"Pregnant when she died","value":"Pregnant when she died"},
+        ],
+        "image":"",
+        "lookup":{
         
-            {"text":"Had a child birth","value":"Had a child birth"},
+        },
+        "crossFlow":[
         
-            {"text":"Had an abortion","value":"Had an abortion"},
+        ],
+        "crossCheck":{
         
-            {"text":"Died within 42 days of childbirth","value":"Died within 42 days of childbirth"},
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"caste",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the deceased (NAME) belong to a scheduled tribe, other backward class, or none of these?",
+        "flow":"",
+        "value":"",
+        "items":[
         
-            {"text":"None of the above","value":"None of the above"}
+            {"text":"Schedule Caste","value":"Schedule Caste"},
+        
+            {"text":"Schedule Tribe","value":"Schedule Tribe"},
+        
+            {"text":"Other Backward classes","value":"Other Backward classes"},
+        
+            {"text":"None of Above","value":"None of Above"},
+        
+            {"text":"Don’t Know","value":"Don’t Know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathSite",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Where did the death occur?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Home","value":"Home"},
+        
+            {"text":"Health facility","value":"Health facility"},
+        
+            {"text":"On the way to health facility","value":"On the way to health facility"},
+        
+            {"text":"Other","value":"Other"},
+        
+            {"text":"Dont Know","value":"Dont Know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathSiteSpecify",
+        "type":"text",
+        "valdn":"",
+        "label":"Specify the place of death",
+        "flow":"data.deathSite=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"maritalStatus",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What was the  marital status of the deceased?",
+        "flow":"data.age>=12",
+        "value":"",
+        "items":[
+        
+            {"text":"Currently Married ","value":"Currently Married "},
+        
+            {"text":"Widowed","value":"Widowed"},
+        
+            {"text":"Divorced","value":"Divorced"},
+        
+            {"text":"Separated/Deserted","value":"Separated/Deserted"},
+        
+            {"text":"Never Married","value":"Never Married"},
+        
+            {"text":"Dont know","value":"Dont know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"schoolAttended",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Had s/he ever attended school?",
+        "flow":"data.age>=5",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"schoolingLevel",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What was the highest level of schooling completed by the deceased?",
+        "flow":"data.age>=1",
+        "value":"",
+        "items":[
+        
+            {"text":"Less than 1 year ","value":"Less than 1 year "},
+        
+            {"text":"Grade completed","value":"Grade completed"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"grade",
+        "type":"text",
+        "valdn":"between[0:50],required",
+        "label":"Enter the grade completed",
+        "flow":"data.age>=1 ",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"readWrite",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was s/he able to read and write?",
+        "flow":"data.age>=5",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Dont Know","value":"Dont Know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"occupation",
+        "type":"text",
+        "valdn":"required",
+        "label":"What was her/his occupation, what kind of word did s/he mainly do?",
+        "flow":"data.age>=5",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"pregWoman",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was this a woman who died more than 42 days but less than 1 year after being pregnant or delivering a baby?",
+        "flow":"data.sex=='Female' && (data.age>=12 || data.age<=49)",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Dont Know","value":"Dont Know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"relationDeceaseF",
+        "type":"suggest",
+        "valdn":"required",
+        "label":"What is your (the respondent's) relationship to the deceased?",
+        "flow":"data.sex=='Female'",
+        "value":"",
+        "items":[
+        
+            {"text":"Head","value":"Head"},
+        
+            {"text":"Wife","value":"Wife"},
+        
+            {"text":"Daughter","value":"Daughter"},
+        
+            {"text":"Daughter-in-law","value":"Daughter-in-law"},
+        
+            {"text":"Grandchild","value":"Grandchild"},
+        
+            {"text":"Mother","value":"Mother"},
+        
+            {"text":"Mother-in-law","value":"Mother-in-law"},
+        
+            {"text":"Sister","value":"Sister"},
+        
+            {"text":"Sister-in-law","value":"Sister-in-law"},
+        
+            {"text":"Niece","value":"Niece"},
+        
+            {"text":"Other relative ","value":"Other relative "},
+        
+            {"text":"Adopted/Foster/Step-child","value":"Adopted/Foster/Step-child"},
+        
+            {"text":"Domestic servant","value":"Domestic servant"},
+        
+            {"text":"Other not related","value":"Other not related"},
+        
+            {"text":"Dont know","value":"Dont know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"relationDeceaseM",
+        "type":"suggest",
+        "valdn":"required",
+        "label":"What is your (the respondent's) relationship to the deceased?",
+        "flow":"data.sex=='Male'",
+        "value":"",
+        "items":[
+        
+            {"text":"Head","value":"Head"},
+        
+            {"text":"Husband","value":"Husband"},
+        
+            {"text":"Son","value":"Son"},
+        
+            {"text":"Son-in-law","value":"Son-in-law"},
+        
+            {"text":"Grandchild","value":"Grandchild"},
+        
+            {"text":"Father","value":"Father"},
+        
+            {"text":"Father-in-law","value":"Father-in-law"},
+        
+            {"text":"Brother","value":"Brother"},
+        
+            {"text":"Brother-in-law","value":"Brother-in-law"},
+        
+            {"text":"Nephew","value":"Nephew"},
+        
+            {"text":"Other relative ","value":"Other relative "},
+        
+            {"text":"Adopted/Foster/Step-child","value":"Adopted/Foster/Step-child"},
+        
+            {"text":"Domestic servant","value":"Domestic servant"},
+        
+            {"text":"Other not related","value":"Other not related"},
+        
+            {"text":"Dont know","value":"Dont know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"relationDeceaseSpecify",
+        "type":"text",
+        "valdn":"",
+        "label":"Specify the relation",
+        "flow":"data.relationDeceaseF=='Other not related' || data.relationDeceaseF== 'Other relative' || data.relationDeceaseM=='Other not related' || data.relationDeceaseM== 'Other relative'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Death Registration",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"registered",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the death registered?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"},
+        
+            {"text":"Dont Know","value":"Dont Know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"dodRegistration",
+        "type":"select_text",
+        "valdn":"between[2004:2014],required",
+        "label":"What was the date of death registration?",
+        "flow":"data.registered=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Jan","value":"Jan"},
+        
+            {"text":"Feb","value":"Feb"},
+        
+            {"text":"Mar","value":"Mar"},
+        
+            {"text":"Apr","value":"Apr"},
+        
+            {"text":"May","value":"May"},
+        
+            {"text":"Jun","value":"Jun"},
+        
+            {"text":"Jul","value":"Jul"},
+        
+            {"text":"Aug","value":"Aug"},
+        
+            {"text":"Sep","value":"Sep"},
+        
+            {"text":"Oct","value":"Oct"},
+        
+            {"text":"Nov","value":"Nov"},
+        
+            {"text":"Dec","value":"Dec"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"numberRegistration",
+        "type":"text",
+        "valdn":"required",
+        "label":"What is the death registration number(certificate) for the deceased?",
+        "flow":"data.registered=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"immCOD",
+        "type":"text",
+        "valdn":"",
+        "label":"Record the immediate cause of death",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"firstCOD",
+        "type":"text",
+        "valdn":"",
+        "label":"Record the first underlying cause of death",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"secondCOD",
+        "type":"text",
+        "valdn":"",
+        "label":"Record the second underlying cause of death",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"thirdCOD",
+        "type":"text",
+        "valdn":"",
+        "label":"Record the third underlying cause of death",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"aadharCard",
+        "type":"radio",
+        "valdn":"",
+        "label":"Do you know the Adhar card number of the deceased?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"aadharNumber",
+        "type":"text",
+        "valdn":"required,number,rangelength[12:12]",
+        "label":"What is the Aadhar number of deceased?",
+        "flow":"data.aadharCard=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"identification",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Do you know any other identification  document  of the deceased?",
+        "flow":"data.aadharCard=='No'",
+        "value":"",
+        "items":[
+        
+            {"text":"Driving License","value":"Driving License"},
+        
+            {"text":"Pan card number","value":"Pan card number"},
+        
+            {"text":"Voters Card","value":"Voters Card"},
+        
+            {"text":"Passport","value":"Passport"},
+        
+            {"text":"Other","value":"Other"},
+        
+            {"text":"Dont know","value":"Dont know"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"identificationSpecify",
+        "type":"text",
+        "valdn":"required",
+        "label":"Specify the other identification document ",
+        "flow":"data.identification=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"numberIdentification",
+        "type":"text",
+        "valdn":"required",
+        "label":"What is the Identification document number ?",
+        "flow":"data.identification=='Dont know'",
+        "value":"",
+        "items":[
         
         ],
         "image":"",
