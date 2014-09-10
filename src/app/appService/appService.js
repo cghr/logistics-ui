@@ -1,7 +1,9 @@
 angular.module('appService', ['toaster'])
-    .service('AppService', function ($http, toaster, $location) {
+    .factory('AppService', function AppService($http, toaster, $location) {
 
-        this.cleanup = function () {
+        AppService.deathDetails = {}
+
+        AppService.cleanup = function () {
 
 
             return $http.get('api/data/cleanup')
@@ -13,5 +15,20 @@ angular.module('appService', ['toaster'])
                     toaster.pop('error', '', 'Failed to cleanup')
                 })
         }
+        AppService.getDeathDetails = function (deathId) {
+
+            return $http.get('api/data/dataAccessService/death/deathId/' + deathId)
+                .success(function (resp) {
+                    AppService.deathDetails = resp
+
+                })
+                .error(function () {
+                    toaster.pop('error', '', 'Failed to fetch death information')
+                })
+
+        }
+
+
+        return AppService
 
     })

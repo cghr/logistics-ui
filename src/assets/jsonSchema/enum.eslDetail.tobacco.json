@@ -1,0 +1,331 @@
+{
+"schemaName":"enum.eslDetail.tobacco",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"tobacco",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"smoketobacco",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] smoke tobacco within last 5 years?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"smoketobaccoKind",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What kind of tobacco did s/he [name] smoke?",
+        "flow":"data.smoketobacco=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Cigarettes","value":"Cigarettes","valdn":""},
+        
+            {"text":"Bidis","value":"Bidis","valdn":""},
+        
+            {"text":"Other","value":"Other","valdn":""},
+        
+            {"text":"Dont know ","value":"Dont know ","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"otherSmokeTobaccoKind",
+        "type":"text",
+        "valdn":"required",
+        "label":"Specify the kind of tobacco s/he [name] smoked.",
+        "flow":"data.smoketobacco=='Yes' && data.smoketobaccoKind=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"cigratte",
+        "type":"text",
+        "valdn":"between[0:100],required",
+        "label":"How many cigarettes did s/he [name] smoke daily within last 5 years?",
+        "flow":"data.smoketobacco=='Yes' ",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bidi",
+        "type":"text",
+        "valdn":"between[0:100],required",
+        "label":"How many bidis did s/he [name] smoke daily within last 5 years?",
+        "flow":"data.smoketobacco=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"chewTobacco",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] chew tobacco within last 5 years?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"amountChewTobacco",
+        "type":"text",
+        "valdn":"between[0:100],required",
+        "label":"How much tobacco did s/he [name] chew daily within last 5 years?",
+        "flow":"data.chewTobacco=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"alcohol",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] drink alcohol within last 5 years?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"amountAlchohol",
+        "type":"select_text",
+        "valdn":"between[0:72],required",
+        "label":"How many days/week did s/he [name] normally drink alcohol?",
+        "flow":"data.alcohol=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Weeks","value":"Weeks","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

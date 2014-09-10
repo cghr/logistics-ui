@@ -1,0 +1,23 @@
+<div ng-controller="EslCtrl">
+    {{childStates}}
+    <div class='span2' style="overflow-y: auto;height: 600px"
+         ng-init="parent=eslConfig.thisState;prev=eslConfig.prevState;">
+        <a ng-click="$state.go(prev.name,$stateParams)" href=''>&laquo; Back to {{prev.title}} </a>
+
+        <div class="well sidebar-nav sidebar-nav-fixed">
+            <ul class="nav nav-list">
+
+                <li class="nav-header"></li>
+                <li ui-sref-active="active"
+                    ng-repeat="childState in eslConfig.children">
+                    <a ui-sref="{{parent.name}}.{{childState.name}}">
+                        {{childState.title}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class='span8'>
+        <div ui-view></div>
+    </div>
+</div>

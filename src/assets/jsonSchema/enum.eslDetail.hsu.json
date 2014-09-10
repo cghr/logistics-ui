@@ -1,0 +1,393 @@
+{
+"schemaName":"enum.eslDetail.hsu",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"hsu",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"healthRecord",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Do you have any health records that belonged to the deceased?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"note",
+        "type":"text",
+        "valdn":"required",
+        "label":"Transcribe the note/TAKE PICTURE OF THEM",
+        "flow":"data.healthRecord=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"treatment",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] receive any treatment for the illness that led to death?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"salts",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] receive oral rehydration salts?",
+        "flow":"data.treatment=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"drip",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] receive (or need) intravenous fluids (drip) treatment?",
+        "flow":"data.treatment=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bloodTrans",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] receive (or need) a blood transfusion?",
+        "flow":"data.treatment=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"tube",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] receive (or need) treatment/food through a tube passed through the nose?",
+        "flow":"data.treatment=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"antibiotics",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] receive (or need) injectable antibiotics?",
+        "flow":"data.treatment=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"operation",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] have (or need) an operation for the illness?",
+        "flow":"data.treatment=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"operation1Month",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] have the operation within 1 month before death?Did s/he have the operation within 1 month before death?",
+        "flow":"data.treatment=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"hospitalDischarge",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was s/he [name] discharged from hospital very ill?",
+        "flow":"data.treatment=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

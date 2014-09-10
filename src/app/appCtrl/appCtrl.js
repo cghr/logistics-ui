@@ -8,5 +8,4 @@ angular.module('myApp')
                 AppService.cleanup()
         }
 
-
     })

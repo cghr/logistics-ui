@@ -88,11 +88,11 @@
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Dont Know","value":"Dont Know"}
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
         
         ],
         "image":"",
@@ -119,57 +119,57 @@
         "value":"",
         "items":[
         
-            {"text":"Electricity?","value":"Electricity"},
+            {"text":"Electricity?","value":"Electricity","valdn":""},
         
-            {"text":"A mattress?","value":"A mattress"},
+            {"text":"A mattress?","value":"A mattress","valdn":""},
         
-            {"text":"A pressure cooker?","value":"A pressure cooker"},
+            {"text":"A pressure cooker?","value":"A pressure cooker","valdn":""},
         
-            {"text":"A chair?","value":"A chair"},
+            {"text":"A chair?","value":"A chair","valdn":""},
         
-            {"text":"A cot/bed?","value":"A cot/bed"},
+            {"text":"A cot/bed?","value":"A cot/bed","valdn":""},
         
-            {"text":"A table?","value":"A table"},
+            {"text":"A table?","value":"A table","valdn":""},
         
-            {"text":"An electric fan?","value":"An electric fan"},
+            {"text":"An electric fan?","value":"An electric fan","valdn":""},
         
-            {"text":"A radio/transistor","value":"A radio/transistor"},
+            {"text":"A radio/transistor ?","value":"A radio/transistor","valdn":""},
         
-            {"text":"A black & white television?","value":"A black & white television"},
+            {"text":"A black & white television?","value":"A black & white television","valdn":""},
         
-            {"text":"A colour television?","value":"A colour television"},
+            {"text":"A colour television?","value":"A colour television","valdn":""},
         
-            {"text":"A sewing machine?","value":"A sewing machine"},
+            {"text":"A sewing machine?","value":"A sewing machine","valdn":""},
         
-            {"text":"A mobile telephone?","value":"A mobile telephone"},
+            {"text":"A mobile telephone?","value":"A mobile telephone","valdn":""},
         
-            {"text":"A land line telephone?","value":"A land line telephone"},
+            {"text":"A land line telephone?","value":"A land line telephone","valdn":""},
         
-            {"text":"Internet?","value":"Internet"},
+            {"text":"Internet?","value":"Internet","valdn":""},
         
-            {"text":"A computer?","value":"A computer"},
+            {"text":"A computer?","value":"A computer","valdn":""},
         
-            {"text":"A refrigerator?","value":"A refrigerator"},
+            {"text":"A refrigerator?","value":"A refrigerator","valdn":""},
         
-            {"text":"An air conditioner/cooler?","value":"An air conditioner/cooler"},
+            {"text":"An air conditioner/cooler?","value":"An air conditioner/cooler","valdn":""},
         
-            {"text":"A washing machine?","value":"A washing machine"},
+            {"text":"A washing machine?","value":"A washing machine","valdn":""},
         
-            {"text":"A watch/clock?","value":"A watch/clock"},
+            {"text":"A watch/clock?","value":"A watch/clock","valdn":""},
         
-            {"text":"A bicycle?","value":"A bicycle"},
+            {"text":"A bicycle?","value":"A bicycle","valdn":""},
         
-            {"text":"A motorcycle/scooter?","value":"A motorcycle/scooter"},
+            {"text":"A motorcycle/scooter?","value":"A motorcycle/scooter","valdn":""},
         
-            {"text":"An animal-drawn cart?","value":"An animal-drawn cart"},
+            {"text":"An animal-drawn cart?","value":"An animal-drawn cart","valdn":""},
         
-            {"text":"A car?","value":"A car"},
+            {"text":"A car?","value":"A car","valdn":""},
         
-            {"text":"A water pump?","value":"A water pump"},
+            {"text":"A water pump?","value":"A water pump","valdn":""},
         
-            {"text":"A thresher?","value":"A thresher"},
+            {"text":"A thresher?","value":"A thresher","valdn":""},
         
-            {"text":"A tractor?","value":"A tractor"}
+            {"text":"A tractor?","value":"A tractor","valdn":""}
         
         ],
         "image":"",
@@ -196,29 +196,29 @@
         "value":"",
         "items":[
         
-            {"text":"Flush to piped sewer system","value":"Flush to piped sewer system"},
+            {"text":"Flush to piped sewer system","value":"Flush to piped sewer system","valdn":""},
         
-            {"text":"Flush to septic tank","value":"Flush to septic tank"},
+            {"text":"Flush to septic tank","value":"Flush to septic tank","valdn":""},
         
-            {"text":"Flush to pit latrine","value":"Flush to pit latrine"},
+            {"text":"Flush to pit latrine","value":"Flush to pit latrine","valdn":""},
         
-            {"text":"Flush to somewhere else","value":"Flush to somewhere else"},
+            {"text":"Flush to somewhere else","value":"Flush to somewhere else","valdn":""},
         
-            {"text":"Flush , Don’t know where","value":"Flush , Don’t know where"},
+            {"text":"Flush , Don’t know where","value":"Flush , Don’t know where","valdn":""},
         
-            {"text":"Ventilated improved system","value":"Ventilated improved system"},
+            {"text":"Ventilated improved system","value":"Ventilated improved system","valdn":""},
         
-            {"text":"Pit Latrine with slab","value":"Pit Latrine with slab"},
+            {"text":"Pit Latrine with slab","value":"Pit Latrine with slab","valdn":""},
         
-            {"text":"Pit Latrine without slab/open pit","value":"Pit Latrine without slab/open pit"},
+            {"text":"Pit Latrine without slab/open pit","value":"Pit Latrine without slab/open pit","valdn":""},
         
-            {"text":"Twin Pit/composting toilet ","value":"Twin Pit/composting toilet "},
+            {"text":"Twin Pit/composting toilet ","value":"Twin Pit/composting toilet ","valdn":""},
         
-            {"text":"Dry toilet ","value":"Dry toilet "},
+            {"text":"Dry toilet ","value":"Dry toilet ","valdn":""},
         
-            {"text":"No Facility /uses open space or field ","value":"No Facility /uses open space or field "},
+            {"text":"No Facility /uses open space or field ","value":"No Facility /uses open space or field ","valdn":""},
         
-            {"text":"Other","value":"Other"}
+            {"text":"Other","value":"Other","valdn":""}
         
         ],
         "image":"",
@@ -270,29 +270,29 @@
         "value":"",
         "items":[
         
-            {"text":"Electricity","value":"Electricity"},
+            {"text":"Electricity","value":"Electricity","valdn":""},
         
-            {"text":"LPG/Natural gas","value":"LPG/Natural gas"},
+            {"text":"LPG/Natural gas","value":"LPG/Natural gas","valdn":""},
         
-            {"text":"Biogas","value":"Biogas"},
+            {"text":"Biogas","value":"Biogas","valdn":""},
         
-            {"text":"Kerosene","value":"Kerosene"},
+            {"text":"Kerosene","value":"Kerosene","valdn":""},
         
-            {"text":"Coal/Lignite","value":"Coal/Lignite"},
+            {"text":"Coal/Lignite","value":"Coal/Lignite","valdn":""},
         
-            {"text":"Charcoal","value":"Charcoal"},
+            {"text":"Charcoal","value":"Charcoal","valdn":""},
         
-            {"text":"Wood","value":"Wood"},
+            {"text":"Wood","value":"Wood","valdn":""},
         
-            {"text":"Straw/Shrubs/Grass","value":"Straw/Shrubs/Grass"},
+            {"text":"Straw/Shrubs/Grass","value":"Straw/Shrubs/Grass","valdn":""},
         
-            {"text":"Agricultural crop waste","value":"Agricultural crop waste"},
+            {"text":"Agricultural crop waste","value":"Agricultural crop waste","valdn":""},
         
-            {"text":"Dung cakes","value":"Dung cakes"},
+            {"text":"Dung cakes","value":"Dung cakes","valdn":""},
         
-            {"text":"No food cooked in household","value":"No food cooked in household"},
+            {"text":"No food cooked in household","value":"No food cooked in household","valdn":""},
         
-            {"text":"Other","value":"Other"}
+            {"text":"Other","value":"Other","valdn":""}
         
         ],
         "image":"",
@@ -344,11 +344,11 @@
         "value":"",
         "items":[
         
-            {"text":"Pakka","value":"Pakka"},
+            {"text":"Pakka","value":"Pakka","valdn":""},
         
-            {"text":"Semi pakka","value":"Semi pakka"},
+            {"text":"Semi pakka","value":"Semi pakka","valdn":""},
         
-            {"text":"Kaccha","value":"Kaccha"}
+            {"text":"Kaccha","value":"Kaccha","valdn":""}
         
         ],
         "image":"",
@@ -375,33 +375,33 @@
         "value":"",
         "items":[
         
-            {"text":"Piped into dwelling ","value":"Piped into dwelling "},
+            {"text":"Piped into dwelling ","value":"Piped into dwelling ","valdn":""},
         
-            {"text":"Piped to Yard/Plot","value":"Piped to Yard/Plot"},
+            {"text":"Piped to Yard/Plot","value":"Piped to Yard/Plot","valdn":""},
         
-            {"text":"Public tab/standpipe","value":"Public tab/standpipe"},
+            {"text":"Public tab/standpipe","value":"Public tab/standpipe","valdn":""},
         
-            {"text":"Tube well or borehole","value":"Tube well or borehole"},
+            {"text":"Tube well or borehole","value":"Tube well or borehole","valdn":""},
         
-            {"text":"Protected well","value":"Protected well"},
+            {"text":"Protected well","value":"Protected well","valdn":""},
         
-            {"text":"Unprotected well","value":"Unprotected well"},
+            {"text":"Unprotected well","value":"Unprotected well","valdn":""},
         
-            {"text":"Protected spring","value":"Protected spring"},
+            {"text":"Protected spring","value":"Protected spring","valdn":""},
         
-            {"text":"Unprotected spring","value":"Unprotected spring"},
+            {"text":"Unprotected spring","value":"Unprotected spring","valdn":""},
         
-            {"text":"Rain water","value":"Rain water"},
+            {"text":"Rain water","value":"Rain water","valdn":""},
         
-            {"text":"Tanker trunk","value":"Tanker trunk"},
+            {"text":"Tanker trunk","value":"Tanker trunk","valdn":""},
         
-            {"text":"Cart with small tank","value":"Cart with small tank"},
+            {"text":"Cart with small tank","value":"Cart with small tank","valdn":""},
         
-            {"text":"Surface water(River/Dam/Lake/Pond/Stream/Canal/Irrigation Channel)","value":"Surface water"},
+            {"text":"Surface water(River/Dam/Lake/Pond/Stream/Canal/Irrigation Channel)","value":"Surface water","valdn":""},
         
-            {"text":"Bottled water","value":"Bottled water"},
+            {"text":"Bottled water","value":"Bottled water","valdn":""},
         
-            {"text":"Other","value":"Other"}
+            {"text":"Other","value":"Other","valdn":""}
         
         ],
         "image":"",

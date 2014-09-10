@@ -1,0 +1,467 @@
+{
+"schemaName":"enum.eslDetail.injury",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"injury",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"injury",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he  [name] suffer from any injury or accident that led to her/his death?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"roadAccident",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was it a road traffic accident?",
+        "flow":"data.injury=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"nonRoadAccident",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was s/he  [name] Injured in a non-road transport accident?",
+        "flow":"data.injury=='Yes' && (data.roadAccident=='No'  || data.roadAccident=='Dont know')",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"fall",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was s/he  [name] Injured in a fall?",
+        "flow":"data.injury=='Yes' && (data.nonRoadAccident=='No' || data.nonRoadAccident=='Dont know')",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"drowning",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he  [name] die of drowning?",
+        "flow":"data.injury=='Yes' && (data.fall=='No' || data.fall=='Dont know')",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"burns",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] suffer from burns?",
+        "flow":"data.injury=='Yes' && (data.drowning=='No' || data.drowning=='Dont know')",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"biteSting",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he  [name] suffer from any plant/ animal/insect bite or sting that led to her/his death?",
+        "flow":"data.burns=='No' || data.burns=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"nature",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was s/he [name] injured by a force of nature?",
+        "flow":"data.biteSting=='No' || data.biteSting=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"poison",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was there any poisoning?",
+        "flow":"data.nature=='No' || data.nature=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"assault",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was s/he [name] subject to violence/assault?",
+        "flow":"(data.poison=='No' || data.poison=='Dont know') && (data.nature=='No' || data.nature=='Dont know')",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"intentional",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the injury or accident intentionally inflicted by someone else?",
+        "flow":"data.nature=='No' || data.nature=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"selfInflicted",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the injury or accident self-inflicted?",
+        "flow":"data.nature=='No' || data.nature=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"survive",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How long did s/he [name] survive after the injury?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Hours","value":"Hours","valdn":""},
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Months","value":"Months","valdn":""},
+        
+            {"text":"Years","value":"Years","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

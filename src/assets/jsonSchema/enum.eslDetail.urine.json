@@ -1,0 +1,223 @@
+{
+"schemaName":"enum.eslDetail.urine",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"urine",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"urineProb",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] have any urine problems?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"noUrine",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] pass no urine at all?",
+        "flow":"data.urine=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"moreUrine",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name]  go to urinate more often than usual?",
+        "flow":"data.urine=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bloodUrine",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During the final illness did s/he [name] ever pass blood in the urine?",
+        "flow":"data.urine=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"difficulty",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] have difficulty in passing urine?",
+        "flow":"data.urine=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

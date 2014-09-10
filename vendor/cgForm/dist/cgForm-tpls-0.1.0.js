@@ -2,7 +2,7 @@
  * cgForm
  * 
 
- * Version: 0.1.0 - 2014-08-20
+ * Version: 0.1.0 - 2014-09-09
  * License: MIT
  */
 angular.module('cgForm', [
@@ -23,7 +23,8 @@ angular.module('cgForm', [
     'cgForm.schemaResolver',
     'cgForm.ffqForm',
     'cgForm.standardForm',
-    'cgForm.surveyForm'
+    'cgForm.surveyForm',
+    'cgForm.tableForm'
 ]);
 angular.module('cgForm.tpls', [
     'template/formElement/checkbox.html',
@@ -37,6 +38,7 @@ angular.module('cgForm.tpls', [
     'template/formElement/radio-inline.html',
     'template/formElement/radio.html',
     'template/formElement/readonly.html',
+    'template/formElement/select_singletext.html',
     'template/formElement/select_text.html',
     'template/formElement/suggest.html',
     'template/formElement/text.html',
@@ -528,7 +530,7 @@ angular.module('cgForm.surveyForm', [
                         var selections = _.keys(value, function (val) {
                             return val;
                         });
-                        $scope.data[key] = selections.join(',');
+                        $scope.data[key] = selections.join(';');
                     }
                 });
                 FormService.postResource($scope.data).then(done, fail);
@@ -626,9 +628,10 @@ angular.module('cgForm.surveyForm', [
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
                     /* Prompt before form submit */
                     scope.schema.properties.push({
-                        flow:'',
+                        flow: '',
                         type: 'heading',
-                        label: 'Section Completed. Press Enter to Continue '
+                        label: 'Section Completed. Press Enter to Continue ',
+                        valdn: ''
                     });
                     /* Initialize form data */
                     scope.data = {};
@@ -641,8 +644,10 @@ angular.module('cgForm.surveyForm', [
                                 elem.type = 'radio';
                                 elem.items = resp.data;
                                 var index = _.findIndex(scope.flow.properties, { name: elem.name });
-                                scope.flow.properties[index].type = 'radio';
-                                scope.flow.properties[index].items = resp.data;
+                                if (index != -1) {
+                                    scope.flow.properties[index].type = 'radio';
+                                    scope.flow.properties[index].items = resp.data;
+                                }
                             });
                         }
                         if (!_.isEmpty(elem.crossCheck)) {
@@ -650,7 +655,8 @@ angular.module('cgForm.surveyForm', [
                                 var condition = elem.crossCheck.condition.replace('{value}', resp.data.value);
                                 elem.valdn = condition;
                                 var index = _.findIndex(scope.flow.properties, { name: elem.name });
-                                scope.flow.properties[index].valdn = condition;
+                                if (index != -1)
+                                    scope.flow.properties[index].valdn = condition;
                             });
                         }
                     });
@@ -679,6 +685,10 @@ angular.module('cgForm.surveyForm', [
                             }
                             return element.crossFlowCheck !== false;
                         });
+                        /* Render Initial Item in the flow after all hidden elements(without conditions) */
+                        scope.flow.properties.push(angular.copy(scope.schema.properties[++hiddenCount]));
+                        scope.flowSeq++;
+                        scope.flowIndex++;
                     });
                     /* Evaluate values in hidden fields */
                     angular.forEach(scope.schema.properties, function (elem) {
@@ -715,12 +725,91 @@ angular.module('cgForm.surveyForm', [
                             break;
                         }
                     }
-                    /* Render Initial Item in the flow after all hidden elements(without conditions) */
-                    scope.flow.properties.push(angular.copy(scope.schema.properties[++hiddenCount]));
-                    scope.flowSeq++;
-                    scope.flowIndex++;
                 },
                 controller: 'surveyFormCtrl'
+            };
+        }
+    ]);
+angular.module('cgForm.tableForm', [
+        'cgForm.formElement',
+        'cgForm.formConfig',
+        'cgForm.formService',
+        'cgForm.lodash',
+        'cgForm.schemaFactory',
+        'ui.router',
+        'cgForm.joelpurra',
+        'cgForm.timelog',
+        'cgForm.schemaResolver'
+    ]).controller('tableFormCtrl', [
+        '$scope',
+        '$element',
+        '$state',
+        '$stateParams',
+        'FormService',
+        function ($scope, $element, $state, $stateParams, FormService) {
+            $scope.onSubmit = function (data) {
+                /* Validate form before submit */
+                if (isValidForm())
+                    postData(data);
+            };
+            function isValidForm() {
+                return $element.data('bValidator').validate();
+            }
+            /* Posts form data to Sever */
+            function postData(data) {
+                FormService.postResource(data).then(function () {
+                    $state.go($scope.schema.onSave, $stateParams);
+                });
+            }
+        }
+    ]).directive('tableForm', [
+        'FormConfig',
+        '_',
+        'SchemaFactory',
+        '$state',
+        'FormService',
+        '$rootScope',
+        'JoelPurra',
+        'TimeLogFactory',
+        'SchemaResolver',
+        function (FormConfig, _, SchemaFactory, $state, FormService, $rootScope, JoelPurra, TimeLogFactory, SchemaResolver) {
+            function postLink(scope, element) {
+                $rootScope.timestamp = TimeLogFactory.getCurrentTime();
+                /* Initialize form data */
+                scope.data = {};
+                /* Load Json Schema for current state if not supplied through attributes */
+                scope.schema = SchemaResolver.resolve(scope);
+                /* Evaluate information in hidden fields */
+                _.each(scope.schema.properties, function (elem) {
+                    if (elem.name !== 'datastore' && elem.type === 'hidden')
+                        elem.value = $rootScope.$eval(elem.value);
+                    if (elem.type === 'hidden')
+                        scope.data[elem.name] = elem.value;
+                });
+                /* Initialize checkbox element's data with empty objects in scope.data */
+                var multipleSelectElements = _.filter(scope.schema.properties, { type: 'checkbox' });
+                _.each(multipleSelectElements, function (item) {
+                    scope.data[item.name] = {};
+                });
+                /* Store datastore value in scope to use in controller */
+                scope.data.datastore = _.find(scope.schema.properties, { name: 'datastore' }).value;
+                /* Create a separate collection for hidden elements  */
+                scope.schema.hiddenElements = _.filter(scope.schema.properties, { type: 'hidden' });
+                /* Remove hidden items from schema */
+                _.remove(scope.schema.properties, { type: 'hidden' });
+                /* Bind Enter as Tab and Validation to form */
+                element.plusAsTab();
+                element.bValidator();
+            }
+            return {
+                templateUrl: function (elem, attrs) {
+                    return attrs.templateUrl;
+                },
+                restrict: 'E',
+                replace: true,
+                scope: { options: ' = ' },
+                link: postLink,
+                controller: 'tableFormCtrl'
             };
         }
     ]);
@@ -790,10 +879,16 @@ angular.module('template/formElement/readonly.html', []).run([
         $templateCache.put('template/formElement/readonly.html', '<input type="text"  ng-model="data[config.name]" readonly="readonly"/>');
     }
 ]);
+angular.module('template/formElement/select_singletext.html', []).run([
+    '$templateCache',
+    function ($templateCache) {
+        $templateCache.put('template/formElement/select_singletext.html', '<select class="span2" data-bvalidator="required" data-bvalidator-msg="Please select an option"\n' + '        ng-model="data[config.name+\'_unit\']" init-focus="{{config.initFocus}}">\n' + '    <option value=""></option>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}">{{item.text}}</option>\n' + '</select>\n' + '<input type="text" data-bvalidator="{{config.valdn}}"\n' + '       ng-model="data[config.name+\'_value\']" class="input-medium"/>\n' + '');
+    }
+]);
 angular.module('template/formElement/select_text.html', []).run([
     '$templateCache',
     function ($templateCache) {
-        $templateCache.put('template/formElement/select_text.html', '<select data-bvalidator="required" data-bvalidator-msg="Please select an option"\n' + '        ng-model="data[config.name+\'_unit\']">\n' + '    <option value=""></option>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}">{{item.text}}</option>\n' + '</select>\n' + '<input type="text" data-bvalidator="{{config.valdn}}"\n' + '       ng-model="data[config.name+\'_value\']" init-focus="{{config.initFocus}}"/>\n' + '\n' + '');
+        $templateCache.put('template/formElement/select_text.html', '<select class="span2" data-bvalidator="required" data-bvalidator-msg="Please select an option"\n' + '        ng-model="data[config.name+\'_unit\']" init-focus="{{config.initFocus}}">\n' + '    <option value=""></option>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}">{{item.text}}</option>\n' + '</select>\n' + '<span ng-repeat="item in config.items">\n' + '    <input type="text" data-bvalidator="{{item.valdn}}"\n' + '           ng-model="data[config.name+\'_value\']" class="input-medium" ng-if="data[config.name+\'_unit\']==item.value"\n' + '           placeholder="{{item.value}}"/>\n' + '</span>\n' + '');
     }
 ]);
 angular.module('template/formElement/suggest.html', []).run([
@@ -811,7 +906,7 @@ angular.module('template/formElement/text.html', []).run([
 angular.module('template/formElement/text_select.html', []).run([
     '$templateCache',
     function ($templateCache) {
-        $templateCache.put('template/formElement/text_select.html', '<input type="text"  data-bvalidator="{{config.valdn}}"\n' + '       ng-model="data[config.name+\'_value\']" init-focus="{{config.initFocus}}" />\n' + '\n' + '<select   data-bvalidator="required" data-bvalidator-msg="Please select an option"\n' + '         ng-model="data[config.name+\'_unit\']"  >\n' + '    <option value=""></option>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}">{{item.text}}</option>\n' + '</select>');
+        $templateCache.put('template/formElement/text_select.html', '<span ng-repeat="item in config.items">\n' + '    <input type="text" data-bvalidator="{{item.valdn}}"\n' + '           ng-model="data[config.name+\'_value\']" class="input-medium" ng-if="data[config.name+\'_unit\']==item.value"\n' + '           placeholder="{{item.value}}" />\n' + '</span>\n' + '<select class="span2" data-bvalidator="required" data-bvalidator-msg="Please select an option"\n' + '        ng-model="data[config.name+\'_unit\']" init-focus="{{config.initFocus}}">\n' + '    <option value=""></option>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}">{{item.text}}</option>\n' + '</select>\n' + '\n' + '');
     }
 ]);
 angular.module('template/formElement/textarea.html', []).run([

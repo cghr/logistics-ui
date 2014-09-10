@@ -1,0 +1,258 @@
+{
+"schemaName":"enum.eslDetail.lumps",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"lumps",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"lumps",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he  [name] have any lumps?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"lumpsMouth",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he  [name] have any lumps or lesions in the mouth? ",
+        "flow":"data.lumps=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"lumpsNect",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he  [name] have any lumps on the neck?",
+        "flow":"data.lumps=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"lumpsArmpit",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he  [name] have any lumps on the armpit?",
+        "flow":"data.lumps=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"lumpsGroin",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he  [name] have any lumps on the groin?",
+        "flow":"data.lumps=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"breastSwell",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did she [name] have  swelling in the breast?",
+        "flow":"data.lumps=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

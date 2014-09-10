@@ -1,0 +1,157 @@
+{
+"schemaName":"enum.eslDetail.birthHistory",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"birthHistory",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ageFatalIllness",
+        "type":"select_text",
+        "valdn":"required",
+        "label":"How old was the baby/child when the fatal illness started?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Days","value":"Days","valdn":"between[1:31],required"},
+        
+            {"text":"Months","value":"Months","valdn":"between[1:12],required"},
+        
+            {"text":"Years","value":"Years","valdn":"between[1:120],required"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"singleMultiple",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the baby/child a singleton or multiple birth?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Singleton","value":"Singleton","valdn":""},
+        
+            {"text":"Multiple","value":"Multiple","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"complications",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was there any complication during labour, delivery, or the last 3 months of pregnancy when pregnant with this baby/child?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

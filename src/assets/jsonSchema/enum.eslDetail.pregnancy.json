@@ -1,0 +1,1114 @@
+{
+"schemaName":"enum.eslDetail.pregnancy",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"pregnancy",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"pregDuration",
+        "type":"select_text",
+        "valdn":"between[0:72],required",
+        "label":"How long was the pregnancy?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Months","value":"Months","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"dieDuringDeliv",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the mother die during labour or delivery?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"dieAfterDeliv",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the mother die within ≤ 24 hours after delivery?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"dieWithin6Weeks",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the mother die between ≥ 24 hours and ≤ 6 weeks after delivery?",
+        "flow":"data.dieAfterDeliv=='No' || data.dieAfterDeliv=='Don’t know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"babyUndelivered",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was baby undelivered?",
+        "flow":"data.dieAfterDeliv=='Yes' || data.dieWithin6Weeks=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bellyPain",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the mother have a sharp pain in the belly shortly before death?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deliveryMode",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What was the mode of delivery?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Vaginal without forceps/vaccum","value":"Vaginal without forceps/vaccum","valdn":""},
+        
+            {"text":"Vaginal with forceps","value":"Vaginal with forceps","valdn":""},
+        
+            {"text":"Vaginal with vaccum","value":"Vaginal with vaccum","valdn":""},
+        
+            {"text":"Vaginal don't know (whether forceps or vaccume used)","value":"Vaginal don't know","valdn":""},
+        
+            {"text":"Caesarean section","value":"Caesarean section","valdn":""},
+        
+            {"text":"Don't know","value":"Don't know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"breastfeed",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the mother breastfeed the child until before death?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"hbp",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During this pregnancy, did you/the mother suffer from high blood pressure?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"convulsions",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During the last 3 months of this pregnancy, did you/the mother suffer from convulsions?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"blurredVision",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During the last 3 months of this pregnancy did you/the mother suffer from blurred vision?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"vaginalDischarge",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the mother have foul smelling vaginal discharge around the time of delivery or after delivery?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"liveBaby",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the mother give birth to a live, healthy baby within 6 weeks of death?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bleedDuringPregDeliv",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was there excessive vaginal bleeding during this pregnancy or after delivery?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bleedF6MonthsPreg",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was there vaginal bleeding during the first 6 months of pregnancy?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bleedL3MonthsPreg",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was there vaginal bleeding during the last 3 months of pregnancy but before labour started?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bleedDuringLabDeliv",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the mother have excessive bleeding during labour or delivery?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bleedAfterDelivAbort",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the mother have excessive bleeding after delivery or abortion?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"placentaDelivered",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the placenta completely delivered? ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"abnormalPosition",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the mother deliver or try to deliver an abnormally positioned baby? ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"durationLabour",
+        "type":"text",
+        "valdn":"between[0:72],required",
+        "label":"For how long was you/the mother in labour (hours)?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"terminatePreg",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the mother attempt to terminate the pregnancy?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"abortion",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the mother recently have a pregnancy that ended in an abortion (spontaneous or induced)?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"dieAbortion",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the mother die during an abortion?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"die6WeeksAbortion",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the mother die within 6 weeks of having an abortion?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"childBornLocation",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Where was the delivery/abortion?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Home","value":"Home","valdn":""},
+        
+            {"text":"Health facility - Public/Govt.","value":"Health facility - Public/Govt.","valdn":""},
+        
+            {"text":"Health facility - Private","value":"Health facility - Private","valdn":""},
+        
+            {"text":"Other","value":"Other","valdn":""},
+        
+            {"text":"Don’t Know","value":"Don’t Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"otherDeliveryLocation",
+        "type":"text",
+        "valdn":"required",
+        "label":"Specify the place of delivery",
+        "flow":"data.childBornLocation=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deliveryAttended",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Who attended the delivery/abortion?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Allopathic Doctor","value":"Allopathic Doctor","valdn":""},
+        
+            {"text":"Ayurvedic/Homeopathic/Unani Doctor","value":"Ayurvedic/Homeopathic/Unani Doctor","valdn":""},
+        
+            {"text":"Midwife/Nurse","value":"Midwife/Nurse","valdn":""},
+        
+            {"text":"Trainined traditional birth attendant","value":"Trainined traditional birth attendant","valdn":""},
+        
+            {"text":"Untrainined traditional birth attendant","value":"Untrainined traditional birth attendant","valdn":""},
+        
+            {"text":"Other","value":"Other","valdn":""},
+        
+            {"text":"None","value":"None","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"removeUterus",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the mother have an operation to remove her uterus shortly before death?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bornEarly",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the baby born more than one month early?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=12"},
+        
+        {"entity":"death","field":"sex","ref":"deathId","condition":"sex=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

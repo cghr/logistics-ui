@@ -63,15 +63,15 @@
         "value":"",
         "items":[
         
-            {"text":"Available","value":"Available"},
+            {"text":"Available","value":"Available","valdn":""},
         
-            {"text":"No Household member at home or no competent respondent at home at the time of visit","value":"TempAbsent"},
+            {"text":"No Household member at home or no competent respondent at home at the time of visit","value":"TempAbsent","valdn":""},
         
-            {"text":"Entire household was absent for extended period (atleast for 3 days) of time","value":"PermAbsent"},
+            {"text":"Entire household was absent for extended period (atleast for 3 days) of time","value":"PermAbsent","valdn":""},
         
-            {"text":"Postponed","value":"Postponed"},
+            {"text":"Postponed","value":"Postponed","valdn":""},
         
-            {"text":"Refused","value":"Refused"}
+            {"text":"Refused","value":"Refused","valdn":""}
         
         ],
         "image":"",

@@ -1,0 +1,846 @@
+{
+"schemaName":"enum.eslDetail.deliveryDetails",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"deliveryDetails",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"hbp",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During pregnancy, did you/the baby's mother suffer from high blood pressure?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"convultion",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the baby's mother have convulsions during last 3 months of pregnancy, or during labour, or delivery?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"anemia",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the baby's mother have severe anemia during the last 3 months of pregnancy, labour or delivery?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"diabetes",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the baby's mother have diabetes during the last 3 months of pregnancy, labour or delivery?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"abnormalPosition",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the baby's bottom, feet, arm or hand come out of the vagina before its head?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"umbilicalCordDelivery",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the umbilical cord delivered first?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"umbilicalCordWrapped",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the umbilical cord wrapped several times (more than once) around the child's neck at birth?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"vaginalBleeding",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the baby's mother have excessive vaginal bleeding during labour or delivery?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"fever",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the baby's mother have fever during labour?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"movingStopped",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the baby stop moving in the womb before labour started?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"childLastMove",
+        "type":"select_text",
+        "valdn":"between[1:99],required",
+        "label":"When did you/the baby's mother last feel the baby move before delivery?(Enter in Hours/Days)",
+        "flow":"data.movingStopped=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Hours","value":"Hours","valdn":""},
+        
+            {"text":"Days","value":"Days","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"waterBreak",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the water break before labor or during labor? ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Before","value":"Before","valdn":""},
+        
+            {"text":"During","value":"During","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"timeWaterBreak",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How much time before labor did the water bag break? ",
+        "flow":"data.waterBreak=='Before' ",
+        "value":"",
+        "items":[
+        
+            {"text":"Less than 1 day","value":"Less than 1 day","valdn":""},
+        
+            {"text":"1 day or more","value":"1 day or more","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"liqourColor",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What was the color of the liquid (amniotic fluid) when the water bag broke?",
+        "flow":"data.waterBreak=='Before' || data.waterBreak=='During'",
+        "value":"",
+        "items":[
+        
+            {"text":"Green or brown ","value":"Green or brown ","valdn":""},
+        
+            {"text":"Clear","value":"Clear","valdn":""},
+        
+            {"text":"Other ","value":"Other ","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"otherLiqourColor",
+        "type":"text",
+        "valdn":"required",
+        "label":"Specify the color of liquid (amniotic fluid).",
+        "flow":"data.liqourColor=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"liqourFoulSmell",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the liquid (amnotic fluid) foul smell?",
+        "flow":"data.waterBreak=='Before' || data.waterBreak=='During'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"timeLaborDelivery",
+        "type":"text",
+        "valdn":"between[0:72],required",
+        "label":"How much time did the labor and delivery take(hours)?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deliveryMode",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What was the mode of delivery?",
+        "flow":"data.deliveryMode=='Caesarean section'",
+        "value":"",
+        "items":[
+        
+            {"text":"Vaginal without forceps/vaccum","value":"Vaginal without forceps/vaccum","valdn":""},
+        
+            {"text":"Vaginal with forceps","value":"Vaginal with forceps","valdn":""},
+        
+            {"text":"Vaginal with vaccum","value":"Vaginal with vaccum","valdn":""},
+        
+            {"text":"Vaginal don't know (whether forceps or vaccume used)","value":"Vaginal don't know","valdn":""},
+        
+            {"text":"Caesarean section","value":"Caesarean section","valdn":""},
+        
+            {"text":"Don't know","value":"Don't know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"caesareanDecision",
+        "type":"radio",
+        "valdn":"required",
+        "label":"When was the decision made for you/the baby's mother to have a Caesarean section? ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Before onset of labour","value":"Before onset of labour","valdn":""},
+        
+            {"text":"After onset of labour","value":"After onset of labour","valdn":""},
+        
+            {"text":"Don’t know","value":"Don’t know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"injectionDuringLabor",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During labour but before delivery, did you/the baby's mother receive any kind of injection?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"childBornLocation",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Where was the baby born?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Home","value":"Home","valdn":""},
+        
+            {"text":"Health facility - Public/Govt.","value":"Health facility - Public/Govt.","valdn":""},
+        
+            {"text":"Health facility - Private","value":"Health facility - Private","valdn":""},
+        
+            {"text":"Other","value":"Other","valdn":""},
+        
+            {"text":"Don’t Know","value":"Don’t Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"otherChildBornLocation",
+        "type":"text",
+        "valdn":"required",
+        "label":"Specify other place where baby was born.",
+        "flow":"data.childBornLocation=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deliveryAttended",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Who attended the delivery? ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Allopathic Doctor","value":"Allopathic Doctor","valdn":""},
+        
+            {"text":"Ayurvedic/Homeopathic/Unani Doctor","value":"Ayurvedic/Homeopathic/Unani Doctor","valdn":""},
+        
+            {"text":"Midwife/Nurse","value":"Midwife/Nurse","valdn":""},
+        
+            {"text":"Trainined traditional birth attendant","value":"Trainined traditional birth attendant","valdn":""},
+        
+            {"text":"Untrainined traditional birth attendant","value":"Untrainined traditional birth attendant","valdn":""},
+        
+            {"text":"Other","value":"Other","valdn":""},
+        
+            {"text":"None","value":"None","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"otherDeliveryAttended",
+        "type":"text",
+        "valdn":"required",
+        "label":"Specify who attended the delivery",
+        "flow":"data.deliveryAttended=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

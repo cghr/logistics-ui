@@ -1,4 +1,4 @@
-<div class='span2'
+<div class='span2' style="overflow-y: auto;height: 600px"
      ng-init="childStates=$state.current.data.children;parent=$state.current.data.thisState;prev=$state.current.data.prev;">
     <a ng-click="$state.go(prev.name,$stateParams)" href=''>&laquo; Back to {{prev.title}} </a>
 

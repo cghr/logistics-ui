@@ -1,0 +1,395 @@
+{
+"schemaName":"enum.eslDetail.breathing",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"breathing",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"breathingProblem",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] have any breathing problem?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"fastBreathing",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] have fast breathing?",
+        "flow":"data.breathingProblem=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"startFastBreathing",
+        "type":"text",
+        "valdn":"between[0:28],required",
+        "label":"At what age did the fast breathing start(days)?",
+        "flow":"data.breathingProblem=='Yes'  &&  data.fastBreathing=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"durationFastBreathing",
+        "type":"select_text",
+        "valdn":"required",
+        "label":"For how long did s/he [name]  have fast breathing?",
+        "flow":"data.breathingProblem=='Yes' && data.fastBreathing=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Months","value":"Months","valdn":""},
+        
+            {"text":"Years","value":"Years","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"breathingDifficulty",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During the illness that led to death, did s/he [name] have difficulty in breathing?",
+        "flow":"data.breathingProblem=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"startBreathingDifficulty",
+        "type":"text",
+        "valdn":"between[0:28],required",
+        "label":"At what age did the difficulty in breathing start?",
+        "flow":"data.breathingProblem=='Yes' && data.breathingDifficulty=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"durationBreathingDifficulty",
+        "type":"select_text",
+        "valdn":"required",
+        "label":"For how many days did the difficulty in breathing last?",
+        "flow":"data.breathingProblem=='Yes' && data.breathingDifficulty=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Months","value":"Months","valdn":""},
+        
+            {"text":"Years","value":"Years","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"patternBreathingDifficulty",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the difficulty in breathing continuous or on and off?",
+        "flow":"data.breathingProblem=='Yes' && data.breathingDifficulty=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Continuous","value":"Continuous","valdn":""},
+        
+            {"text":"On and off","value":"On and off","valdn":""},
+        
+            {"text":"Dont know ","value":"Dont know ","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"position",
+        "type":"radio",
+        "valdn":"required",
+        "label":"In what position did the difficulty in breathing get worse?",
+        "flow":"data.breathingProblem=='Yes' && data.breathingDifficulty=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Lying","value":"Lying","valdn":""},
+        
+            {"text":"Sitting","value":"Sitting","valdn":""},
+        
+            {"text":"Walking","value":"Walking","valdn":""},
+        
+            {"text":"During exertion","value":"During exertion","valdn":""},
+        
+            {"text":"Didnt matter","value":"Didnt matter","valdn":""},
+        
+            {"text":"Dont know ","value":"Dont know ","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"chestPull",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you see the lower chest wall/ribs being pulled in as the  breathed?",
+        "flow":"data.breathingProblem=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"breathingSound",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During the illness that led to death, did his/her [name] breathing sound like any of the following: stridor/ grunting/wheezing?",
+        "flow":"data.breathingProblem=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Stridor","value":"Stridor","valdn":""},
+        
+            {"text":"Grunting","value":"Grunting","valdn":""},
+        
+            {"text":"Wheezing","value":"Wheezing","valdn":""},
+        
+            {"text":"Dont know ","value":"Dont know ","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

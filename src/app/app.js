@@ -34,7 +34,7 @@ angular.module("myApp", [
             };
 
         }
-//        $httpProvider.interceptors.push(reqInterceptor);
 
+        //$httpProvider.interceptors.push(reqInterceptor);
         $urlRouterProvider.otherwise('/enum/area')
     })

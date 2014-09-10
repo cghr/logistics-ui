@@ -1,0 +1,223 @@
+{
+"schemaName":"enum.eslDetail.vaccination",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"vaccination",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"vaccinationsReceived",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the mother receive any vaccination since reaching adulthood including during this pregnancy?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"tetanusToxoidVacc",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the mother receive tetanus toxoid (TT) vaccine during this pregnancy?",
+        "flow":"data.vaccinationsReceived=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"tetanusDoses",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How many doses of tetanus toxoid (TT) vaccine did you/the mother receive during this pregnancy?",
+        "flow":"data.vaccinationsReceived=='Yes' && data.tetanusToxoidVacc=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"One","value":"One","valdn":""},
+        
+            {"text":"Two","value":"Two","valdn":""},
+        
+            {"text":"Three or more","value":"Three or more","valdn":""},
+        
+            {"text":"Dont Know ","value":"Dont Know ","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ironFolicAcid",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did you/the mother receive iron-folic acid tablets or syrup during this pregnancy? ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"durationIFC",
+        "type":"select_text",
+        "valdn":"between[0:72],required",
+        "label":"For how long did you/the mother consumed iron-folic acid tablets or syrup during this pregnancy?",
+        "flow":"data.ironFolicAcid=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Months","value":"Months","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

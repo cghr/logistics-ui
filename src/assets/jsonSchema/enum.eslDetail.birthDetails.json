@@ -1,0 +1,656 @@
+{
+"schemaName":"enum.eslDetail.birthDetails",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"birthDetails",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"born",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the baby born alive or dead?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Alive","value":"Alive","valdn":""},
+        
+            {"text":"Dead","value":"Dead","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"birthWeight",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What was the baby’s weight at birth?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Less than 1500 grams","value":"Less than 1500 grams","valdn":""},
+        
+            {"text":"1500-2499 grams","value":"1500-2499 grams","valdn":""},
+        
+            {"text":"2500-3999 grams","value":"2500-3999 grams","valdn":""},
+        
+            {"text":"Greather than 4000 grams","value":"Greather than 4000 grams","valdn":""},
+        
+            {"text":"Birth weight not taken","value":"Birth weight not taken","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"pregDuration",
+        "type":"select_text",
+        "valdn":"between[0:72],required",
+        "label":"How long was the pregnancy when the baby was born?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Months","value":"Months","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"abnormalPhysPart",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was any part of the baby physically abnormal at time of delivery? (for example: body part too large or too small, additional growth on body) ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"abnormalities",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What were the abnormalities? ",
+        "flow":"data.abnormalPhysPart=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Head size very small at time of birth","value":"Head size very small at time of birth","valdn":""},
+        
+            {"text":"Head size very large at time of birth","value":"Head size very large at time of birth","valdn":""},
+        
+            {"text":"Mass or defect on the back of head or spine","value":"Mass or defect on the back of head or spine","valdn":""},
+        
+            {"text":"Other","value":"Other","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"otherAbnormalities",
+        "type":"text",
+        "valdn":"required",
+        "label":"Specify the abnormalities.",
+        "flow":"data.abnormalities=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"blueColor",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the baby blue in colour at birth?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"normalGrowth",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the baby/the child not growing normally?",
+        "flow":"data.born=='Alive' || data.born=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.083 && age_value<5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"everCry",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the baby ever cry after birth, even if only a bit?",
+        "flow":"data.born=='Alive' || data.born=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"everMove",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the baby ever move after birth?",
+        "flow":"data.born=='Alive' || data.born=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"everBreathe",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the baby ever breathe after birth?",
+        "flow":"data.born=='Alive' || data.born=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"durationCryBreatheAfterBirth",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How long after birth did the baby first cry or breath?",
+        "flow":"data.everCry=='Yes' || data.everBreathe=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Less than and Equal to 5 minutes","value":"Less than and Equal to 5 minutes","valdn":""},
+        
+            {"text":"6-30 minutes","value":"6-30 minutes","valdn":""},
+        
+            {"text":"Greather than 30 minutes","value":"Greather than 30 minutes","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"stopCry",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the baby stop being able to cry?",
+        "flow":"data.born=='Alive' || data.born=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"durationStopCryBeforeDeath",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How long before the baby died did the baby stop crying?",
+        "flow":"data.stopCry=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Less than 1 day","value":"Less than 1 day","valdn":""},
+        
+            {"text":"1 day or more","value":"1 day or more","valdn":""},
+        
+            {"text":"Dont know","value":"Dont know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"breatheAssistance",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the baby given assistance to breathe at birth?",
+        "flow":"data.born=='Alive' || data.born=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bodyInjury",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Were there any bruises or signs of injury on the baby/child's body after the birth?",
+        "flow":"data.born=='Alive' || data.born=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<15"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"convulsionsFirstDay",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the baby have convulsions starting within the first day of life?",
+        "flow":"data.born=='Alive' || data.born=='Dont know'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"convulsionsSecondDay",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did the baby have convulsions starting on the second day or later after birth?",
+        "flow":"data.convulsionsFirstDay=='No' || data.convulsionsFirstDay== 'Dont know' ",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value<0.077"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

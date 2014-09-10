@@ -1,0 +1,349 @@
+{
+"schemaName":"enum.eslDetail.abdominal",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"abdominal",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"abdominalPain",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] have any abdominal problem?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bellyPain",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] have belly pain?",
+        "flow":"data.abdominalPain=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"durationBellyPain",
+        "type":"select_text",
+        "valdn":"required",
+        "label":"For how long before death did s/he [name] have belly pain?",
+        "flow":"data.abdominalPain=='Yes' && data.bellyPain=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Months","value":"Months","valdn":""},
+        
+            {"text":"Years","value":"Years","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bellyPart",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the pain in the upper or lower belly?",
+        "flow":"data.abdominalPain=='Yes' && data.bellyPain=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Upper belly","value":"Upper belly","valdn":""},
+        
+            {"text":"Lower belly","value":"Lower belly","valdn":""},
+        
+            {"text":"Dont know ","value":"Dont know ","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bellyProtrude",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did her/his [name] belly protrude more than usual?",
+        "flow":"data.abdominalPain=='Yes' ",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"duratiionBellyProtrude",
+        "type":"select_text",
+        "valdn":"required",
+        "label":"For how long before death did s/he [name] have a protruding belly?",
+        "flow":"data.abdominalPain=='Yes'  && data.bellyProtrude=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Months","value":"Months","valdn":""},
+        
+            {"text":"Years","value":"Years","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"speedBellyProtrude",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How rapidly did s/he [name] develop the protruding belly? ",
+        "flow":"data.abdominalPain=='Yes'  && data.bellyProtrude=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Rapidly","value":"Rapidly","valdn":""},
+        
+            {"text":"Slowly","value":"Slowly","valdn":""},
+        
+            {"text":"Dont know ","value":"Dont know ","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bellyMass",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] have any mass in the belly?",
+        "flow":"data.abdominalPain=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"durationBellyMass",
+        "type":"select_text",
+        "valdn":"required",
+        "label":"For how long before death did s/he [name] have a mass in the belly?",
+        "flow":"data.abdominalPain=='Yes'  && data.bellyMass=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Months","value":"Months","valdn":""},
+        
+            {"text":"Years","value":"Years","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=0.77"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

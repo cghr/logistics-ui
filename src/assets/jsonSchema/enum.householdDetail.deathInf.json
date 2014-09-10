@@ -63,9 +63,9 @@
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"}
+            {"text":"No","value":"No","valdn":""}
         
         ],
         "image":"",

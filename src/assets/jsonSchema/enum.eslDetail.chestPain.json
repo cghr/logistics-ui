@@ -1,0 +1,223 @@
+{
+"schemaName":"enum.eslDetail.chestPain",
+"onSave":"",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"chestPain",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"deathId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.deathId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"chestPain",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] experience pain in the chest in the month preceding death?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=1"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"durationChestPain",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How long did the pain last?",
+        "flow":"data.chestPain=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Less than 30 minutes","value":"Less than 30 minutes","valdn":""},
+        
+            {"text":"30 minutes - 24 hours","value":"30 minutes - 24 hours","valdn":""},
+        
+            {"text":"Greater than 24 hours","value":"Greater than 24 hours","valdn":""},
+        
+            {"text":"Dont know ","value":"Dont know ","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"phyActivity",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the pain during physical activity?",
+        "flow":"data.chestPain=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"painLocated",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Where was the pain located?",
+        "flow":"data.chestPain=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Upper or middle chest","value":"Upper or middle chest","valdn":""},
+        
+            {"text":"Lower chest","value":"Lower chest","valdn":""},
+        
+            {"text":"Left arm","value":"Left arm","valdn":""},
+        
+            {"text":"Other","value":"Other","valdn":""},
+        
+            {"text":"Dont know ","value":"Dont know ","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"otherPainLocated",
+        "type":"text",
+        "valdn":"required",
+        "label":"Specify where the pain was.",
+        "flow":"data.chestPain=='Yes' && data.painLocated=='Other'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        }
+
+
+
+]
+}

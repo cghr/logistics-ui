@@ -1,6 +1,6 @@
 {
-"schemaName":"enum.householdDetail.basicInf",
-"onSave":"enum.householdDetail.respondent",
+"schemaName":"enum.eslDetail.vomit",
+"onSave":"",
 "properties":[
 
 
@@ -10,7 +10,7 @@
         "valdn":"",
         "label":"",
         "flow":"",
-        "value":"household",
+        "value":"vomit",
         "items":[
         
         ],
@@ -30,12 +30,12 @@
 
 
         {
-        "name":"householdId",
+        "name":"deathId",
         "type":"hidden",
         "valdn":"",
         "label":"",
         "flow":"",
-        "value":"$stateParams.householdId",
+        "value":"$stateParams.deathId",
         "items":[
         
         ],
@@ -55,67 +55,19 @@
 
 
         {
-        "name":"houseId",
-        "type":"hidden",
-        "valdn":"",
-        "label":"",
-        "flow":"",
-        "value":"$stateParams.houseId",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"areaId",
-        "type":"hidden",
-        "valdn":"",
-        "label":"",
-        "flow":"",
-        "value":"$stateParams.areaId",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"consent",
+        "name":"vomit",
         "type":"radio",
         "valdn":"required",
-        "label":"Consent for Survey?",
+        "label":"Did s/he [name] vomit?",
         "flow":"",
         "value":"",
         "items":[
         
             {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No","valdn":""}
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
         
         ],
         "image":"",
@@ -134,13 +86,19 @@
 
 
         {
-        "name":"householdCount",
-        "type":"text",
-        "valdn":"between[0:9],required",
-        "label":"Total persons in household",
-        "flow":"",
+        "name":"durationVomit",
+        "type":"select_text",
+        "valdn":"required",
+        "label":"For how long before death did s/he [name] start vomiting?",
+        "flow":"data.vomit=='Yes'",
         "value":"",
         "items":[
+        
+            {"text":"Days","value":"Days","valdn":""},
+        
+            {"text":"Months","value":"Months","valdn":""},
+        
+            {"text":"Years","value":"Years","valdn":""}
         
         ],
         "image":"",
@@ -148,6 +106,72 @@
         
         },
         "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"CofeeBloodVomit",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Did s/he [name] vomit 'coffee grounds' or bright red/blood?",
+        "flow":"data.vomit=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"blackVomit",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was the vomit black?",
+        "flow":"data.vomit=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Dont Know","value":"Dont Know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"death","field":"age_value","ref":"deathId","condition":"age_value>=5"}
         
         ],
         "crossCheck":{
