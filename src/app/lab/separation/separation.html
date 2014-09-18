@@ -1,0 +1,26 @@
+<div>
+    <input type="text" placeholder="Scan EDTA tube" ng-model="edta"  id="edta" ng-enter="scanEdta(edta)"
+           autofocus=""/>
+    <input type="text" placeholder="Scan Cryovial" id="cryovial" ng-model="cryovial"
+           ng-enter="scanCryovial(cryovial)"/>
+
+    <button ng-click="saveBatch(separation)" class="btn btn-primary btn-small">Save Batch</button>
+
+    <table class="table table-bordered table-striped" style="width: 400px">
+        <thead>
+        <tr style="background-color: darkgrey;color: #f5f5f5">
+            <th>EDTA Tube</th>
+            <th>Cryovial 1</th>
+            <th>Cryovial 2</th>
+            <th>Cryovial 3</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="sep in separation  | reverse">
+            <td><i class="icon icon-trash" ng-click="removeSerumtube(sep.id)"></i> {{sep.id}}</td>
+            <td ng-repeat="item in sep.items">{{item}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

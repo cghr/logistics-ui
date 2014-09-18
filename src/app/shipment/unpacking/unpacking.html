@@ -1,0 +1,74 @@
+<div ng-hide="unpackingDone">
+    <input type="text" placeholder="Scan Ice box" ng-model="icebox" ng-enter="scanIceBox(icebox)"
+           autofocus=""/>
+    <input type="text" placeholder="Scan Cryovial Boxes" id="serumtube" ng-model="serumtube"
+           ng-enter="scanSerumtube(serumtube)"/>
+    <button ng-click="saveBatch(unpacking)" class="btn btn-primary btn-small">Save Batch</button>
+
+    {{focusSerumtube}}
+
+    <h4>Ice box: {{currentIcebox}}</h4>
+    <h5>Total Cryovial Boxess: {{unpacking | currentPackingLength:currentIcebox}}</h5>
+    <table class="table table-bordered table-striped" style="width: 400px">
+        <thead>
+        <tr style="background-color: darkgrey;color: #f5f5f5">
+            <th>Cryovial Boxess</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in currentBoxItems  | reverse">
+            <td><i class="icon icon-trash" ng-click="removeSerumtube(item)"></i> {{item}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div ng-show="unpackingDone">
+    <h5>Summary</h5>
+    <table class="table table-bordered table-striped">
+
+        <thead>
+        <tr>
+            <th>Icebox</th>
+            <th>No. of Cryovial Boxes</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="box in unpacking">
+            <td>{{box.id}}</td>
+            <td>{{box.items.length}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 ng-show="missing.length">Missing Items</h5>
+    <div ng-repeat="box in missing">
+
+        <h6>IceBox: {{box.id}}</h6>
+        <table class="table table-bordered table-striped">
+
+            <thead>
+            <tr>
+                <th>Cryovial Boxes</th>
+                <th>Reason</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in box.items">
+                <td>{{item}}</td>
+                <td><select>
+                    <option value="">Select an Option</option>
+                    <option value="0">Cryovial Box damaged</option>
+                    <option value="1">Other</option>
+                </select></td>
+                <td>
+                    <input type="text" placeholder="description"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <button class="btn btn-primary btn-small" ng-click="saveReason()" ng-show="missing.length">Save</button>
+
+</div>

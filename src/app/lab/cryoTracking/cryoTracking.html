@@ -1,0 +1,18 @@
+<input type="text" ng-model="cryovial" ng-enter="searchCryovial(cryovial)" autofocus=""/>
+
+<h4>CryovialBox box: {{currentBox.id}}</h4>
+<table class="table table-bordered" style="width: 400px">
+    <thead>
+    <tr style="background-color: darkgrey;color: #f5f5f5">
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in currentBox.rows">
+        <td ng-repeat="col in row.col"
+            ng-style="{ background: col.barcode.length>0?(col.searchStatus==1?'green':'red'):''}"
+            style="color: #ffffff;font-weight: bold">
+            {{col.barcode}}
+        </td>
+    </tr>
+    </tbody>
+</table>

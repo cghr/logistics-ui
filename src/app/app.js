@@ -1,4 +1,7 @@
 angular.module("myApp", [
+        'field',
+        'lab',
+        'shipment',
         'schemaLoader',
         'lodash',
         'chieffancypants.loadingBar',
@@ -7,7 +10,6 @@ angular.module("myApp", [
         'sync',
         'cgForm',
         'cgGrid',
-        'idService',
         'appService',
         'stateTransitions',
         'templates-app',
@@ -15,9 +17,6 @@ angular.module("myApp", [
         'ui.router',
         'security',
         'report',
-        'enum',
-        'hc',
-        'resamp',
         //'ngcamera',
         'toaster']
     )
@@ -35,6 +34,6 @@ angular.module("myApp", [
 
         }
 
-        //$httpProvider.interceptors.push(reqInterceptor);
-        $urlRouterProvider.otherwise('/enum/area')
+        $httpProvider.interceptors.push(reqInterceptor);
+        $urlRouterProvider.otherwise('/field/packing')
     })

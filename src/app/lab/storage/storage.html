@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="span3" ng-repeat="item in [1,2,3]" style="cursor: pointer" style="background:#ffffff"
+             ng-click="selectFreezer(item)" ng-class="{well:$index==(currentFreezerId-1)}">
+            <img src="assets/img/freezer.jpg" style="width: 100px;height: 200px">
+            <strong>Freezer {{item}}</strong>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="span2">
+            Freezer : {{currentFreezerId}}
+            <table class="table table-bordered" style=";width: 115px;height: 230px;cursor: pointer">
+                <tr ng-class="{activeItem:$index==(currentRackId-1)}" ng-repeat="rack in currentFreezer.racks"
+                    ng-click="selectRack($index+1)">
+                    <td style="font-weight: bold">{{rack.items.length}}/18</td>
+                </tr>
+
+            </table>
+
+        </div>
+        <div class="span2">
+            Rack Details
+            <div class="well">
+                <span ng-repeat="item in rackItems">{{item}},</span>
+            </div>
+        </div>
+        <div class="span8">
+            <input type="text" ng-model="cryovialBox" ng-enter="scanCryovialBox(cryovialBox)"
+                   placeholder="Scan CryovialBox"/>
+            <button ng-click="saveBatch(storage)" class="btn btn-primary btn-small">Done Storage</button>
+
+        </div>
+
+
+    </div>
+
+
+</div>

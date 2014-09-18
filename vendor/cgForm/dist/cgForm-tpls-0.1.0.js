@@ -2,7 +2,7 @@
  * cgForm
  * 
 
- * Version: 0.1.0 - 2014-09-09
+ * Version: 0.1.0 - 2014-09-10
  * License: MIT
  */
 angular.module('cgForm', [
@@ -31,6 +31,7 @@ angular.module('cgForm.tpls', [
     'template/formElement/control-group-heading.html',
     'template/formElement/control-group.html',
     'template/formElement/dropdown.html',
+    'template/formElement/dynamic_dropdown.html',
     'template/formElement/gps.html',
     'template/formElement/hidden.html',
     'template/formElement/lookup.html',
@@ -165,6 +166,7 @@ angular.module('cgForm.formConfig', ['cgForm.lodash']).factory('FormConfig', fun
         lookupBaseUrl: 'api/LookupService/',
         crossFlowBaseUrl: 'api/CrossFlowService',
         crossCheckBaseUrl: 'api/CrossCheckService',
+        dynamicDropdownBaseUrl: 'api/dynamicDropdownService',
         submitLabel: 'Save',
         style: 'well'
     };
@@ -210,12 +212,16 @@ angular.module('cgForm.formService', [
                 });
                 return postData(FormConfig.crossFlowBaseUrl, crossFlows);
             }
+            function getDynamicDropDownData(reqData) {
+                return postData(FormConfig.dynamicDropdownBaseUrl, reqData);
+            }
             return {
                 getResource: getResource,
                 postResource: postResource,
                 getLookupData: getLookupData,
                 getCrossCheckData: getCrossCheckData,
-                checkCrossFlow: checkCrossFlow
+                checkCrossFlow: checkCrossFlow,
+                getDynamicDropdownData: getDynamicDropDownData
             };
         }
     ]);
@@ -563,6 +569,18 @@ angular.module('cgForm.surveyForm', [
                 if (!_.isUndefined(nextItemInFlow)) {
                     if (nextItemInFlow.type == 'checkbox')
                         $scope.data[nextItemInFlow.name] = {};
+                    else if (nextItemInFlow.type == 'dynamic_dropdown') {
+                        var reqData = angular.copy(nextItemInFlow.metadata);
+                        reqData['refValue'] = $scope.$eval(nextItemInFlow['metadata']['refValue']);
+                        FormService.getDynamicDropdownData(reqData).then(function (resp) {
+                            var dynamicDropdownIndex = $scope.flowSeq;
+                            $scope.schema.properties[$scope.flowSeq].items = resp.data;
+                            $scope.flow.properties.splice($scope.flow.properties.length - 1, 1);
+                            $scope.flow.properties.push($scope.schema.properties[dynamicDropdownIndex]);
+                        }, function () {
+                            console.log('error fetching data');
+                        });
+                    }
                 }
                 if (!nextItemInFlow) {
                     postData();
@@ -835,6 +853,12 @@ angular.module('template/formElement/dropdown.html', []).run([
     '$templateCache',
     function ($templateCache) {
         $templateCache.put('template/formElement/dropdown.html', '<select  data-bvalidator="{{config.valdn}}"\n' + '        data-bvalidator-msg="Please select an option"\n' + '        ng-model="data[config.name]"\n' + '        init-focus>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}" init-focus="{{config.initFocus}}" >{{item.text}}</option>\n' + '\n' + '</select>');
+    }
+]);
+angular.module('template/formElement/dynamic_dropdown.html', []).run([
+    '$templateCache',
+    function ($templateCache) {
+        $templateCache.put('template/formElement/dynamic_dropdown.html', '<select  data-bvalidator="{{config.valdn}}"\n' + '         data-bvalidator-msg="Please select an option"\n' + '         ng-model="data[config.name]"\n' + '         init-focus>\n' + '    <option ng-repeat="item in config.items" value="{{item.value}}" init-focus="{{config.initFocus}}" >{{item.text}}</option>\n' + '\n' + '</select>');
     }
 ]);
 angular.module('template/formElement/gps.html', []).run([

@@ -15,18 +15,6 @@ angular.module('appService', ['toaster'])
                     toaster.pop('error', '', 'Failed to cleanup')
                 })
         }
-        AppService.getDeathDetails = function (deathId) {
-
-            return $http.get('api/data/dataAccessService/death/deathId/' + deathId)
-                .success(function (resp) {
-                    AppService.deathDetails = resp
-
-                })
-                .error(function () {
-                    toaster.pop('error', '', 'Failed to fetch death information')
-                })
-
-        }
 
 
         return AppService

@@ -1,0 +1,43 @@
+<div ng-hide="packingDone">
+    <input type="text" placeholder="Scan Ice box" ng-model="icebox" ng-enter="scanIceBox(icebox)"
+           autofocus=""/>
+    <input type="text" placeholder="Scan EDTA tube" id="serumtube" ng-model="serumtube"
+           ng-enter="scanSerumtube(serumtube)"/>
+    <button ng-click="saveBatch(packing)" class="btn btn-primary btn-small">Save Batch</button>
+
+    {{focusSerumtube}}
+
+    <h4>Ice box: {{currentIcebox}}</h4>
+    <h5>Total EDTA tubes: {{packing | currentPackingLength:currentIcebox}}</h5>
+    <table class="table table-bordered table-striped" style="width: 400px">
+        <thead>
+        <tr style="background-color: darkgrey;color: #f5f5f5">
+            <th>EDTA Tubes</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in currentBoxItems  | reverse">
+            <td><i class="icon icon-trash" ng-click="removeSerumtube(item)"></i> {{item}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div ng-show="packingDone">
+    <h5>Summary</h5>
+    <table class="table table-bordered table-striped">
+
+        <thead>
+        <tr>
+            <th>Icebox</th>
+            <th>EDTA Tubes</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="box in packing">
+            <td>{{box.id}}</td>
+            <td>{{box.items.length}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
